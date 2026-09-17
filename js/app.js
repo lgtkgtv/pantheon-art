@@ -1,7 +1,9 @@
 /**
  * PANTHEON: Fine Art Exhibition & 500-Year History Engine
  * Minimalist, Intuitive, Visual-First Architecture
- * Phase 2: Curator's Detail Loupe, Mobile Bottom Sheet, & Curated Shelves
+ * Step 1: Foundation & Reliability
+ * Step 2: Real-Life Size on Museum Wall (Human Silhouette Scale)
+ * Step 3: The 5-Minute Guided Tour (10 Historical Milestones)
  */
 
 (function() {
@@ -24,9 +26,14 @@
     modalIndex: -1,
     zoomScale: 1.0,
     loupeActive: false,
+    isWallMode: false,
     isDraggingSheet: false,
     sheetStartY: 0,
-    sheetCurrentDeltaY: 0
+    sheetCurrentDeltaY: 0,
+    // 5-Minute Tour State
+    tourIndex: 0,
+    tourAutoPlay: false,
+    tourTimer: null
   };
 
   // Magnification constant for Curator's Detail Loupe
@@ -44,6 +51,7 @@
     heroPrevBtn: document.getElementById('heroPrevBtn'),
     heroNextBtn: document.getElementById('heroNextBtn'),
     heroDots: document.getElementById('heroDots'),
+    startTourBtn: document.getElementById('startTourBtn'),
     // Sticky Floating Nav & Controls
     tabGallery: document.getElementById('tabGallery'),
     tabTimeline: document.getElementById('tabTimeline'),
@@ -66,10 +74,16 @@
     zoomContainer: document.getElementById('zoomContainer'),
     curatorLoupe: document.getElementById('curatorLoupe'),
     loupeToggleBtn: document.getElementById('loupeToggleBtn'),
+    wallScaleToggleBtn: document.getElementById('wallScaleToggleBtn'),
+    wallStage: document.getElementById('wallStage'),
+    wallImage: document.getElementById('wallImage'),
+    wallFrame: document.getElementById('wallFrame'),
+    wallDimensionBadge: document.getElementById('wallDimensionBadge'),
     modalImage: document.getElementById('modalImage'),
     modalTitle: document.getElementById('modalTitle'),
     modalArtist: document.getElementById('modalArtist'),
     modalMuseum: document.getElementById('modalMuseum'),
+    modalPhysicalDim: document.getElementById('modalPhysicalDim'),
     modalRes: document.getElementById('modalRes'),
     modalMp: document.getElementById('modalMp'),
     modalSize: document.getElementById('modalSize'),
@@ -79,11 +93,31 @@
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     zoomInBtn: document.getElementById('zoomInBtn'),
     zoomOutBtn: document.getElementById('zoomOutBtn'),
-    zoomResetBtn: document.getElementById('zoomResetBtn')
+    zoomResetBtn: document.getElementById('zoomResetBtn'),
+    // 5-Minute Guided Tour Story Mode
+    tourModal: document.getElementById('tourModal'),
+    tourStepLabel: document.getElementById('tourStepLabel'),
+    tourProgressSegments: document.getElementById('tourProgressSegments'),
+    tourAutoPlayBtn: document.getElementById('tourAutoPlayBtn'),
+    tourPlayIcon: document.getElementById('tourPlayIcon'),
+    tourPlayText: document.getElementById('tourPlayText'),
+    tourExitBtn: document.getElementById('tourExitBtn'),
+    tourPrevBtn: document.getElementById('tourPrevBtn'),
+    tourNextBtn: document.getElementById('tourNextBtn'),
+    tourAmbientBg: document.getElementById('tourAmbientBg'),
+    tourImage: document.getElementById('tourImage'),
+    tourEpochBadge: document.getElementById('tourEpochBadge'),
+    tourYearBadge: document.getElementById('tourYearBadge'),
+    tourWorkTitle: document.getElementById('tourWorkTitle'),
+    tourWorkArtist: document.getElementById('tourWorkArtist'),
+    tourStoryText: document.getElementById('tourStoryText'),
+    tourBreakthroughText: document.getElementById('tourBreakthroughText'),
+    tourInspectLoupeBtn: document.getElementById('tourInspectLoupeBtn')
   };
 
   // Helper: Image Source Resolver
   function resolveImgSrc(item) {
+    if (!item) return '';
     if (window.location.protocol.startsWith('http')) {
       return item.HighResUrl || item.LocalRelativePath;
     }
@@ -126,7 +160,7 @@
         dom.heroDots.innerHTML = '';
         spotlights.forEach((_, i) => {
           const dot = document.createElement('button');
-          dot.className = `w-2 h-2 rounded-full transition-all ${i === index ? 'bg-amber-400 w-6' : 'bg-slate-600 hover:bg-slate-400'}`;
+          dot.className = `w-2 h-2 rounded-full transition-all cursor-pointer ${i === index ? 'bg-amber-400 w-6' : 'bg-slate-600 hover:bg-slate-400'}`;
           dot.onclick = () => {
             renderSpotlight(i);
             resetSpotlightTimer();
@@ -193,7 +227,7 @@
 
     dom.shelvesSection.innerHTML = '';
 
-    shelves.forEach((shelf, idx) => {
+    shelves.forEach((shelf) => {
       const block = document.createElement('div');
       block.className = 'space-y-3';
 
@@ -234,6 +268,7 @@
                   src="${resolveImgSrc(item)}" 
                   alt="${item.Title}" 
                   loading="lazy" 
+                  decoding="async"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   onerror="if (this.src !== '${item.HighResUrl}') { this.src = '${item.HighResUrl}'; }"
                 />
@@ -334,6 +369,7 @@
             src="${resolveImgSrc(item)}" 
             alt="${item.Title}" 
             loading="lazy" 
+            decoding="async"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             onerror="if (this.src !== '${item.HighResUrl}') { this.src = '${item.HighResUrl}'; }"
           />
@@ -370,10 +406,10 @@
           </div>
           
           <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-sans">
-            <span class="truncate max-w-[200px]" title="${item.Museum || 'Museum Collection'}">
+            <span class="truncate max-w-[190px]" title="${item.Museum || 'Museum Collection'}">
               🏛️ ${item.Museum || 'Museum Collection'}
             </span>
-            <span class="font-mono text-slate-500">${item.FileSizeMB} MB</span>
+            <span class="font-mono text-slate-400 font-semibold">${item.physicalWidthCm ? Math.round(item.physicalWidthCm) + '×' + Math.round(item.physicalHeightCm) + 'cm' : item.FileSizeMB + ' MB'}</span>
           </div>
         </div>
       `;
@@ -415,7 +451,7 @@
           onclick="window.openMasterpieceModal('${w.FileName}')"
         >
           <div class="relative w-full h-full">
-            <img src="${resolveImgSrc(w)}" alt="${w.Title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="if (this.src !== '${w.HighResUrl}') { this.src = '${w.HighResUrl}'; }" />
+            <img src="${resolveImgSrc(w)}" alt="${w.Title}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="if (this.src !== '${w.HighResUrl}') { this.src = '${w.HighResUrl}'; }" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2.5">
               <p class="text-white text-xs font-bold line-clamp-1 group-hover:text-amber-300 transition-colors">${w.Title}</p>
               <p class="text-slate-400 text-[10px] font-mono">${w.Megapixels.toFixed(1)} MP &bull; ${w.Year}</p>
@@ -522,6 +558,7 @@
     state.modalIndex = index;
     state.zoomScale = 1.0;
     deactivateLoupe();
+    deactivateWallScale();
     updateModalContent();
 
     dom.lightboxModal.classList.remove('hidden');
@@ -535,6 +572,7 @@
 
   function closeModal() {
     deactivateLoupe();
+    deactivateWallScale();
     dom.lightboxModal.classList.add('hidden');
     document.body.style.overflow = '';
     state.modalIndex = -1;
@@ -548,9 +586,15 @@
     const item = state.filteredMasterpieces[state.modalIndex];
     if (!item) return;
 
+    // Apply shimmer placeholder while image loads
+    dom.modalImage.classList.add('img-loading-shimmer');
     const imgSrc = resolveImgSrc(item);
     dom.modalImage.src = imgSrc;
+    dom.modalImage.onload = () => {
+      dom.modalImage.classList.remove('img-loading-shimmer');
+    };
     dom.modalImage.onerror = () => {
+      dom.modalImage.classList.remove('img-loading-shimmer');
       if (dom.modalImage.src !== item.HighResUrl) {
         dom.modalImage.src = item.HighResUrl;
       }
@@ -561,6 +605,11 @@
     dom.modalTitle.textContent = item.Title;
     dom.modalArtist.textContent = `${item.Artist} (${item.Year})`;
     dom.modalMuseum.textContent = item.Museum || 'Museum Collection';
+    
+    if (dom.modalPhysicalDim) {
+      dom.modalPhysicalDim.textContent = item.physicalDimensionsStr || '';
+    }
+
     dom.modalRes.textContent = `${item.Width} × ${item.Height} px`;
     dom.modalMp.textContent = `${item.Megapixels.toFixed(2)} MP`;
     dom.modalSize.textContent = `${item.FileSizeMB} MB`;
@@ -570,6 +619,11 @@
     // Refresh loupe if active
     if (state.loupeActive) {
       dom.curatorLoupe.style.backgroundImage = `url('${item.HighResUrl || imgSrc}')`;
+    }
+
+    // Refresh wall scale if active
+    if (state.isWallMode) {
+      renderWallScale(item);
     }
   }
 
@@ -584,6 +638,7 @@
   }
 
   function adjustZoom(delta) {
+    if (state.isWallMode) return;
     state.zoomScale = Math.max(0.5, Math.min(4.0, state.zoomScale + delta));
     if (dom.modalImage) {
       dom.modalImage.style.transform = `scale(${state.zoomScale})`;
@@ -614,6 +669,7 @@
   // 6. CURATOR'S DETAIL LOUPE ENGINE (3.0× Magnification)
   // =========================================================================
   function toggleLoupe() {
+    if (state.isWallMode) deactivateWallScale();
     if (state.loupeActive) {
       deactivateLoupe();
     } else {
@@ -693,7 +749,190 @@
   }
 
   // =========================================================================
-  // 7. MOBILE BOTTOM SHEET TOUCH SWIPE GESTURES
+  // 7. REAL-LIFE SIZE "ON THE WALL" SCALE VISUALIZER (Step 2)
+  // =========================================================================
+  function toggleWallScale() {
+    if (state.isWallMode) {
+      deactivateWallScale();
+    } else {
+      activateWallScale();
+    }
+  }
+
+  function activateWallScale() {
+    state.isWallMode = true;
+    deactivateLoupe();
+
+    if (dom.wallScaleToggleBtn) {
+      dom.wallScaleToggleBtn.classList.add('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-400');
+      dom.wallScaleToggleBtn.classList.remove('bg-slate-800', 'text-slate-300');
+    }
+
+    if (dom.wallStage) dom.wallStage.classList.remove('hidden');
+    if (dom.modalImage) dom.modalImage.classList.add('hidden');
+
+    const item = state.filteredMasterpieces[state.modalIndex];
+    if (item) renderWallScale(item);
+  }
+
+  function deactivateWallScale() {
+    state.isWallMode = false;
+
+    if (dom.wallScaleToggleBtn) {
+      dom.wallScaleToggleBtn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-400');
+      dom.wallScaleToggleBtn.classList.add('bg-slate-800', 'text-slate-300');
+    }
+
+    if (dom.wallStage) dom.wallStage.classList.add('hidden');
+    if (dom.modalImage) dom.modalImage.classList.remove('hidden');
+  }
+
+  function renderWallScale(item) {
+    if (!dom.wallFrame || !dom.wallImage || !dom.wallDimensionBadge) return;
+
+    dom.wallImage.src = resolveImgSrc(item);
+
+    // Baseline: 175 cm human silhouette reference height in px
+    const isMobile = window.innerWidth <= 768;
+    const humanHeightPx = isMobile ? 165 : 220;
+    const pxPerCm = humanHeightPx / 175.0;
+
+    let frameW = (item.physicalWidthCm || 80) * pxPerCm;
+    let frameH = (item.physicalHeightCm || 80) * pxPerCm;
+
+    // Stage constraints so giant murals fit elegantly alongside the human
+    const maxStageH = isMobile ? 220 : 280;
+    const maxStageW = isMobile ? 220 : 380;
+
+    if (frameH > maxStageH || frameW > maxStageW) {
+      const scaleDown = Math.min(maxStageH / frameH, maxStageW / frameW);
+      frameW *= scaleDown;
+      frameH *= scaleDown;
+    }
+
+    dom.wallFrame.style.width = `${Math.max(26, Math.round(frameW))}px`;
+    dom.wallFrame.style.height = `${Math.max(26, Math.round(frameH))}px`;
+    dom.wallDimensionBadge.textContent = item.physicalDimensionsStr || `${item.physicalWidthCm} × ${item.physicalHeightCm} cm`;
+  }
+
+  // =========================================================================
+  // 8. THE 5-MINUTE GUIDED TOUR STORY MODE (Step 3)
+  // =========================================================================
+  window.startTour = function() {
+    const tour = data.guidedTour;
+    if (!tour || tour.length === 0) return;
+
+    if (dom.tourModal) {
+      dom.tourModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Build 10 segmented progress bars
+      if (dom.tourProgressSegments) {
+        dom.tourProgressSegments.innerHTML = '';
+        tour.forEach((_, i) => {
+          const seg = document.createElement('div');
+          seg.className = `tour-step-bar flex-1 ${i === 0 ? 'active' : ''}`;
+          dom.tourProgressSegments.appendChild(seg);
+        });
+      }
+
+      renderTourStep(0);
+    }
+  };
+
+  function closeTour() {
+    stopTourAutoPlay();
+    if (dom.tourModal) {
+      dom.tourModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function renderTourStep(index) {
+    const tour = data.guidedTour;
+    if (!tour || index < 0 || index >= tour.length) return;
+
+    state.tourIndex = index;
+    const stop = tour[index];
+
+    if (dom.tourStepLabel) {
+      dom.tourStepLabel.textContent = `Milestone ${index + 1} of ${tour.length} • Year ${stop.year}`;
+    }
+    if (dom.tourEpochBadge) dom.tourEpochBadge.textContent = stop.epoch;
+    if (dom.tourYearBadge) dom.tourYearBadge.textContent = stop.year;
+    if (dom.tourWorkTitle) dom.tourWorkTitle.textContent = stop.title;
+    if (dom.tourWorkArtist) dom.tourWorkArtist.textContent = stop.artist;
+    if (dom.tourStoryText) dom.tourStoryText.textContent = `"${stop.story}"`;
+    if (dom.tourBreakthroughText) dom.tourBreakthroughText.textContent = stop.breakthrough;
+
+    const imgSrc = resolveImgSrc(stop);
+    if (dom.tourImage) dom.tourImage.src = imgSrc;
+    if (dom.tourAmbientBg) dom.tourAmbientBg.src = imgSrc;
+
+    // Update progress segments
+    if (dom.tourProgressSegments) {
+      const bars = dom.tourProgressSegments.querySelectorAll('.tour-step-bar');
+      bars.forEach((bar, i) => {
+        bar.className = `tour-step-bar flex-1 ${i < index ? 'completed' : (i === index ? 'active' : '')}`;
+      });
+    }
+  }
+
+  function nextTourStep() {
+    const tour = data.guidedTour;
+    if (!tour) return;
+    const nextIdx = (state.tourIndex + 1) % tour.length;
+    renderTourStep(nextIdx);
+  }
+
+  function prevTourStep() {
+    const tour = data.guidedTour;
+    if (!tour) return;
+    const prevIdx = (state.tourIndex - 1 + tour.length) % tour.length;
+    renderTourStep(prevIdx);
+  }
+
+  function toggleTourAutoPlay() {
+    if (state.tourAutoPlay) {
+      stopTourAutoPlay();
+    } else {
+      startTourAutoPlay();
+    }
+  }
+
+  function startTourAutoPlay() {
+    state.tourAutoPlay = true;
+    if (dom.tourPlayIcon) dom.tourPlayIcon.textContent = '⏸';
+    if (dom.tourPlayText) dom.tourPlayText.textContent = 'Pause';
+    if (dom.tourAutoPlayBtn) dom.tourAutoPlayBtn.classList.add('bg-amber-500/20', 'text-amber-300', 'border-amber-500/40');
+
+    if (state.tourTimer) clearInterval(state.tourTimer);
+    state.tourTimer = setInterval(nextTourStep, 9500);
+  }
+
+  function stopTourAutoPlay() {
+    state.tourAutoPlay = false;
+    if (dom.tourPlayIcon) dom.tourPlayIcon.textContent = '▶';
+    if (dom.tourPlayText) dom.tourPlayText.textContent = 'Auto-Play';
+    if (dom.tourAutoPlayBtn) dom.tourAutoPlayBtn.classList.remove('bg-amber-500/20', 'text-amber-300', 'border-amber-500/40');
+
+    if (state.tourTimer) {
+      clearInterval(state.tourTimer);
+      state.tourTimer = null;
+    }
+  }
+
+  function inspectCurrentTourWork() {
+    const tour = data.guidedTour;
+    if (!tour) return;
+    const stop = tour[state.tourIndex];
+    closeTour();
+    window.openMasterpieceModal(stop.fileName);
+    setTimeout(activateLoupe, 250);
+  }
+
+  // =========================================================================
+  // 9. MOBILE BOTTOM SHEET TOUCH SWIPE GESTURES
   // =========================================================================
   function initMobileSheetGestures() {
     const handleZone = dom.sheetHandleZone;
@@ -702,7 +941,7 @@
     if (!sheet) return;
 
     function onTouchStart(e) {
-      if (window.innerWidth > 768) return; // Desktop uses standard modal
+      if (window.innerWidth > 768) return;
       state.isDraggingSheet = true;
       state.sheetStartY = e.touches[0].clientY;
       state.sheetCurrentDeltaY = 0;
@@ -715,29 +954,25 @@
       const deltaY = currentY - state.sheetStartY;
 
       if (deltaY > 0) {
-        // Dragging downwards
         state.sheetCurrentDeltaY = deltaY;
         sheet.style.transform = `translateY(${deltaY}px)`;
       } else {
-        // Slight resistance when pulling upwards
         sheet.style.transform = `translateY(${deltaY * 0.15}px)`;
       }
     }
 
-    function onTouchEnd(e) {
+    function onTouchEnd() {
       if (!state.isDraggingSheet) return;
       state.isDraggingSheet = false;
       sheet.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
 
       if (state.sheetCurrentDeltaY > 80) {
-        // Threshold passed -> Dismiss bottom sheet
         sheet.style.transform = 'translateY(100%)';
         setTimeout(() => {
           closeModal();
           sheet.style.transform = '';
         }, 220);
       } else {
-        // Snap back to open position
         sheet.style.transform = 'translateY(0)';
       }
       state.sheetCurrentDeltaY = 0;
@@ -757,7 +992,7 @@
   }
 
   // =========================================================================
-  // 8. EVENT LISTENERS & INITIALIZATION
+  // 10. EVENT LISTENERS & INITIALIZATION
   // =========================================================================
   function initEvents() {
     // View tabs: Gallery vs Timeline
@@ -815,10 +1050,9 @@
     if (dom.zoomOutBtn) dom.zoomOutBtn.onclick = () => adjustZoom(-0.3);
     if (dom.zoomResetBtn) dom.zoomResetBtn.onclick = resetZoom;
 
-    // Loupe toggle
-    if (dom.loupeToggleBtn) {
-      dom.loupeToggleBtn.onclick = toggleLoupe;
-    }
+    // Loupe & Wall Scale toggles
+    if (dom.loupeToggleBtn) dom.loupeToggleBtn.onclick = toggleLoupe;
+    if (dom.wallScaleToggleBtn) dom.wallScaleToggleBtn.onclick = toggleWallScale;
 
     // Loupe cursor & touch tracking
     if (dom.zoomContainer) {
@@ -838,19 +1072,41 @@
       };
     }
 
+    // 5-Minute Guided Tour controls
+    if (dom.tourExitBtn) dom.tourExitBtn.onclick = closeTour;
+    if (dom.tourPrevBtn) dom.tourPrevBtn.onclick = prevTourStep;
+    if (dom.tourNextBtn) dom.tourNextBtn.onclick = nextTourStep;
+    if (dom.tourAutoPlayBtn) dom.tourAutoPlayBtn.onclick = toggleTourAutoPlay;
+    if (dom.tourInspectLoupeBtn) dom.tourInspectLoupeBtn.onclick = inspectCurrentTourWork;
+
     // Mobile bottom sheet drag-to-dismiss gesture
     initMobileSheetGestures();
 
     // Keyboard shortcuts
     window.onkeydown = (e) => {
-      if (dom.lightboxModal.classList.contains('hidden')) return;
-      if (e.key === 'Escape') closeModal();
-      else if (e.key === 'ArrowLeft') stepModal(-1);
-      else if (e.key === 'ArrowRight') stepModal(1);
-      else if (e.key === '+' || e.key === '=') adjustZoom(0.2);
-      else if (e.key === '-') adjustZoom(-0.2);
-      else if (e.key === '0') resetZoom();
-      else if (e.key === 'l' || e.key === 'L') toggleLoupe();
+      // If Tour Modal is open
+      if (dom.tourModal && !dom.tourModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeTour();
+        else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') nextTourStep();
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prevTourStep();
+        else if (e.key === ' ' || e.code === 'Space') {
+          e.preventDefault();
+          toggleTourAutoPlay();
+        }
+        return;
+      }
+
+      // If Lightbox Modal is open
+      if (dom.lightboxModal && !dom.lightboxModal.classList.contains('hidden')) {
+        if (e.key === 'Escape') closeModal();
+        else if (e.key === 'ArrowLeft') stepModal(-1);
+        else if (e.key === 'ArrowRight') stepModal(1);
+        else if (e.key === '+' || e.key === '=') adjustZoom(0.2);
+        else if (e.key === '-') adjustZoom(-0.2);
+        else if (e.key === '0') resetZoom();
+        else if (e.key === 'l' || e.key === 'L') toggleLoupe();
+        else if (e.key === 'w' || e.key === 'W') toggleWallScale();
+      }
     };
   }
 
@@ -882,7 +1138,7 @@
     renderGallery();
     renderTimeline();
     initEvents();
-    console.log('Pantheon exhibition initialized with Phase 2 capabilities.');
+    console.log('Pantheon exhibition initialized: Step 1, Step 2, and Step 3 fully active.');
   }
 
   if (document.readyState === 'loading') {

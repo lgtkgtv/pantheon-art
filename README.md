@@ -144,18 +144,22 @@ The repository includes a museum-grade interactive web application configured fo
 5. Within 1–2 minutes, GitHub will publish your museum exhibition live at `https://lgtkgtv.github.io/pantheon-art/`.
 
 ### 🎨 Key Website Features
-1. **Dramatic Spotlight Hero**:
-   * Full-bleed ambient museum spotlight rotating through the world's most iconic masterworks (*The Art of Painting*, *Mona Lisa*, *The Starry Night*, *The Kiss*).
-   * 1-tap instant gateway to inspect scans up to **45.80 Megapixels**.
-2. **Curated Horizontal Discovery Shelves**:
-   * Frictionless visual browsing without complex filter setup.
-   * Curated shelves for **The Crown Jewels**, **Ultra-HD Scans (20+ MP)**, **Masters of Shadow & Light**, and **The Plein-Air Revolution**.
-3. **500-Year Timeline with Curator Micro-Plaques**:
-   * Zero text overload: each master features a 1-sentence poetic punchline and key technical innovation chips.
-   * Progressive disclosure: deep scholarly analyses (*"Why They Belong"* and *"Role in Evolution"*) unlock gracefully in an expandable curator drawer.
-4. **Mobile-First Bottom Sheet & Lightbox**:
-   * On mobile devices, paintings slide up in a native touch-friendly bottom sheet with drag handle and direct scan links.
-   * On desktop, interactive lightbox supports pan/zoom controls and keyboard shortcuts (`Esc`, `←`, `→`, `+`, `-`).
+1. **🎧 The 5-Minute Guided Tour (Story Mode)**:
+   * 1-tap automated chronological narrative journey through **10 landmark turning points** in art history (1485 &rarr; 1937) from Botticelli to Picasso.
+   * Features bite-sized 2-sentence evolutionary story cards, breakthrough tags, segmented progress bars, and timed auto-play slideshow.
+2. **🖼️ "Real-Life Size" on Museum Wall Visualizer**:
+   * Solves digital scale distortion by displaying framed artworks on an architectural gallery wall beside an average-height human silhouette (175 cm / 5'9").
+   * Visually reveals why *Mona Lisa* (30 in) is intimate, *The Night Watch* (14 ft) is colossal, and *Guernica* (25 ft) fills an entire room.
+3. **🔬 Interactive Curator's Detail Loupe (3.0× Ultra-HD)**:
+   * Circular 180×180px high-magnification lens with museum gold rim.
+   * Tracks cursor dynamically on desktop (with shortcut `L`) and follows touch contacts with a **-65px vertical offset** on mobile so fingers never obstruct the magnified view.
+4. **👑 Curated Horizontal Discovery Shelves**:
+   * Frictionless visual browsing with smooth desktop left/right chevrons (`‹` and `›`) and mobile touch flicking:
+   * Shelves for **The Crown Jewels**, **Ultra-HD Scans (20+ MP)**, **Masters of Shadow & Light**, and **The Plein-Air Revolution**.
+5. **📱 Mobile-First Bottom Sheet & Gestures**:
+   * On mobile viewports, paintings slide up in an ergonomic bottom sheet with drag handle. Dragging down smoothly tracks touch and dismisses upon passing 80px threshold.
+6. **🏛️ 500-Year Timeline with Progressive Disclosure**:
+   * Zero text overload: each master features a 1-sentence poetic punchline, technical innovation tags, and an expandable scholar drawer.
 
 ---
 

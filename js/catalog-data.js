@@ -64,6 +64,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 53.0,
+      "physicalHeightCm": 77.0,
+      "physicalType": "Intimate Poplar Panel",
+      "physicalDimensionsStr": "53 × 77 cm (20.9 × 30.3 in) • Intimate Poplar Panel",
       "EpochId": "renaissance"
     },
     {
@@ -84,6 +88,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 570.0,
+      "physicalHeightCm": 280.0,
+      "physicalType": "Sistine Chapel Ceiling Fresco",
+      "physicalDimensionsStr": "570 × 280 cm (18.7 × 9.2 ft) • Sistine Chapel Ceiling Fresco",
       "EpochId": "renaissance"
     },
     {
@@ -104,6 +112,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 39.0,
+      "physicalHeightCm": 44.5,
+      "physicalType": "Intimate Domestic Tronie",
+      "physicalDimensionsStr": "39 × 44.5 cm (15.4 × 17.5 in) • Intimate Domestic Tronie",
       "EpochId": "baroque"
     },
     {
@@ -124,6 +136,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 100.0,
+      "physicalHeightCm": 120.0,
+      "physicalType": "Full-Scale Studio Allegory",
+      "physicalDimensionsStr": "100 × 120 cm (39.4 × 47.2 in) • Full-Scale Studio Allegory",
       "EpochId": "baroque"
     },
     {
@@ -144,6 +160,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 63.0,
+      "physicalHeightCm": 48.0,
+      "physicalType": "Plein-Air Harbor Study",
+      "physicalDimensionsStr": "63 × 48 cm (24.8 × 18.9 in) • Plein-Air Harbor Study",
       "EpochId": "impressionism"
     },
     {
@@ -164,6 +184,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 92.1,
+      "physicalHeightCm": 73.7,
+      "physicalType": "Intimate Cosmic Vision",
+      "physicalDimensionsStr": "92.1 × 73.7 cm (36.3 × 29 in) • Intimate Cosmic Vision",
       "EpochId": "impressionism"
     },
     {
@@ -184,6 +208,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 180.0,
+      "physicalHeightCm": 180.0,
+      "physicalType": "Square Gold Leaf Masterpiece",
+      "physicalDimensionsStr": "180 × 180 cm (70.9 × 70.9 in) • Square Gold Leaf Masterpiece",
       "EpochId": "expressionism"
     },
     {
@@ -204,7 +232,153 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 173.0,
+      "physicalHeightCm": 173.5,
+      "physicalType": "Square Double Self-Portrait",
+      "physicalDimensionsStr": "173 × 173.5 cm (68.1 × 68.3 in) • Square Double Self-Portrait",
       "EpochId": "modernism"
+    }
+  ],
+  "guidedTour": [
+    {
+      "step": 1,
+      "year": "1485",
+      "epoch": "Early Renaissance",
+      "artist": "Sandro Botticelli",
+      "title": "The Birth of Venus",
+      "fileName": "01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg",
+      "headline": "The Rebirth of Myth & Classical Beauty",
+      "story": "After a thousand years of medieval gloom, Botticelli resurrected classical poetry and graceful lyrical contours. The goddess of love floats ashore on a giant seashell, inaugurating the Italian Renaissance.",
+      "breakthrough": "Humanist revival of pagan mythology & lyrical anatomy",
+      "HighResUrl": "https://uploads5.wikiart.org/00142/images/57726d7dedc2cb3880b47c88/sandro-botticelli-la-nascita-di-venere-google-art-project-edited.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg",
+      "Megapixels": 15.7,
+      "Museum": "Uffizi Gallery, Florence",
+      "physicalDimensionsStr": "278.9 × 172.5 cm (109.8 × 67.9 in) • Grand Mythological Canvas"
+    },
+    {
+      "step": 2,
+      "year": "1503",
+      "epoch": "High Renaissance",
+      "artist": "Leonardo da Vinci",
+      "title": "Mona Lisa",
+      "fileName": "06_Leonardo_da_Vinci_-_Mona_Lisa.jpg",
+      "headline": "The Invention of Living Sfumato Shadows",
+      "story": "Leonardo banished harsh medieval outlines, blending layers of translucent glaze like smoke (\"sfumato\"). The result was a living, breathing presence whose shifting smile redefined human psychology in art.",
+      "breakthrough": "Sfumato (smoke-like soft shading) & psychological presence",
+      "HighResUrl": "https://uploads6.wikiart.org/00142/images/leonardo-da-vinci/mona-lisa.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/06_Leonardo_da_Vinci_-_Mona_Lisa.jpg",
+      "Megapixels": 37.26,
+      "Museum": "Musée du Louvre, Paris",
+      "physicalDimensionsStr": "53 × 77 cm (20.9 × 30.3 in) • Intimate Poplar Panel"
+    },
+    {
+      "step": 3,
+      "year": "1512",
+      "epoch": "High Renaissance",
+      "artist": "Michelangelo",
+      "title": "The Creation of Adam",
+      "fileName": "14_Michelangelo_-_The_Creation_of_Adam.jpg",
+      "headline": "Anatomical Grandeur & The Divine Spark",
+      "story": "Suspended on scaffolding beneath the Vatican ceiling, Michelangelo sculpted God and man in paint. The near-touch of two fingertips charged the Sistine Chapel with electrifying human potential.",
+      "breakthrough": "Sculptural monumentality & heroic human anatomy",
+      "HighResUrl": "https://uploads3.wikiart.org/00255/images/57726d7fedc2cb3880b4805e/creaci-n-de-ad-n.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/14_Michelangelo_-_The_Creation_of_Adam.jpg",
+      "Megapixels": 12.1,
+      "Museum": "Sistine Chapel, Vatican Museums",
+      "physicalDimensionsStr": "570 × 280 cm (18.7 × 9.2 ft) • Sistine Chapel Ceiling Fresco"
+    },
+    {
+      "step": 4,
+      "year": "1600",
+      "epoch": "Baroque",
+      "artist": "Caravaggio",
+      "title": "The Calling of Saint Matthew",
+      "fileName": "18_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg",
+      "headline": "Theatrical Tenebrism: Miracles in Gritty Tavern Light",
+      "story": "Caravaggio dragged sacred art off divine pedestals and into dusty Roman taverns. A harsh, cinematic beam of light pierces pitch darkness, capturing the exact second of divine awakening.",
+      "breakthrough": "Tenebrism (violent light vs. shadow) & street realism"
+    },
+    {
+      "step": 5,
+      "year": "1642",
+      "epoch": "Dutch Golden Age",
+      "artist": "Rembrandt van Rijn",
+      "title": "The Night Watch",
+      "fileName": "24_Rembrandt_-_The_Night_Watch.jpg",
+      "headline": "Explosive Motion & Golden Dutch Impasto",
+      "story": "Refusing to paint a stiff, orderly military lineup, Rembrandt threw the Amsterdam civic guard into kinetic chaos. Thick golden impasto catches the light as the captain marches forward right off the canvas.",
+      "breakthrough": "Dynamic group action & golden psychological impasto"
+    },
+    {
+      "step": 6,
+      "year": "1665",
+      "epoch": "Dutch Golden Age",
+      "artist": "Johannes Vermeer",
+      "title": "Girl with a Pearl Earring",
+      "fileName": "34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg",
+      "headline": "Sacred Domestic Stillness & Pure Lapis Lazuli",
+      "story": "Working quietly in Delft, Vermeer elevated quiet moments into timeless sacraments. With a single glistening highlight on a teardrop pearl and liquid highlights on parting lips, he captured eternity in an instant.",
+      "breakthrough": "Optical camera-obscura fidelity & luminous stillness",
+      "HighResUrl": "https://uploads5.wikiart.org/00129/images/johannes-vermeer/the-girl-with-a-pearl-earring.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg",
+      "Megapixels": 19.63,
+      "Museum": "Mauritshuis, The Hague",
+      "physicalDimensionsStr": "39 × 44.5 cm (15.4 × 17.5 in) • Intimate Domestic Tronie"
+    },
+    {
+      "step": 7,
+      "year": "1872",
+      "epoch": "Impressionism",
+      "artist": "Claude Monet",
+      "title": "Impression, Sunrise",
+      "fileName": "39_Claude_Monet_-_Impression,_Sunrise.jpg",
+      "headline": "The Plein-Air Revolution: Painting Fleeting Sunlight",
+      "story": "Stepping out of stuffy academic studios onto the misty harbor of Le Havre, Monet captured the orange sun bleeding into morning fog with rapid, broken brushstrokes. Critics coined \"Impressionism\" as an insult; it launched modern art.",
+      "breakthrough": "Plein-air painting, optical vibration, & pure atmospheric light",
+      "HighResUrl": "https://uploads8.wikiart.org/00129/images/claude-monet/impression-sunrise.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/39_Claude_Monet_-_Impression,_Sunrise.jpg",
+      "Megapixels": 25.85,
+      "Museum": "Musée Marmottan Monet, Paris",
+      "physicalDimensionsStr": "63 × 48 cm (24.8 × 18.9 in) • Plein-Air Harbor Study"
+    },
+    {
+      "step": 8,
+      "year": "1889",
+      "epoch": "Post-Impressionism",
+      "artist": "Vincent van Gogh",
+      "title": "The Starry Night",
+      "fileName": "46_Vincent_van_Gogh_-_The_Starry_Night.jpg",
+      "headline": "Painting Emotion Instead of Reality",
+      "story": "Gazing from his asylum window in Saint-Rémy, Van Gogh didn't paint the night sky as it appeared—he painted the cosmic vortex of his soul. Swirling impasto rhythms transformed painting from observation into raw spiritual expression.",
+      "breakthrough": "Post-Impressionist subjective emotion through rhythmic impasto",
+      "HighResUrl": "https://uploads3.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/46_Vincent_van_Gogh_-_The_Starry_Night.jpg",
+      "Megapixels": 19.8,
+      "Museum": "Museum of Modern Art, New York",
+      "physicalDimensionsStr": "92.1 × 73.7 cm (36.3 × 29 in) • Intimate Cosmic Vision"
+    },
+    {
+      "step": 9,
+      "year": "1893",
+      "epoch": "Expressionism",
+      "artist": "Edvard Munch",
+      "title": "The Scream",
+      "fileName": "53_Edvard_Munch_-_The_Scream.jpg",
+      "headline": "The Birth of Expressionism & Modern Anxiety",
+      "story": "Walking across a bridge at sunset, Munch sensed \"an infinite scream passing through nature.\" The blood-red sky, melting contours, and sexless skull-like figure captured the existential dread of modern civilization.",
+      "breakthrough": "Psychic symbolism & the birth of 20th-century Expressionism"
+    },
+    {
+      "step": 10,
+      "year": "1937",
+      "epoch": "Modernism / Cubism",
+      "artist": "Pablo Picasso",
+      "title": "Guernica",
+      "fileName": "64_Pablo_Picasso_-_Guernica.jpg",
+      "headline": "Cubism Unleashed: The Ultimate Anti-War Scream",
+      "story": "Horrified by the saturation bombing of a defenseless Basque town, Picasso shattered physical space into monochromatic black, white, and grey geometric knives. The screaming horse and weeping mother became humanity's universal protest against cruelty.",
+      "breakthrough": "Synthetic Cubism weaponized into monumental political protest"
     }
   ],
   "artists": [
@@ -514,6 +688,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "botticelli",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 278.9,
+      "physicalHeightCm": 172.5,
+      "physicalType": "Grand Mythological Canvas",
+      "physicalDimensionsStr": "278.9 × 172.5 cm (109.8 × 67.9 in) • Grand Mythological Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -534,6 +712,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "botticelli",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 314.0,
+      "physicalHeightCm": 203.0,
+      "physicalType": "Grand Allegorical Masterpiece",
+      "physicalDimensionsStr": "314 × 203 cm (123.6 × 79.9 in) • Grand Allegorical Masterpiece",
       "EpochId": "renaissance"
     },
     {
@@ -554,6 +736,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "botticelli",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 75.0,
+      "physicalHeightCm": 108.5,
+      "physicalType": "Devotional Panel",
+      "physicalDimensionsStr": "75 × 108.5 cm (29.5 × 42.7 in) • Devotional Panel",
       "EpochId": "renaissance"
     },
     {
@@ -574,6 +760,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "botticelli",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 138.0,
+      "physicalHeightCm": 83.0,
+      "physicalType": "Spalliera Wedding Panel",
+      "physicalDimensionsStr": "138 × 83 cm (54.3 × 32.7 in) • Spalliera Wedding Panel",
       "EpochId": "renaissance"
     },
     {
@@ -594,6 +784,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "botticelli",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 91.0,
+      "physicalHeightCm": 62.0,
+      "physicalType": "Classical Allegory",
+      "physicalDimensionsStr": "91 × 62 cm (35.8 × 24.4 in) • Classical Allegory",
       "EpochId": "renaissance"
     },
     {
@@ -614,6 +808,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 53.0,
+      "physicalHeightCm": 77.0,
+      "physicalType": "Intimate Poplar Panel",
+      "physicalDimensionsStr": "53 × 77 cm (20.9 × 30.3 in) • Intimate Poplar Panel",
       "EpochId": "renaissance"
     },
     {
@@ -634,6 +832,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 880.0,
+      "physicalHeightCm": 460.0,
+      "physicalType": "Monumental Convent Refectory Fresco",
+      "physicalDimensionsStr": "880 × 460 cm (28.9 × 15.1 ft) • Monumental Convent Refectory Fresco",
       "EpochId": "renaissance"
     },
     {
@@ -654,6 +856,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 39.0,
+      "physicalHeightCm": 54.0,
+      "physicalType": "Intimate Walnut Panel",
+      "physicalDimensionsStr": "39 × 54 cm (15.4 × 21.3 in) • Intimate Walnut Panel",
       "EpochId": "renaissance"
     },
     {
@@ -674,6 +880,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 66.2,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "66.2 × 90 cm (26.1 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -694,6 +904,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 84.8,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "84.8 × 90 cm (33.4 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -714,6 +928,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 217.0,
+      "physicalHeightCm": 98.0,
+      "physicalType": "Early Masterwork",
+      "physicalDimensionsStr": "217 × 98 cm (85.4 × 38.6 in) • Early Masterwork",
       "EpochId": "renaissance"
     },
     {
@@ -734,6 +952,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 200.0,
+      "physicalHeightCm": 190.0,
+      "physicalType": "Late Colorful Swirling Canvas",
+      "physicalDimensionsStr": "200 × 190 cm (78.7 × 74.8 in) • Late Colorful Swirling Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -754,6 +976,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "davinci",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 68.5,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "68.5 × 90 cm (27 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -774,6 +1000,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 570.0,
+      "physicalHeightCm": 280.0,
+      "physicalType": "Sistine Chapel Ceiling Fresco",
+      "physicalDimensionsStr": "570 × 280 cm (18.7 × 9.2 ft) • Sistine Chapel Ceiling Fresco",
       "EpochId": "renaissance"
     },
     {
@@ -794,6 +1024,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 1220.0,
+      "physicalHeightCm": 1370.0,
+      "physicalType": "Colossal Sistine Altar Wall",
+      "physicalDimensionsStr": "1220 × 1370 cm (40.0 × 44.9 ft) • Colossal Sistine Altar Wall",
       "EpochId": "renaissance"
     },
     {
@@ -814,6 +1048,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 133.1,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "133.1 × 90 cm (52.4 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -834,6 +1072,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 89.5,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "89.5 × 90 cm (35.2 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -854,6 +1096,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 74.8,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "74.8 × 90 cm (29.4 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -874,6 +1120,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 142.0,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "142 × 90 cm (55.9 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -894,6 +1144,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 203.0,
+      "physicalHeightCm": 300.0,
+      "physicalType": "Monumental Altar Canvas",
+      "physicalDimensionsStr": "203 × 300 cm (79.9 × 118.1 in) • Monumental Altar Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -914,6 +1168,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "michelangelo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 63.6,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "63.6 × 90 cm (25 × 35.4 in) • Museum Master Canvas",
       "EpochId": "renaissance"
     },
     {
@@ -934,6 +1192,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "caravaggio",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 340.0,
+      "physicalHeightCm": 322.0,
+      "physicalType": "Monumental Contarelli Chapel Canvas",
+      "physicalDimensionsStr": "340 × 322 cm (133.9 × 126.8 in) • Monumental Contarelli Chapel Canvas",
       "EpochId": "baroque"
     },
     {
@@ -954,6 +1216,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "caravaggio",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 343.0,
+      "physicalHeightCm": 323.0,
+      "physicalType": "Dramatic Action Tenebrism",
+      "physicalDimensionsStr": "343 × 323 cm (135 × 127.2 in) • Dramatic Action Tenebrism",
       "EpochId": "baroque"
     },
     {
@@ -974,6 +1240,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "caravaggio",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 195.0,
+      "physicalHeightCm": 145.0,
+      "physicalType": "Visceral Dramatic Canvas",
+      "physicalDimensionsStr": "195 × 145 cm (76.8 × 57.1 in) • Visceral Dramatic Canvas",
       "EpochId": "baroque"
     },
     {
@@ -994,6 +1264,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "caravaggio",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 85.0,
+      "physicalHeightCm": 95.0,
+      "physicalType": "Sensual Youth Portrait",
+      "physicalDimensionsStr": "85 × 95 cm (33.5 × 37.4 in) • Sensual Youth Portrait",
       "EpochId": "baroque"
     },
     {
@@ -1014,6 +1288,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "caravaggio",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 101.0,
+      "physicalHeightCm": 125.0,
+      "physicalType": "Dark Tragic Self-Portrait",
+      "physicalDimensionsStr": "101 × 125 cm (39.8 × 49.2 in) • Dark Tragic Self-Portrait",
       "EpochId": "baroque"
     },
     {
@@ -1034,6 +1312,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 437.0,
+      "physicalHeightCm": 363.0,
+      "physicalType": "Colossal Civic Guard Canvas",
+      "physicalDimensionsStr": "437 × 363 cm (14.3 × 11.9 ft) • Colossal Civic Guard Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1054,6 +1336,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 216.5,
+      "physicalHeightCm": 169.5,
+      "physicalType": "Dynamic Guild Portrait",
+      "physicalDimensionsStr": "216.5 × 169.5 cm (85.2 × 66.7 in) • Dynamic Guild Portrait",
       "EpochId": "baroque"
     },
     {
@@ -1074,6 +1360,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 128.0,
+      "physicalHeightCm": 160.0,
+      "physicalType": "Dramatic Seascape (Stolen)",
+      "physicalDimensionsStr": "128 × 160 cm (50.4 × 63 in) • Dramatic Seascape (Stolen)",
       "EpochId": "baroque"
     },
     {
@@ -1094,6 +1384,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 72.8,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "72.8 × 90 cm (28.7 × 35.4 in) • Museum Master Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1114,6 +1408,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 72.7,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "72.7 × 90 cm (28.6 × 35.4 in) • Museum Master Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1134,6 +1432,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 70.5,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "70.5 × 90 cm (27.8 × 35.4 in) • Museum Master Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1154,6 +1456,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "rembrandt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 58.9,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "58.9 × 90 cm (23.2 × 35.4 in) • Museum Master Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1174,6 +1480,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 39.0,
+      "physicalHeightCm": 44.5,
+      "physicalType": "Intimate Domestic Tronie",
+      "physicalDimensionsStr": "39 × 44.5 cm (15.4 × 17.5 in) • Intimate Domestic Tronie",
       "EpochId": "baroque"
     },
     {
@@ -1194,6 +1504,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 41.0,
+      "physicalHeightCm": 45.5,
+      "physicalType": "Intimate Sacred Stillness",
+      "physicalDimensionsStr": "41 × 45.5 cm (16.1 × 17.9 in) • Intimate Sacred Stillness",
       "EpochId": "baroque"
     },
     {
@@ -1214,6 +1528,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 100.0,
+      "physicalHeightCm": 120.0,
+      "physicalType": "Full-Scale Studio Allegory",
+      "physicalDimensionsStr": "100 × 120 cm (39.4 × 47.2 in) • Full-Scale Studio Allegory",
       "EpochId": "baroque"
     },
     {
@@ -1234,6 +1552,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 45.0,
+      "physicalHeightCm": 50.0,
+      "physicalType": "Enlightenment Intellectual",
+      "physicalDimensionsStr": "45 × 50 cm (17.7 × 19.7 in) • Enlightenment Intellectual",
       "EpochId": "baroque"
     },
     {
@@ -1254,6 +1576,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vermeer",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 77.3,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "77.3 × 90 cm (30.4 × 35.4 in) • Museum Master Canvas",
       "EpochId": "baroque"
     },
     {
@@ -1274,6 +1600,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 63.0,
+      "physicalHeightCm": 48.0,
+      "physicalType": "Plein-Air Harbor Study",
+      "physicalDimensionsStr": "63 × 48 cm (24.8 × 18.9 in) • Plein-Air Harbor Study",
       "EpochId": "impressionism"
     },
     {
@@ -1294,6 +1624,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 1275.0,
+      "physicalHeightCm": 200.0,
+      "physicalType": "Panoramic Curved Mural Installation",
+      "physicalDimensionsStr": "1275 × 200 cm (41.8 × 6.6 ft) • Panoramic Curved Mural Installation",
       "EpochId": "impressionism"
     },
     {
@@ -1314,6 +1648,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 101.0,
+      "physicalHeightCm": 89.0,
+      "physicalType": "Giverny Garden Canvas",
+      "physicalDimensionsStr": "101 × 89 cm (39.8 × 35 in) • Giverny Garden Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1334,6 +1672,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 106.5,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "106.5 × 90 cm (41.9 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1354,6 +1696,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 70.6,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "70.6 × 90 cm (27.8 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1374,6 +1720,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 113.5,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "113.5 × 90 cm (44.7 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1394,6 +1744,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "monet",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 105.6,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "105.6 × 90 cm (41.6 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1414,6 +1768,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 92.1,
+      "physicalHeightCm": 73.7,
+      "physicalType": "Intimate Cosmic Vision",
+      "physicalDimensionsStr": "92.1 × 73.7 cm (36.3 × 29 in) • Intimate Cosmic Vision",
       "EpochId": "impressionism"
     },
     {
@@ -1434,6 +1792,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 73.0,
+      "physicalHeightCm": 92.1,
+      "physicalType": "Vibrant Chrome Yellow Still Life",
+      "physicalDimensionsStr": "73 × 92.1 cm (28.7 × 36.3 in) • Vibrant Chrome Yellow Still Life",
       "EpochId": "impressionism"
     },
     {
@@ -1454,6 +1816,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 114.0,
+      "physicalHeightCm": 82.0,
+      "physicalType": "Raw Peasant Earthiness",
+      "physicalDimensionsStr": "114 × 82 cm (44.9 × 32.3 in) • Raw Peasant Earthiness",
       "EpochId": "impressionism"
     },
     {
@@ -1474,6 +1840,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 73.0,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "73 × 90 cm (28.7 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1494,6 +1864,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 119.1,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "119.1 × 90 cm (46.9 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1514,6 +1888,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "vangogh",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 73.3,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "73.3 × 90 cm (28.9 × 35.4 in) • Museum Master Canvas",
       "EpochId": "impressionism"
     },
     {
@@ -1534,6 +1912,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "munch",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 73.5,
+      "physicalHeightCm": 91.0,
+      "physicalType": "Cardboard Tempera & Pastel Icon",
+      "physicalDimensionsStr": "73.5 × 91 cm (28.9 × 35.8 in) • Cardboard Tempera & Pastel Icon",
       "EpochId": "expressionism"
     },
     {
@@ -1554,6 +1936,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "munch",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 71.0,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Sensual Symbolist Icon",
+      "physicalDimensionsStr": "71 × 90 cm (28 × 35.4 in) • Sensual Symbolist Icon",
       "EpochId": "expressionism"
     },
     {
@@ -1574,6 +1960,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "munch",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 127.6,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "127.6 × 90 cm (50.2 × 35.4 in) • Museum Master Canvas",
       "EpochId": "expressionism"
     },
     {
@@ -1594,6 +1984,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "munch",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 72.2,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "72.2 × 90 cm (28.4 × 35.4 in) • Museum Master Canvas",
       "EpochId": "expressionism"
     },
     {
@@ -1614,6 +2008,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 180.0,
+      "physicalHeightCm": 180.0,
+      "physicalType": "Square Gold Leaf Masterpiece",
+      "physicalDimensionsStr": "180 × 180 cm (70.9 × 70.9 in) • Square Gold Leaf Masterpiece",
       "EpochId": "expressionism"
     },
     {
@@ -1634,6 +2032,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 138.0,
+      "physicalHeightCm": 138.0,
+      "physicalType": "Golden Viennese Portrait",
+      "physicalDimensionsStr": "138 × 138 cm (54.3 × 54.3 in) • Golden Viennese Portrait",
       "EpochId": "expressionism"
     },
     {
@@ -1654,6 +2056,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 42.0,
+      "physicalHeightCm": 84.0,
+      "physicalType": "Decadent Femme Fatale",
+      "physicalDimensionsStr": "42 × 84 cm (16.5 × 33.1 in) • Decadent Femme Fatale",
       "EpochId": "expressionism"
     },
     {
@@ -1674,6 +2080,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 38.7,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "38.7 × 90 cm (15.2 × 35.4 in) • Museum Master Canvas",
       "EpochId": "expressionism"
     },
     {
@@ -1694,6 +2104,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "klimt",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 42.1,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "42.1 × 90 cm (16.6 × 35.4 in) • Museum Master Canvas",
       "EpochId": "expressionism"
     },
     {
@@ -1714,6 +2128,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "picasso",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 776.6,
+      "physicalHeightCm": 349.3,
+      "physicalType": "Colossal Anti-War Monumental Canvas",
+      "physicalDimensionsStr": "776.6 × 349.3 cm (25.5 × 11.5 ft) • Colossal Anti-War Monumental Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1734,6 +2152,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "picasso",
       "isCrownJewel": true,
       "isUltraRes": true,
+      "physicalWidthCm": 82.6,
+      "physicalHeightCm": 122.9,
+      "physicalType": "Blue Period Melancholy",
+      "physicalDimensionsStr": "82.6 × 122.9 cm (32.5 × 48.4 in) • Blue Period Melancholy",
       "EpochId": "modernism"
     },
     {
@@ -1754,6 +2176,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "picasso",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 69.4,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "69.4 × 90 cm (27.3 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1774,6 +2200,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "picasso",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 74.4,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "74.4 × 90 cm (29.3 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1794,6 +2224,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "picasso",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 64.8,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "64.8 × 90 cm (25.5 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1814,6 +2248,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 33.0,
+      "physicalHeightCm": 24.1,
+      "physicalType": "Intimate Surrealist Miniature",
+      "physicalDimensionsStr": "33 × 24.1 cm (13 × 9.5 in) • Intimate Surrealist Miniature",
       "EpochId": "modernism"
     },
     {
@@ -1834,6 +2272,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 150.0,
+      "physicalHeightCm": 110.0,
+      "physicalType": "Freudian Dream Landscape",
+      "physicalDimensionsStr": "150 × 110 cm (59.1 × 43.3 in) • Freudian Dream Landscape",
       "EpochId": "modernism"
     },
     {
@@ -1854,6 +2296,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 77.5,
+      "physicalHeightCm": 51.5,
+      "physicalType": "Double-Image Paranoiac Canvas",
+      "physicalDimensionsStr": "77.5 × 51.5 cm (30.5 × 20.3 in) • Double-Image Paranoiac Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1874,6 +2320,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 78.0,
+      "physicalHeightCm": 51.2,
+      "physicalType": "Double-Image Transformation",
+      "physicalDimensionsStr": "78 × 51.2 cm (30.7 × 20.2 in) • Double-Image Transformation",
       "EpochId": "modernism"
     },
     {
@@ -1894,6 +2344,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 119.5,
+      "physicalHeightCm": 89.5,
+      "physicalType": "Spidery Surrealist Mirage",
+      "physicalDimensionsStr": "119.5 × 89.5 cm (47 × 35.2 in) • Spidery Surrealist Mirage",
       "EpochId": "modernism"
     },
     {
@@ -1914,6 +2368,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 56.6,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "56.6 × 90 cm (22.3 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1934,6 +2392,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 65.8,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "65.8 × 90 cm (25.9 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     },
     {
@@ -1954,6 +2416,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "dali",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 33.0,
+      "physicalHeightCm": 24.1,
+      "physicalType": "Intimate Surrealist Miniature",
+      "physicalDimensionsStr": "33 × 24.1 cm (13 × 9.5 in) • Intimate Surrealist Miniature",
       "EpochId": "modernism"
     },
     {
@@ -1974,6 +2440,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 173.0,
+      "physicalHeightCm": 173.5,
+      "physicalType": "Square Double Self-Portrait",
+      "physicalDimensionsStr": "173 × 173.5 cm (68.1 × 68.3 in) • Square Double Self-Portrait",
       "EpochId": "modernism"
     },
     {
@@ -1994,6 +2464,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 30.5,
+      "physicalHeightCm": 39.8,
+      "physicalType": "Intimate Autobiographical Icon",
+      "physicalDimensionsStr": "30.5 × 39.8 cm (12 × 15.7 in) • Intimate Autobiographical Icon",
       "EpochId": "modernism"
     },
     {
@@ -2014,6 +2488,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": true,
       "isUltraRes": false,
+      "physicalWidthCm": 72.0,
+      "physicalHeightCm": 59.5,
+      "physicalType": "Final Defiant Celebration of Life",
+      "physicalDimensionsStr": "72 × 59.5 cm (28.3 × 23.4 in) • Final Defiant Celebration of Life",
       "EpochId": "modernism"
     },
     {
@@ -2034,6 +2512,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 38.0,
+      "physicalHeightCm": 30.5,
+      "physicalType": "Visceral Sheet Metal Panel",
+      "physicalDimensionsStr": "38 × 30.5 cm (15 × 12 in) • Visceral Sheet Metal Panel",
       "EpochId": "modernism"
     },
     {
@@ -2054,6 +2536,10 @@ window.PANTHEON_DATA = {
       "ArtistId": "kahlo",
       "isCrownJewel": false,
       "isUltraRes": false,
+      "physicalWidthCm": 103.7,
+      "physicalHeightCm": 90.0,
+      "physicalType": "Museum Master Canvas",
+      "physicalDimensionsStr": "103.7 × 90 cm (40.8 × 35.4 in) • Museum Master Canvas",
       "EpochId": "modernism"
     }
   ],
