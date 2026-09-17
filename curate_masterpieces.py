@@ -217,7 +217,7 @@ def curate_masterpieces(source_dir: Path, top100_dir: Path, output_dir: Path) ->
                 "FileSizeBytes": file_size,
                 "FileSizeMB": size_mb,
                 "FileName": dest_name,
-                "SourcePath": str(found_file.resolve()),
+                "SourcePath": str(found_file.relative_to(Path.cwd())).replace("\\", "/") if found_file.is_relative_to(Path.cwd()) else str(found_file).replace("\\", "/"),
             }
             curated_list.append(item)
             print(f"  [{idx:02d}] Curated: {sig['artist']} — \"{sig['title']}\" ({size_mb} MB, {w}x{h})")

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantheon of Masters: 500-Year Illustrated Visual Chronicle</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+    .font-serif-title { font-family: 'Cinzel', serif; }
+    .font-sans-body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans-body antialiased min-h-screen">
+
+  <!-- Hero Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-xl shadow-inner">
+          🏛️
+        </div>
+        <div>
+          <h1 class="font-serif-title text-lg sm:text-xl font-bold tracking-wide text-amber-300">
+            The Pantheon of Masters
+          </h1>
+          <p class="text-xs text-slate-400">
+            500 Years of Western Master Art (1470–1954) &bull; 13 Celebrity Artists &bull; 7,652 Scans Extracted
+          </p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          Peak Res: 45.80 MP
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Timeline Filter Navigation -->
+  <nav class="max-w-7xl mx-auto px-4 py-4 sm:px-6">
+    <div class="flex flex-wrap gap-2 items-center justify-center sm:justify-start">
+      <button onclick="filterEpoch('all')" class="epoch-btn active px-3.5 py-1.5 rounded-lg text-xs font-medium bg-amber-500 text-slate-950 font-bold transition">All Eras (1470–1954)</button>
+      <button onclick="filterEpoch('renaissance')" class="epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Renaissance</button>
+      <button onclick="filterEpoch('baroque')" class="epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Baroque & Golden Age</button>
+      <button onclick="filterEpoch('impressionism')" class="epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">19th C. Impressionism</button>
+      <button onclick="filterEpoch('expressionism')" class="epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Expressionism & Secession</button>
+      <button onclick="filterEpoch('modernism')" class="epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition">Cubism & Surrealism</button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="max-w-7xl mx-auto px-4 pb-16 sm:px-6 space-y-16" id="mastersList">
+    <!-- Populated dynamically by JavaScript -->
+  </main>
+
+  <!-- Image Modal for Full-Resolution Preview -->
+  <div id="imageModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4" onclick="closeModal()">
+    <div class="relative max-w-6xl max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="absolute -top-12 right-0 text-white hover:text-amber-400 text-3xl font-bold">&times;</button>
+      <img id="modalImg" src="" alt="Masterpiece" class="max-h-[78vh] max-w-full object-contain rounded-lg shadow-2xl border border-slate-700" />
+      <div class="mt-3 text-center">
+        <h3 id="modalTitle" class="text-base font-bold text-amber-300"></h3>
+        <p id="modalMeta" class="text-xs text-slate-400 font-mono mt-0.5"></p>
+        <a id="modalDirectLink" href="#" target="_blank" class="inline-block mt-2 text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1 rounded-md transition shadow">
+          Open Raw Uncompressed Master Scan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const masters = [
+      {
+        id: "botticelli",
+        epochTag: "renaissance",
+        name: "Sandro Botticelli",
+        lifespan: "1445–1510",
+        epithet: "The Poet of Early Renaissance Grace & Myth",
+        whyBelongs: "Revived classical Greco-Roman mythology, introducing non-religious pagan allegories back into European high art. Defined the universal Western archetype of ethereal female beauty that influenced modern high fashion and aesthetics.",
+        evolutionRole: "Rejected heavy geometric realism in favor of lyrical contour lines and rhythmic elongation, merging medieval spirituality with Renaissance Neoplatonism.",
+        paintings: [
+          {
+            title: "The Birth of Venus",
+            year: "1485–1486",
+            museum: "Uffizi Gallery, Florence",
+            res: "5000 × 3140 px",
+            mp: "15.70 MP",
+            size: "5.69 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg"
+          },
+          {
+            title: "The Spring (Primavera)",
+            year: "1477–1482",
+            museum: "Uffizi Gallery, Florence",
+            res: "4926 × 3236 px",
+            mp: "15.94 MP",
+            size: "6.37 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/02_Sandro_Botticelli_-_The_Spring_(Primavera).jpg"
+          },
+          {
+            title: "The Mystical Nativity",
+            year: "1500",
+            museum: "National Gallery, London",
+            res: "2541 × 3642 px",
+            mp: "9.25 MP",
+            size: "5.40 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/03_Sandro_Botticelli_-_The_Mystical_Nativity.jpg"
+          }
+        ]
+      },
+      {
+        id: "davinci",
+        epochTag: "renaissance",
+        name: "Leonardo da Vinci",
+        lifespan: "1452–1519",
+        epithet: "The Universal Polymath of High Renaissance Harmony",
+        whyBelongs: "The quintessential Renaissance genius—anatomist, scientist, engineer, and painter. Created the single most famous, analyzed, and valuable visual artwork in recorded human history (Mona Lisa).",
+        evolutionRole: "Invented sfumato (imperceptible gradations of tone) and atmospheric perspective; elevated painting from craft to divine intellectual science through anatomical dissection.",
+        paintings: [
+          {
+            title: "Mona Lisa",
+            year: "1503–1519",
+            museum: "Musée du Louvre, Paris",
+            res: "5000 × 7452 px",
+            mp: "37.26 MP",
+            size: "14.22 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/06_Leonardo_da_Vinci_-_Mona_Lisa.jpg"
+          },
+          {
+            title: "The Last Supper",
+            year: "1495–1498",
+            museum: "Santa Maria delle Grazie, Milan",
+            res: "5193 × 2926 px",
+            mp: "15.20 MP",
+            size: "8.81 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/07_Leonardo_da_Vinci_-_The_Last_Supper.jpg"
+          },
+          {
+            title: "Lady with an Ermine",
+            year: "1489–1490",
+            museum: "Czartoryski Museum, Kraków",
+            res: "3543 × 4876 px",
+            mp: "17.28 MP",
+            size: "3.34 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/08_Leonardo_da_Vinci_-_Lady_with_an_Ermine.jpg"
+          }
+        ]
+      },
+      {
+        id: "michelangelo",
+        epochTag: "renaissance",
+        name: "Michelangelo Buonarroti",
+        lifespan: "1475–1564",
+        epithet: "The Titan of Monumental Human Drama",
+        whyBelongs: "Redefined human musculature as the vessel of divine spiritual agony and heroic power. Executed the greatest fresco commissions in history across the Sistine Chapel, single-handedly redefining monumental scale.",
+        evolutionRole: "Pioneered 'terribilità'—a tense, awe-inspiring, muscular dynamism that broke Renaissance calm and directly sparked Mannerism and the Baroque.",
+        paintings: [
+          {
+            title: "The Creation of Adam",
+            year: "1512",
+            museum: "Sistine Chapel, Vatican",
+            res: "4256 × 2843 px",
+            mp: "12.10 MP",
+            size: "9.06 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/14_Michelangelo_-_The_Creation_of_Adam.jpg"
+          },
+          {
+            title: "The Last Judgement",
+            year: "1536–1541",
+            museum: "Sistine Chapel, Vatican",
+            res: "4579 × 5764 px",
+            mp: "26.39 MP",
+            size: "7.41 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/15_Michelangelo_-_The_Last_Judgement.jpg"
+          },
+          {
+            title: "Sistine Chapel: Libyan Sibyl",
+            year: "1511",
+            museum: "Sistine Chapel, Vatican",
+            res: "939 × 944 px",
+            mp: "0.89 MP",
+            size: "0.14 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/17_Michelangelo_-_Sistine_Chapel_Libyan_Sibyl.jpg"
+          }
+        ]
+      },
+      {
+        id: "caravaggio",
+        epochTag: "baroque",
+        name: "Caravaggio",
+        lifespan: "1571–1610",
+        epithet: "The Revolutionary Outlaw of Baroque Realism",
+        whyBelongs: "The explosive catalyst of the Baroque era. Invented tenebrism (dramatic, piercing spotlights piercing dark voids) and cast street laborers and courtesans as live Biblical models.",
+        evolutionRole: "Destroyed idealized Renaissance beauty in favor of gritty, violent, photographic naturalism. Directly fathered the styles of Rembrandt, Velázquez, and modern cinematic lighting.",
+        paintings: [
+          {
+            title: "The Martyrdom of Saint Matthew",
+            year: "1599–1600",
+            museum: "San Luigi dei Francesi, Rome",
+            res: "5000 × 4392 px",
+            mp: "21.96 MP",
+            size: "7.32 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/23_Caravaggio_-_The_Martyrdom_of_Saint_Matthew.jpg"
+          },
+          {
+            title: "David with the Head of Goliath",
+            year: "1609–1610",
+            museum: "Borghese Gallery, Rome",
+            res: "2362 × 2664 px",
+            mp: "6.29 MP",
+            size: "6.96 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/26_Caravaggio_-_David_with_the_Head_of_Goliath.jpg"
+          },
+          {
+            title: "Bacchus",
+            year: "1595",
+            museum: "Uffizi Gallery, Florence",
+            res: "2311 × 3009 px",
+            mp: "6.95 MP",
+            size: "2.12 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/25_Caravaggio_-_Bacchus.jpg"
+          }
+        ]
+      },
+      {
+        id: "rembrandt",
+        epochTag: "baroque",
+        name: "Rembrandt van Rijn",
+        lifespan: "1606–1669",
+        epithet: "The Master of the Human Soul & Golden Age Chiaroscuro",
+        whyBelongs: "The supreme portraitist of human interiority. Created an unmatched lifelong visual autobiography across ~80 self-portraits, painting grief, vulnerability, and moral depth.",
+        evolutionRole: "Democratized art in a Protestant mercantile republic, using thick impasto and radiant golden light to make ordinary human consciousness appear sacred.",
+        paintings: [
+          {
+            title: "The Night Watch",
+            year: "1642",
+            museum: "Rijksmuseum, Amsterdam",
+            res: "1259 × 1024 px",
+            mp: "1.29 MP",
+            size: "0.22 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/27_Rembrandt_-_The_Night_Watch.jpg"
+          },
+          {
+            title: "Self-Portrait at the Age of 63",
+            year: "1669",
+            museum: "National Gallery, London",
+            res: "3415 × 4224 px",
+            mp: "14.42 MP",
+            size: "3.59 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/30_Rembrandt_-_Self-Portrait_at_the_Age_of_63.jpg"
+          },
+          {
+            title: "The Anatomy Lesson of Dr. Tulp",
+            year: "1632",
+            museum: "Mauritshuis, The Hague",
+            res: "2351 × 1774 px",
+            mp: "4.17 MP",
+            size: "0.90 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/28_Rembrandt_-_The_Anatomy_Lesson_of_Dr._Nicolaes_Tulp.jpg"
+          }
+        ]
+      },
+      {
+        id: "vermeer",
+        epochTag: "baroque",
+        name: "Johannes Vermeer",
+        lifespan: "1632–1675",
+        epithet: "The Optical Poet of Delft & Domestic Luminism",
+        whyBelongs: "Created Girl with a Pearl Earring (the 'Dutch Mona Lisa'). Entire surviving career totals only ~36 authenticated paintings, each treated as an irreplaceable national treasure.",
+        evolutionRole: "Pioneered camera-obscura optical effects, soft-focus diffusion, and light pointillés 200 years before photography was invented, turning mundane domestic rituals into eternal poetry.",
+        paintings: [
+          {
+            title: "The Art of Painting",
+            year: "1666–1668",
+            museum: "Kunsthistorisches Museum, Vienna",
+            res: "6209 × 7377 px",
+            mp: "45.80 MP",
+            size: "7.47 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/36_Johannes_Vermeer_-_The_Art_of_Painting.jpg"
+          },
+          {
+            title: "Girl with a Pearl Earring",
+            year: "1665",
+            museum: "Mauritshuis, The Hague",
+            res: "4095 × 4794 px",
+            mp: "19.63 MP",
+            size: "5.94 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg"
+          },
+          {
+            title: "The Milkmaid",
+            year: "1657–1658",
+            museum: "Rijksmuseum, Amsterdam",
+            res: "4000 × 4485 px",
+            mp: "17.94 MP",
+            size: "10.70 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/35_Johannes_Vermeer_-_The_Milkmaid.jpg"
+          },
+          {
+            title: "Young Woman with a Pearl Necklace",
+            year: "1662–1664",
+            museum: "Gemäldegalerie, Berlin",
+            res: "4500 × 5236 px",
+            mp: "23.56 MP",
+            size: "10.06 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/38_Johannes_Vermeer_-_Young_Woman_with_a_Pearl_Necklace.jpg"
+          }
+        ]
+      },
+      {
+        id: "monet",
+        epochTag: "impressionism",
+        name: "Claude Monet",
+        lifespan: "1840–1926",
+        epithet: "The Pioneer of Light & Father of Impressionism",
+        whyBelongs: "Founded and named Impressionism with his 1872 canvas Impression, Sunrise. Liberated artists from dark academic studios to paint en plein air under natural sunlight.",
+        evolutionRole: "Proved that color is an optical vibration that shifts constantly with the passage of time; his late semi-abstract Giverny Water Lilies directly anticipated Abstract Expressionism.",
+        paintings: [
+          {
+            title: "Impression, Sunrise",
+            year: "1872",
+            museum: "Musée Marmottan Monet, Paris",
+            res: "5773 × 4478 px",
+            mp: "25.85 MP",
+            size: "6.78 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/39_Claude_Monet_-_Impression,_Sunrise.jpg"
+          },
+          {
+            title: "Water Lilies (The Clouds)",
+            year: "1903",
+            museum: "Musée de l'Orangerie, Paris",
+            res: "1497 × 1200 px",
+            mp: "1.80 MP",
+            size: "1.80 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/40_Claude_Monet_-_Water_Lilies_(The_Clouds).jpg"
+          },
+          {
+            title: "The Japanese Footbridge",
+            year: "1899",
+            museum: "National Gallery of Art, Washington",
+            res: "2000 × 1923 px",
+            mp: "3.85 MP",
+            size: "2.84 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/41_Claude_Monet_-_The_Japanese_Bridge_(Water-Lily_Pond).jpg"
+          }
+        ]
+      },
+      {
+        id: "vangogh",
+        epochTag: "impressionism",
+        name: "Vincent van Gogh",
+        lifespan: "1853–1890",
+        epithet: "The Father of Modern Emotional Expressionism",
+        whyBelongs: "The most beloved and emotionally resonant painter in human history. Turned pure color into psychological music, creating over 2,100 works in a single feverish decade.",
+        evolutionRole: "Severed color from optical realism to communicate raw spiritual and existential feeling; sculpted thick impasto ribbons directly onto canvas, birthing modern Expressionism.",
+        paintings: [
+          {
+            title: "The Starry Night",
+            year: "1889",
+            museum: "Museum of Modern Art (MoMA), New York",
+            res: "5000 × 3959 px",
+            mp: "19.80 MP",
+            size: "8.73 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/46_Vincent_van_Gogh_-_The_Starry_Night.jpg"
+          },
+          {
+            title: "Vase with Fifteen Sunflowers",
+            year: "1888",
+            museum: "National Gallery, London",
+            res: "3748 × 2624 px",
+            mp: "9.83 MP",
+            size: "5.33 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/47_Vincent_van_Gogh_-_Still_Life_Vase_with_Fifteen_Sunflowers.jpg"
+          },
+          {
+            title: "The Potato Eaters",
+            year: "1885",
+            museum: "Van Gogh Museum, Amsterdam",
+            res: "3543 × 2517 px",
+            mp: "8.92 MP",
+            size: "1.45 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/48_Vincent_van_Gogh_-_The_Potato_Eaters.jpg"
+          }
+        ]
+      },
+      {
+        id: "munch",
+        epochTag: "expressionism",
+        name: "Edvard Munch",
+        lifespan: "1863–1944",
+        epithet: "The Chronicler of the Modern Existential Soul",
+        whyBelongs: "Created The Scream (1893), the universal symbol of existential alienation and anxiety across modern global culture. Founding father of European Nordic Expressionism.",
+        evolutionRole: "Banished decorative polite realism to paint the raw nervous system of human condition: grief, loneliness, jealousy, and fear, using undulating blood-red skies and sickly hues.",
+        paintings: [
+          {
+            title: "The Scream",
+            year: "1893",
+            museum: "National Gallery of Norway, Oslo",
+            res: "3000 × 3822 px",
+            mp: "11.46 MP",
+            size: "4.02 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/52_Edvard_Munch_-_The_Scream.jpg"
+          },
+          {
+            title: "Madonna",
+            year: "1894",
+            museum: "Munch Museum, Oslo",
+            res: "771 × 1054 px",
+            mp: "0.81 MP",
+            size: "0.19 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/53_Edvard_Munch_-_Madonna.jpg"
+          },
+          {
+            title: "The Sick Child",
+            year: "1907",
+            museum: "Tate Modern, London",
+            res: "1698 × 1198 px",
+            mp: "2.03 MP",
+            size: "0.45 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/55_Edvard_Munch_-_The_Sick_Child.jpg"
+          }
+        ]
+      },
+      {
+        id: "klimt",
+        epochTag: "expressionism",
+        name: "Gustav Klimt",
+        lifespan: "1862–1918",
+        epithet: "The Golden Prophet of Vienna Secession & Sensuality",
+        whyBelongs: "Visionary leader of the Vienna Secession. Merged Byzantine gold mosaic grandeur, Japanese patterns, and Freudian eroticism into world-renowned decorative masterpieces.",
+        evolutionRole: "Flattened academic space into glowing tapestries of gold leaf, geometric spirals, and sensual modern decorative symbolism.",
+        paintings: [
+          {
+            title: "The Kiss",
+            year: "1907–1908",
+            museum: "Belvedere Museum, Vienna",
+            res: "5000 × 5017 px",
+            mp: "25.08 MP",
+            size: "11.33 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/57_Gustav_Klimt_-_The_Kiss.jpg"
+          },
+          {
+            title: "Portrait of Adele Bloch-Bauer I",
+            year: "1907",
+            museum: "Neue Galerie, New York",
+            res: "1838 × 1838 px",
+            mp: "3.38 MP",
+            size: "1.36 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/58_Gustav_Klimt_-_Portrait_of_Adele_Bloch-Bauer_I.jpg"
+          },
+          {
+            title: "Portrait of Emilie Flöge",
+            year: "1902",
+            museum: "Wien Museum, Vienna",
+            res: "1291 × 3000 px",
+            mp: "3.87 MP",
+            size: "3.12 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/60_Gustav_Klimt_-_Portrait_of_Emilie_FlA_ge.jpg"
+          }
+        ]
+      },
+      {
+        id: "picasso",
+        epochTag: "modernism",
+        name: "Pablo Picasso",
+        lifespan: "1881–1973",
+        epithet: "The Relentless Disruptor of Modernist Vision",
+        whyBelongs: "The most influential and prolific artistic titan of the 20th century. Co-invented Cubism, shattering single-point perspective that had ruled art since the Renaissance.",
+        evolutionRole: "Deconstructed objects into multifaceted simultaneous planes; proved that an artwork is an autonomous visual reality rather than a passive window into nature.",
+        paintings: [
+          {
+            title: "Guernica",
+            year: "1937",
+            museum: "Museo Reina Sofía, Madrid",
+            res: "3369 × 1523 px",
+            mp: "5.13 MP",
+            size: "2.11 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/62_Pablo_Picasso_-_Guernica.jpg"
+          },
+          {
+            title: "The Old Blind Guitarist",
+            year: "1903",
+            museum: "Art Institute of Chicago",
+            res: "3648 × 5472 px",
+            mp: "19.96 MP",
+            size: "6.94 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/63_Pablo_Picasso_-_The_Old_Blind_Guitarist.jpg"
+          },
+          {
+            title: "Self-Portrait (1907)",
+            year: "1907",
+            museum: "National Gallery, Prague",
+            res: "1810 × 2348 px",
+            mp: "4.25 MP",
+            size: "0.67 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/64_Pablo_Picasso_-_Self-Portrait_(1907).jpg"
+          }
+        ]
+      },
+      {
+        id: "dali",
+        epochTag: "modernism",
+        name: "Salvador Dalí",
+        lifespan: "1904–1989",
+        epithet: "The Arch-Surrealist & Master of Paranoiac-Critical Dreams",
+        whyBelongs: "The face of Surrealism; turned his eccentric public brand into a global phenomenon. Rendered subconscious dreamscapes with microscopic Dutch Renaissance precision.",
+        evolutionRole: "Invented the paranoiac-critical method to paint 'hand-painted dream photographs', depicting the fluidity of time, memory, and Freudian desire with razor-sharp realism.",
+        paintings: [
+          {
+            title: "The Persistence of Memory",
+            year: "1931",
+            museum: "Museum of Modern Art (MoMA), New York",
+            res: "2105 × 1600 px",
+            mp: "3.37 MP",
+            size: "1.54 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/67_Salvador_Dali_-_The_Persistence_of_Memory.jpg"
+          },
+          {
+            title: "Swans Reflecting Elephants",
+            year: "1937",
+            museum: "Private Collection",
+            res: "2402 × 1600 px",
+            mp: "3.84 MP",
+            size: "1.90 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/69_Salvador_Dali_-_Swans_Reflecting_Elephants.jpg"
+          },
+          {
+            title: "The Metamorphosis of Narcissus",
+            year: "1937",
+            museum: "Tate Modern, London",
+            res: "2427 × 1596 px",
+            mp: "3.87 MP",
+            size: "0.65 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/70_Salvador_Dali_-_The_Metamorphosis_of_Narcissus.jpg"
+          }
+        ]
+      },
+      {
+        id: "kahlo",
+        epochTag: "modernism",
+        name: "Frida Kahlo",
+        lifespan: "1907–1954",
+        epithet: "The Global Cultural & Feminist Icon of Autobiographical Surrealism",
+        whyBelongs: "Has surpassed nearly all contemporaries in 21st-century iconography ('Fridamania'), fashion, gender theory, and auction records. Transformed chronic pain and defiance into visual poetry.",
+        evolutionRole: "Pioneered raw autobiographical surrealism rooted in Mexicanidad folk art; shattered taboos surrounding the female body, trauma, and vulnerability, declaring: 'I painted my own reality.'",
+        paintings: [
+          {
+            title: "The Two Fridas",
+            year: "1939",
+            museum: "Museo de Arte Moderno, Mexico City",
+            res: "2206 × 2186 px",
+            mp: "4.82 MP",
+            size: "1.73 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/75_Frida_Kahlo_-_The_Two_Fridas.jpg"
+          },
+          {
+            title: "The Broken Column",
+            year: "1944",
+            museum: "Museo Dolores Olmedo, Mexico City",
+            res: "1693 × 2229 px",
+            mp: "3.77 MP",
+            size: "1.12 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/76_Frida_Kahlo_-_The_Broken_Column.jpg"
+          },
+          {
+            title: "Viva la Vida, Watermelons",
+            year: "1954",
+            museum: "Frida Kahlo Museum, Mexico City",
+            res: "2429 × 1789 px",
+            mp: "4.35 MP",
+            size: "1.43 MB",
+            file: "./artist_paintings/Top_Celebrity_Masterpieces/77_Frida_Kahlo_-_Viva_la_Vida,_Watermelons.jpg"
+          }
+        ]
+      }
+    ];
+
+    const container = document.getElementById("mastersList");
+
+    function renderMasters(list) {
+      container.innerHTML = "";
+      list.forEach((m, idx) => {
+        const section = document.createElement("section");
+        section.className = "master-card bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl transition hover:border-slate-700 space-y-6";
+        section.dataset.epoch = m.epochTag;
+
+        let paintingsHtml = m.paintings.map(p => `
+          <div class="group relative bg-slate-950 rounded-xl overflow-hidden border border-slate-800 hover:border-amber-500/50 transition duration-200 flex flex-col">
+            <div class="relative aspect-[4/3] bg-black/50 overflow-hidden cursor-pointer flex items-center justify-center" onclick="openModal('${p.file}', '${p.title} (${p.year})', '${m.name} • ${p.museum} • ${p.res} (${p.mp})')">
+              <img src="${p.file}" alt="${p.title}" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition flex items-end p-3">
+                <span class="text-xs font-bold text-amber-300 flex items-center gap-1">🔍 Click to inspect ultra-res</span>
+              </div>
+              <div class="absolute top-2 right-2">
+                <span class="bg-black/80 backdrop-blur text-[11px] font-mono font-bold text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/30">${p.mp}</span>
+              </div>
+            </div>
+            <div class="p-3.5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-sm text-slate-100 group-hover:text-amber-300 transition">${p.title}</h4>
+                <p class="text-xs text-slate-400 mt-0.5">${p.year} &bull; <span class="text-slate-300">${p.museum}</span></p>
+              </div>
+              <div class="mt-3 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                <span>${p.res}</span>
+                <a href="${p.file}" target="_blank" class="text-amber-400 hover:underline font-sans font-medium">Open Image &rarr;</a>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        section.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-4 border-b border-slate-800 gap-2">
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-mono font-bold text-amber-400/80">#${String(idx + 1).padStart(2, '0')}</span>
+                <h2 class="text-xl sm:text-2xl font-serif-title font-bold text-white tracking-wide">${m.name}</h2>
+                <span class="text-xs text-slate-400 font-mono">(${m.lifespan})</span>
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-amber-300/90 mt-1 italic">${m.epithet}</p>
+            </div>
+            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 uppercase tracking-wider">${m.epochTag}</span>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 space-y-1.5">
+              <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Why They Belong</h3>
+              <p>${m.whyBelongs}</p>
+            </div>
+            <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 space-y-1.5">
+              <h3 class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Role in the Evolution of Art</h3>
+              <p>${m.evolutionRole}</p>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">Landmark Masterpieces (Full Museum Scans)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              ${paintingsHtml}
+            </div>
+          </div>
+        `;
+        container.appendChild(section);
+      });
+    }
+
+    function filterEpoch(epoch) {
+      document.querySelectorAll(".epoch-btn").forEach(b => {
+        b.className = "epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 transition";
+      });
+      event.target.className = "epoch-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-amber-500 text-slate-950 font-bold transition";
+
+      if (epoch === "all") {
+        renderMasters(masters);
+      } else {
+        const filtered = masters.filter(m => m.epochTag === epoch);
+        renderMasters(filtered);
+      }
+    }
+
+    function openModal(imgSrc, title, meta) {
+      document.getElementById("modalImg").src = imgSrc;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalMeta").textContent = meta;
+      document.getElementById("modalDirectLink").href = imgSrc;
+      document.getElementById("imageModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.add("hidden");
+    }
+
+    // Initial render
+    renderMasters(masters);
+  </script>
+</body>
+</html>
