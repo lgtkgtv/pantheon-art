@@ -144,16 +144,18 @@ The repository includes a museum-grade interactive web application configured fo
 5. Within 1–2 minutes, GitHub will publish your museum exhibition live at `https://lgtkgtv.github.io/pantheon-art/`.
 
 ### 🎨 Key Website Features
-1. **The Crown Jewels Master Gallery**:
-   * Interactive high-resolution inspection of the 78 world-famous paintings.
-   * Epoch filter tabs (Renaissance, Baroque, Impressionism, Expressionism, Modernism).
-   * Live search by title, artist, museum, or year; multi-criteria sorting (Chronological, Megapixels, Title, File Size).
-   * Lightbox modal with zoom/pan controls and direct links to authentic uncompressed museum scans.
-2. **500-Year Art History Odyssey**:
-   * Interactive chronological narrative spanning Botticelli (1470) to Frida Kahlo (1954).
-   * Curatorial breakdowns of **Why They Belong** and their **Role in the Evolution of Western Art**.
-3. **The 13 Celebrity Masters Index**:
-   * Comprehensive artist profiles with total ingested works, lifespan, movement, and quick jump into the gallery.
+1. **Dramatic Spotlight Hero**:
+   * Full-bleed ambient museum spotlight rotating through the world's most iconic masterworks (*The Art of Painting*, *Mona Lisa*, *The Starry Night*, *The Kiss*).
+   * 1-tap instant gateway to inspect scans up to **45.80 Megapixels**.
+2. **Curated Horizontal Discovery Shelves**:
+   * Frictionless visual browsing without complex filter setup.
+   * Curated shelves for **The Crown Jewels**, **Ultra-HD Scans (20+ MP)**, **Masters of Shadow & Light**, and **The Plein-Air Revolution**.
+3. **500-Year Timeline with Curator Micro-Plaques**:
+   * Zero text overload: each master features a 1-sentence poetic punchline and key technical innovation chips.
+   * Progressive disclosure: deep scholarly analyses (*"Why They Belong"* and *"Role in Evolution"*) unlock gracefully in an expandable curator drawer.
+4. **Mobile-First Bottom Sheet & Lightbox**:
+   * On mobile devices, paintings slide up in a native touch-friendly bottom sheet with drag handle and direct scan links.
+   * On desktop, interactive lightbox supports pan/zoom controls and keyboard shortcuts (`Esc`, `←`, `→`, `+`, `-`).
 
 ---
 

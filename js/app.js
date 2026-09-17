@@ -1,12 +1,11 @@
 ﻿/**
- * PANTHEON: Master Art Gallery & 500-Year History Engine
- * Vanilla ES6 JavaScript for GitHub Pages & Local Hosting
+ * PANTHEON: Fine Art Exhibition & 500-Year History Engine
+ * Minimalist, Intuitive, Visual-First Architecture
  */
 
 (function() {
   'use strict';
 
-  // Verify catalog data is loaded
   const data = window.PANTHEON_DATA;
   if (!data) {
     console.error('PANTHEON_DATA catalog failed to load.');
@@ -16,33 +15,46 @@
   // Application State
   const state = {
     activeEpoch: 'all',
-    activeArtist: 'all',
     searchQuery: '',
-    sortBy: 'chronological',
-    activeView: 'gallery',
+    currentView: 'gallery', // 'gallery' | 'timeline'
+    spotlightIndex: 0,
+    spotlightTimer: null,
     filteredMasterpieces: [],
     modalIndex: -1,
     zoomScale: 1.0
   };
 
-  // DOM Cache
+  // DOM Elements Cache
   const dom = {
-    galleryGrid: document.getElementById('galleryGrid'),
-    historyTimeline: document.getElementById('historyTimeline'),
-    artistsGrid: document.getElementById('artistsGrid'),
-    epochButtons: document.querySelectorAll('.epoch-filter-btn'),
-    artistFilter: document.getElementById('artistFilter'),
-    sortSelect: document.getElementById('sortSelect'),
+    // Spotlight Hero
+    heroBg: document.getElementById('heroBg'),
+    heroTitle: document.getElementById('heroTitle'),
+    heroMeta: document.getElementById('heroMeta'),
+    heroMpBadge: document.getElementById('heroMpBadge'),
+    heroMuseum: document.getElementById('heroMuseum'),
+    heroInspectBtn: document.getElementById('heroInspectBtn'),
+    heroPrevBtn: document.getElementById('heroPrevBtn'),
+    heroNextBtn: document.getElementById('heroNextBtn'),
+    heroDots: document.getElementById('heroDots'),
+    // Sticky Floating Nav & Controls
+    tabGallery: document.getElementById('tabGallery'),
+    tabTimeline: document.getElementById('tabTimeline'),
+    epochPills: document.querySelectorAll('.epoch-pill'),
     searchInput: document.getElementById('searchInput'),
     searchClearBtn: document.getElementById('searchClearBtn'),
+    // Views
+    shelvesSection: document.getElementById('shelvesSection'),
+    gallerySection: document.getElementById('gallerySection'),
+    timelineSection: document.getElementById('timelineSection'),
+    galleryGrid: document.getElementById('galleryGrid'),
+    timelineContainer: document.getElementById('timelineContainer'),
     galleryCountBadge: document.getElementById('galleryCountBadge'),
     noResultsNotice: document.getElementById('noResultsNotice'),
-    // Modal
+    // Lightbox / Bottom Sheet
     lightboxModal: document.getElementById('lightboxModal'),
     modalImage: document.getElementById('modalImage'),
     modalTitle: document.getElementById('modalTitle'),
     modalArtist: document.getElementById('modalArtist'),
-    modalYear: document.getElementById('modalYear'),
     modalMuseum: document.getElementById('modalMuseum'),
     modalRes: document.getElementById('modalRes'),
     modalMp: document.getElementById('modalMp'),
@@ -53,11 +65,10 @@
     modalCloseBtn: document.getElementById('modalCloseBtn'),
     zoomInBtn: document.getElementById('zoomInBtn'),
     zoomOutBtn: document.getElementById('zoomOutBtn'),
-    zoomResetBtn: document.getElementById('zoomResetBtn'),
-    zoomContainer: document.getElementById('zoomContainer')
+    zoomResetBtn: document.getElementById('zoomResetBtn')
   };
 
-  // Helper: Image Source Resolver with Graceful Fallback
+  // Helper: Image Source Resolver
   function resolveImgSrc(item) {
     if (window.location.protocol.startsWith('http')) {
       return item.HighResUrl || item.LocalRelativePath;
@@ -65,33 +76,167 @@
     return item.LocalRelativePath || item.HighResUrl;
   }
 
-  // Populate Artist Dropdown Filter
-  function initArtistFilter() {
-    if (!dom.artistFilter) return;
-    dom.artistFilter.innerHTML = '<option value="all">All 13 Masters (All Catalogs)</option>';
-    data.artists.forEach(a => {
-      const opt = document.createElement('option');
-      opt.value = a.id;
-      opt.textContent = `${a.name} (${a.lifespan})`;
-      dom.artistFilter.appendChild(opt);
+  // =========================================================================
+  // 1. SPOTLIGHT HERO ENGINE
+  // =========================================================================
+  function initSpotlightHero() {
+    const spotlights = data.spotlights && data.spotlights.length > 0 
+      ? data.spotlights 
+      : data.masterpieces.slice(0, 5);
+
+    function renderSpotlight(index, animate = true) {
+      const item = spotlights[index];
+      if (!item) return;
+
+      state.spotlightIndex = index;
+
+      if (dom.heroBg) {
+        if (animate) dom.heroBg.style.opacity = '0.3';
+        setTimeout(() => {
+          dom.heroBg.src = resolveImgSrc(item);
+          dom.heroBg.style.opacity = '1';
+        }, animate ? 200 : 0);
+      }
+
+      if (dom.heroTitle) dom.heroTitle.textContent = item.Title;
+      if (dom.heroMeta) dom.heroMeta.textContent = `${item.Artist} (${item.Year})`;
+      if (dom.heroMuseum) dom.heroMuseum.textContent = item.Museum || 'Museum Collection';
+      if (dom.heroMpBadge) dom.heroMpBadge.textContent = `${item.Megapixels.toFixed(1)} MP`;
+
+      if (dom.heroInspectBtn) {
+        dom.heroInspectBtn.onclick = () => window.openMasterpieceModal(item.FileName);
+      }
+
+      // Update dots
+      if (dom.heroDots) {
+        dom.heroDots.innerHTML = '';
+        spotlights.forEach((_, i) => {
+          const dot = document.createElement('button');
+          dot.className = `w-2 h-2 rounded-full transition-all ${i === index ? 'bg-amber-400 w-6' : 'bg-slate-600 hover:bg-slate-400'}`;
+          dot.onclick = () => {
+            renderSpotlight(i);
+            resetSpotlightTimer();
+          };
+          dom.heroDots.appendChild(dot);
+        });
+      }
+    }
+
+    function nextSpotlight() {
+      const nextIdx = (state.spotlightIndex + 1) % spotlights.length;
+      renderSpotlight(nextIdx);
+    }
+
+    function prevSpotlight() {
+      const prevIdx = (state.spotlightIndex - 1 + spotlights.length) % spotlights.length;
+      renderSpotlight(prevIdx);
+    }
+
+    function resetSpotlightTimer() {
+      if (state.spotlightTimer) clearInterval(state.spotlightTimer);
+      state.spotlightTimer = setInterval(nextSpotlight, 6500);
+    }
+
+    if (dom.heroNextBtn) dom.heroNextBtn.onclick = () => { nextSpotlight(); resetSpotlightTimer(); };
+    if (dom.heroPrevBtn) dom.heroPrevBtn.onclick = () => { prevSpotlight(); resetSpotlightTimer(); };
+
+    renderSpotlight(0, false);
+    resetSpotlightTimer();
+  }
+
+  // =========================================================================
+  // 2. CURATED HORIZONTAL SHELVES ENGINE
+  // =========================================================================
+  function renderCuratedShelves() {
+    if (!dom.shelvesSection) return;
+
+    const shelves = [
+      {
+        title: '👑 The Crown Jewels of Art History',
+        subtitle: 'The 10 most universally recognized masterworks in human civilization.',
+        items: data.masterpieces.filter(m => m.isCrownJewel).slice(0, 10)
+      },
+      {
+        title: '🔬 Ultra-HD Museum Scans (20+ Megapixels)',
+        subtitle: 'Peak resolution master captures—inspect microscopic brushstrokes and cracked glaze.',
+        items: data.masterpieces.filter(m => m.Megapixels >= 20.0)
+      },
+      {
+        title: '🕯️ Masters of Shadow & Light (Baroque)',
+        subtitle: 'The dramatic tenebrism of Caravaggio & the golden psychological impasto of Rembrandt.',
+        items: data.masterpieces.filter(m => m.ArtistId === 'caravaggio' || m.ArtistId === 'rembrandt')
+      },
+      {
+        title: '🌸 The Plein-Air Revolution (Impressionism)',
+        subtitle: 'Claude Monet’s fleeting optical vibrations & Vincent van Gogh’s raw emotional swirls.',
+        items: data.masterpieces.filter(m => m.ArtistId === 'monet' || m.ArtistId === 'vangogh').slice(0, 10)
+      }
+    ];
+
+    dom.shelvesSection.innerHTML = '';
+
+    shelves.forEach(shelf => {
+      const block = document.createElement('div');
+      block.className = 'space-y-3';
+
+      block.innerHTML = `
+        <div class="flex items-baseline justify-between px-1">
+          <div>
+            <h3 class="font-monumental text-lg sm:text-xl font-bold text-white">${shelf.title}</h3>
+            <p class="font-editorial text-xs sm:text-sm text-slate-400 italic">${shelf.subtitle}</p>
+          </div>
+        </div>
+        
+        <div class="flex gap-4 overflow-x-auto no-scrollbar shelf-snap py-2 px-1">
+          ${shelf.items.map(item => `
+            <div 
+              class="group flex-shrink-0 w-60 sm:w-72 bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
+              onclick="window.openMasterpieceModal('${item.FileName}')"
+            >
+              <div class="aspect-[4/3] w-full relative overflow-hidden bg-slate-950">
+                <img 
+                  src="${resolveImgSrc(item)}" 
+                  alt="${item.Title}" 
+                  loading="lazy" 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                  onerror="if (this.src !== '${item.HighResUrl}') { this.src = '${item.HighResUrl}'; }"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-70"></div>
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                  ${item.Megapixels.toFixed(1)} MP
+                </span>
+                <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/60 text-slate-300 backdrop-blur-md">
+                  ${item.Year}
+                </span>
+              </div>
+              <div class="p-3 flex-1 flex flex-col justify-between">
+                <div>
+                  <p class="text-[11px] font-mono text-amber-400/90 truncate">${item.Artist}</p>
+                  <h4 class="font-editorial text-sm font-bold text-white group-hover:text-amber-300 transition-colors line-clamp-1 mt-0.5">${item.Title}</h4>
+                </div>
+                <p class="text-[10px] text-slate-400 truncate mt-2">🏛️ ${item.Museum || 'Museum Collection'}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      dom.shelvesSection.appendChild(block);
     });
   }
 
-  // Filter & Sort Logic
+  // =========================================================================
+  // 3. MASTER GALLERY ENGINE (Grid View)
+  // =========================================================================
   function applyFilters() {
     let list = [...data.masterpieces];
 
-    // Filter: Epoch
+    // Epoch filter
     if (state.activeEpoch !== 'all') {
       list = list.filter(item => item.EpochId === state.activeEpoch);
     }
 
-    // Filter: Artist
-    if (state.activeArtist !== 'all') {
-      list = list.filter(item => item.ArtistId === state.activeArtist);
-    }
-
-    // Filter: Search Query
+    // Search query filter
     if (state.searchQuery.trim()) {
       const q = state.searchQuery.toLowerCase().trim();
       list = list.filter(item => {
@@ -104,33 +249,17 @@
       });
     }
 
-    // Sorting
-    if (state.sortBy === 'chronological') {
-      list.sort((a, b) => {
-        const yearA = parseInt(a.Year.split('–')[0].replace(/[^0-9]/g, '')) || 0;
-        const yearB = parseInt(b.Year.split('–')[0].replace(/[^0-9]/g, '')) || 0;
-        return yearA - yearB;
-      });
-    } else if (state.sortBy === 'megapixels') {
-      list.sort((a, b) => (b.Megapixels || 0) - (a.Megapixels || 0));
-    } else if (state.sortBy === 'title') {
-      list.sort((a, b) => a.Title.localeCompare(b.Title));
-    } else if (state.sortBy === 'filesize') {
-      list.sort((a, b) => (b.FileSizeBytes || 0) - (a.FileSizeBytes || 0));
-    }
-
     state.filteredMasterpieces = list;
     renderGallery();
   }
 
-  // Render Masterpiece Cards in Gallery Grid
   function renderGallery() {
     if (!dom.galleryGrid) return;
     dom.galleryGrid.innerHTML = '';
 
     const list = state.filteredMasterpieces;
     if (dom.galleryCountBadge) {
-      dom.galleryCountBadge.textContent = `${list.length} of ${data.masterpieces.length} Masterpieces`;
+      dom.galleryCountBadge.textContent = `${list.length} Works`;
     }
 
     if (list.length === 0) {
@@ -143,40 +272,38 @@
 
     list.forEach((item, index) => {
       const card = document.createElement('article');
-      card.className = 'group relative bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 flex flex-col cursor-pointer';
-      
+      card.className = 'group relative bg-slate-900/70 border border-slate-800 hover:border-amber-500/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col cursor-pointer';
+
       const isUltraRes = item.Megapixels >= 20.0;
-      const mpBadgeClass = isUltraRes 
+      const badgeColor = isUltraRes 
         ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 animate-pulse' 
         : 'bg-amber-500/20 text-amber-300 border-amber-500/40';
-
-      const imgSrc = resolveImgSrc(item);
 
       card.innerHTML = `
         <div class="img-container aspect-[4/3] w-full relative overflow-hidden bg-slate-950 flex items-center justify-center">
           <img 
-            src="${imgSrc}" 
-            alt="${item.Title} by ${item.Artist}" 
+            src="${resolveImgSrc(item)}" 
+            alt="${item.Title}" 
             loading="lazy" 
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
             onerror="if (this.src !== '${item.HighResUrl}') { this.src = '${item.HighResUrl}'; }"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-75 group-hover:opacity-50 transition-opacity"></div>
           
-          <div class="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
-            <span class="px-2 py-0.5 rounded-md text-[11px] font-mono font-bold border backdrop-blur-md ${mpBadgeClass}">
-              ${item.Megapixels.toFixed(2)} MP
+          <div class="absolute top-3 left-3 flex gap-1.5 z-10">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border backdrop-blur-md ${badgeColor}">
+              ${item.Megapixels.toFixed(1)} MP
             </span>
           </div>
 
           <div class="absolute top-3 right-3 z-10">
-            <span class="px-2 py-0.5 rounded-md text-[11px] font-mono bg-black/60 backdrop-blur-md text-slate-300 border border-slate-700/50">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/60 backdrop-blur-md text-slate-300 border border-slate-700/50">
               ${item.Width} × ${item.Height}
             </span>
           </div>
 
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
-            <span class="bg-amber-500 text-slate-950 px-3.5 py-1.5 rounded-full text-xs font-bold font-sans tracking-wide shadow-xl flex items-center gap-1.5 transform group-hover:scale-105 transition-transform">
+            <span class="bg-amber-500 text-slate-950 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xl">
               🔍 Inspect High-Res
             </span>
           </div>
@@ -202,154 +329,143 @@
         </div>
       `;
 
-      card.addEventListener('click', () => openModal(index));
+      card.onclick = () => openModal(index);
       fragment.appendChild(card);
     });
 
     dom.galleryGrid.appendChild(fragment);
   }
 
-  // Render 500-Year Art History Chronological Timeline
-  function renderHistoryTimeline() {
-    if (!dom.historyTimeline) return;
-    dom.historyTimeline.innerHTML = '';
+  // =========================================================================
+  // 4. TIMELINE WITH CURATOR MICRO-PLAQUES & PROGRESSIVE DISCLOSURE
+  // =========================================================================
+  function renderTimeline() {
+    if (!dom.timelineContainer) return;
+    dom.timelineContainer.innerHTML = '';
 
-    const timelineContainer = document.createElement('div');
-    timelineContainer.className = 'relative space-y-16';
-
-    data.artists.forEach((artist) => {
-      const artistWorks = data.masterpieces.filter(m => m.ArtistId === artist.id);
-
-      const section = document.createElement('section');
-      section.id = `artist-${artist.id}`;
-      section.className = 'relative rounded-3xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 backdrop-blur-md shadow-xl hover:border-amber-500/30 transition-all duration-300';
-
-      const epochClass = `badge-${artist.epochId}`;
-
-      let thumbnailsHtml = '';
-      if (artistWorks.length > 0) {
-        thumbnailsHtml = `
-          <div class="mt-6 pt-6 border-t border-slate-800">
-            <h4 class="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400 mb-3 flex items-center gap-2">
-              <span>🎨</span> Crown Jewel Works in Collection (${artistWorks.length})
-            </h4>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              ${artistWorks.map(w => `
-                <div class="group relative rounded-xl overflow-hidden border border-slate-800 bg-slate-950 aspect-[4/3] cursor-pointer hover:border-amber-400 transition-all" onclick="window.openMasterpieceModal('${w.FileName}')">
-                  <img src="${resolveImgSrc(w)}" alt="${w.Title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="if (this.src !== '${w.HighResUrl}') { this.src = '${w.HighResUrl}'; }" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2">
-                    <p class="text-white text-[11px] font-bold line-clamp-1 group-hover:text-amber-300 transition-colors">${w.Title}</p>
-                    <p class="text-slate-400 text-[9px] font-mono">${w.Megapixels.toFixed(1)} MP &bull; ${w.Year}</p>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      }
-
-      section.innerHTML = `
-        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-2 mb-2">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold ${epochClass}">
-                ${artist.epochName}
-              </span>
-              <span class="text-xs font-mono text-slate-400 bg-slate-800/60 px-2.5 py-0.5 rounded-full border border-slate-700/50">
-                ${artist.lifespan}
-              </span>
-              <span class="text-xs font-sans text-amber-300/80">
-                📍 ${artist.location}
-              </span>
-            </div>
-
-            <h3 class="font-monumental text-2xl sm:text-3xl font-bold text-white tracking-wide mt-1">
-              ${artist.name}
-            </h3>
-            <p class="font-editorial italic text-base sm:text-lg text-amber-300/90 mt-1 mb-4">
-              ${artist.epithet}
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-4 my-4">
-              <div class="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4">
-                <h5 class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-                  <span>👑</span> Why They Belong
-                </h5>
-                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                  ${artist.whyBelongs}
-                </p>
-              </div>
-
-              <div class="bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4">
-                <h5 class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
-                  <span>⚡</span> Role in Evolution of Art
-                </h5>
-                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-                  ${artist.evolutionRole}
-                </p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-3 mt-4">
-              <button onclick="window.filterByArtistAndScroll('${artist.id}')" class="text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2 rounded-xl transition-all shadow-md hover:shadow-amber-500/20 flex items-center gap-1.5">
-                <span>🏛️</span> View ${artistWorks.length} Masterpieces in Gallery
-              </button>
-              <span class="text-xs font-mono text-slate-400">
-                Total Catalog Ingested: <strong class="text-white">${artist.totalWorksCataloged} works</strong>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        ${thumbnailsHtml}
-      `;
-
-      timelineContainer.appendChild(section);
-    });
-
-    dom.historyTimeline.appendChild(timelineContainer);
-  }
-
-  // Render Artist Cards Grid in Artists Section
-  function renderArtistsGrid() {
-    if (!dom.artistsGrid) return;
-    dom.artistsGrid.innerHTML = '';
-
+    const list = data.artists;
     const fragment = document.createDocumentFragment();
 
-    data.artists.forEach(artist => {
+    list.forEach((artist) => {
       const works = data.masterpieces.filter(m => m.ArtistId === artist.id);
-      const card = document.createElement('div');
-      card.className = 'bg-slate-900/80 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-5 shadow-lg flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:shadow-amber-500/10';
 
-      card.innerHTML = `
-        <div>
-          <div class="flex items-center justify-between text-xs font-mono mb-2">
-            <span class="badge-${artist.epochId} px-2 py-0.5 rounded-full text-[10px] font-bold uppercase">${artist.epochName.split(' ')[0]}</span>
-            <span class="text-slate-400">${artist.lifespan}</span>
+      const section = document.createElement('article');
+      section.className = 'relative bg-slate-900/60 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-md hover:border-amber-400/30 transition-all';
+
+      // Innovations chips
+      const innovationPills = (artist.innovations || []).map(inv => `
+        <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300">
+          ✦ ${inv}
+        </span>
+      `).join('');
+
+      // Signature Works Horizontal Reel
+      const worksReel = works.map(w => `
+        <div 
+          class="flex-shrink-0 w-44 sm:w-52 group rounded-xl overflow-hidden border border-slate-800 bg-slate-950 aspect-[4/3] cursor-pointer hover:border-amber-400 transition-all"
+          onclick="window.openMasterpieceModal('${w.FileName}')"
+        >
+          <div class="relative w-full h-full">
+            <img src="${resolveImgSrc(w)}" alt="${w.Title}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="if (this.src !== '${w.HighResUrl}') { this.src = '${w.HighResUrl}'; }" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-2.5">
+              <p class="text-white text-xs font-bold line-clamp-1 group-hover:text-amber-300 transition-colors">${w.Title}</p>
+              <p class="text-slate-400 text-[10px] font-mono">${w.Megapixels.toFixed(1)} MP &bull; ${w.Year}</p>
+            </div>
           </div>
-          <h4 class="font-monumental text-lg font-bold text-white mb-1">${artist.name}</h4>
-          <p class="font-editorial text-xs italic text-amber-300/80 mb-3">${artist.epithet}</p>
-          <p class="text-xs text-slate-300 line-clamp-3 leading-relaxed mb-4">${artist.whyBelongs}</p>
+        </div>
+      `).join('');
+
+      section.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="badge-${artist.epochId} px-3 py-0.5 rounded-full text-xs font-mono font-semibold">
+              ${artist.epochName}
+            </span>
+            <span class="text-xs font-mono text-slate-400">
+              ${artist.lifespan}
+            </span>
+          </div>
+          <span class="text-xs text-slate-400 font-sans">
+            📍 ${artist.location}
+          </span>
         </div>
 
-        <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs">
-          <span class="font-mono text-slate-400">
-            <strong>${artist.totalWorksCataloged}</strong> Ingested
-          </span>
-          <button onclick="window.filterByArtistAndScroll('${artist.id}')" class="text-amber-400 hover:text-amber-300 font-bold flex items-center gap-1">
-            Explore (${works.length}) &rarr;
+        <!-- Master Name & Punchy Micro-Plaque Tagline -->
+        <h3 class="font-monumental text-2xl sm:text-3xl font-bold text-white mt-1">
+          ${artist.name}
+        </h3>
+        <p class="font-editorial italic text-base sm:text-lg text-amber-300/90 mt-1 max-w-3xl leading-relaxed">
+          "${artist.tagline || artist.epithet}"
+        </p>
+
+        <!-- Technical Innovation Chips -->
+        <div class="flex flex-wrap gap-2 mt-3 mb-5">
+          ${innovationPills}
+        </div>
+
+        <!-- Horizontal Signature Works Reel -->
+        <div class="my-4">
+          <h5 class="text-xs font-mono uppercase tracking-widest text-slate-400 mb-2.5">
+            Key Masterworks in Collection (${works.length})
+          </h5>
+          <div class="flex gap-3 overflow-x-auto no-scrollbar shelf-snap py-1">
+            ${worksReel}
+          </div>
+        </div>
+
+        <!-- Progressive Disclosure: Expandable Curator Drawer -->
+        <div class="mt-4 pt-4 border-t border-slate-800/80">
+          <button 
+            class="curator-toggle-btn text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition-colors focus:outline-none"
+            onclick="window.toggleCuratorDrawer(this)"
+          >
+            <span>📖</span>
+            <span class="btn-text">Read Curator's Historical Analysis</span>
+            <span class="chevron">▾</span>
           </button>
+          
+          <div class="curator-drawer mt-3 grid sm:grid-cols-2 gap-4 text-xs text-slate-300 leading-relaxed font-sans">
+            <div class="bg-slate-950/70 border border-slate-800 p-4 rounded-xl">
+              <strong class="text-amber-400 block font-mono uppercase tracking-wider mb-1">👑 Why They Belong:</strong>
+              ${artist.whyBelongs}
+            </div>
+            <div class="bg-slate-950/70 border border-slate-800 p-4 rounded-xl">
+              <strong class="text-cyan-400 block font-mono uppercase tracking-wider mb-1">⚡ Evolutionary Role:</strong>
+              ${artist.evolutionRole}
+            </div>
+          </div>
         </div>
       `;
 
-      fragment.appendChild(card);
+      fragment.appendChild(section);
     });
 
-    dom.artistsGrid.appendChild(fragment);
+    dom.timelineContainer.appendChild(fragment);
   }
 
-  // Lightbox Modal Functions
+  // Toggle Curator Note Drawer (Accordion)
+  window.toggleCuratorDrawer = function(btn) {
+    const drawer = btn.parentElement.querySelector('.curator-drawer');
+    const chevron = btn.querySelector('.chevron');
+    const btnText = btn.querySelector('.btn-text');
+
+    if (!drawer) return;
+
+    const isOpen = drawer.classList.contains('open');
+    if (isOpen) {
+      drawer.classList.remove('open');
+      chevron.textContent = '▾';
+      btnText.textContent = "Read Curator's Historical Analysis";
+    } else {
+      drawer.classList.add('open');
+      chevron.textContent = '▴';
+      btnText.textContent = "Close Curator's Analysis";
+    }
+  };
+
+  // =========================================================================
+  // 5. LIGHTBOX MODAL & MOBILE BOTTOM SHEET
+  // =========================================================================
   function openModal(index) {
     const list = state.filteredMasterpieces;
     if (index < 0 || index >= list.length) return;
@@ -417,14 +533,12 @@
     }
   }
 
-  // Global helper to open modal by filename
   window.openMasterpieceModal = function(fileName) {
     const idx = state.filteredMasterpieces.findIndex(m => m.FileName === fileName);
     if (idx !== -1) {
       openModal(idx);
     } else {
       state.activeEpoch = 'all';
-      state.activeArtist = 'all';
       state.searchQuery = '';
       applyFilters();
       const newIdx = state.filteredMasterpieces.findIndex(m => m.FileName === fileName);
@@ -432,50 +546,37 @@
     }
   };
 
-  // Global helper to filter by artist and scroll to gallery
-  window.filterByArtistAndScroll = function(artistId) {
-    state.activeArtist = artistId;
-    if (dom.artistFilter) dom.artistFilter.value = artistId;
-    applyFilters();
-    const gallerySection = document.getElementById('gallery');
-    if (gallerySection) {
-      gallerySection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Setup Event Listeners
+  // =========================================================================
+  // 6. EVENT LISTENERS & INITIALIZATION
+  // =========================================================================
   function initEvents() {
-    dom.epochButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        dom.epochButtons.forEach(b => {
-          b.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
-          b.classList.add('bg-slate-800', 'text-slate-300');
-        });
-        btn.classList.remove('bg-slate-800', 'text-slate-300');
-        btn.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+    // View tabs: Gallery vs Timeline
+    if (dom.tabGallery) {
+      dom.tabGallery.onclick = () => switchView('gallery');
+    }
+    if (dom.tabTimeline) {
+      dom.tabTimeline.onclick = () => switchView('timeline');
+    }
 
-        state.activeEpoch = btn.dataset.epoch;
+    // Epoch filter pills
+    dom.epochPills.forEach(pill => {
+      pill.onclick = () => {
+        dom.epochPills.forEach(p => {
+          p.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+          p.classList.add('bg-slate-800/80', 'text-slate-300');
+        });
+        pill.classList.remove('bg-slate-800/80', 'text-slate-300');
+        pill.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+
+        state.activeEpoch = pill.dataset.epoch;
         applyFilters();
-      });
+      };
     });
 
-    if (dom.artistFilter) {
-      dom.artistFilter.addEventListener('change', (e) => {
-        state.activeArtist = e.target.value;
-        applyFilters();
-      });
-    }
-
-    if (dom.sortSelect) {
-      dom.sortSelect.addEventListener('change', (e) => {
-        state.sortBy = e.target.value;
-        applyFilters();
-      });
-    }
-
+    // Search input (debounced)
     if (dom.searchInput) {
       let timeout = null;
-      dom.searchInput.addEventListener('input', (e) => {
+      dom.searchInput.oninput = (e) => {
         clearTimeout(timeout);
         timeout = setTimeout(() => {
           state.searchQuery = e.target.value;
@@ -484,52 +585,73 @@
           }
           applyFilters();
         }, 150);
-      });
+      };
     }
 
     if (dom.searchClearBtn) {
-      dom.searchClearBtn.addEventListener('click', () => {
+      dom.searchClearBtn.onclick = () => {
         dom.searchInput.value = '';
         state.searchQuery = '';
         dom.searchClearBtn.classList.add('hidden');
         applyFilters();
-      });
+      };
     }
 
-    if (dom.modalCloseBtn) dom.modalCloseBtn.addEventListener('click', closeModal);
-    if (dom.modalPrevBtn) dom.modalPrevBtn.addEventListener('click', () => stepModal(-1));
-    if (dom.modalNextBtn) dom.modalNextBtn.addEventListener('click', () => stepModal(1));
-
-    if (dom.zoomInBtn) dom.zoomInBtn.addEventListener('click', () => adjustZoom(0.3));
-    if (dom.zoomOutBtn) dom.zoomOutBtn.addEventListener('click', () => adjustZoom(-0.3));
-    if (dom.zoomResetBtn) dom.zoomResetBtn.addEventListener('click', resetZoom);
+    // Modal controls
+    if (dom.modalCloseBtn) dom.modalCloseBtn.onclick = closeModal;
+    if (dom.modalPrevBtn) dom.modalPrevBtn.onclick = () => stepModal(-1);
+    if (dom.modalNextBtn) dom.modalNextBtn.onclick = () => stepModal(1);
+    if (dom.zoomInBtn) dom.zoomInBtn.onclick = () => adjustZoom(0.3);
+    if (dom.zoomOutBtn) dom.zoomOutBtn.onclick = () => adjustZoom(-0.3);
+    if (dom.zoomResetBtn) dom.zoomResetBtn.onclick = resetZoom;
 
     if (dom.lightboxModal) {
-      dom.lightboxModal.addEventListener('click', (e) => {
+      dom.lightboxModal.onclick = (e) => {
         if (e.target === dom.lightboxModal) closeModal();
-      });
+      };
     }
 
-    window.addEventListener('keydown', (e) => {
+    // Keyboard shortcuts
+    window.onkeydown = (e) => {
       if (dom.lightboxModal.classList.contains('hidden')) return;
-
       if (e.key === 'Escape') closeModal();
       else if (e.key === 'ArrowLeft') stepModal(-1);
       else if (e.key === 'ArrowRight') stepModal(1);
       else if (e.key === '+' || e.key === '=') adjustZoom(0.2);
       else if (e.key === '-') adjustZoom(-0.2);
       else if (e.key === '0') resetZoom();
-    });
+    };
+  }
+
+  function switchView(view) {
+    state.currentView = view;
+    if (view === 'gallery') {
+      dom.tabGallery.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+      dom.tabGallery.classList.remove('text-slate-400', 'hover:text-white');
+      dom.tabTimeline.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+      dom.tabTimeline.classList.add('text-slate-400', 'hover:text-white');
+
+      dom.gallerySection.classList.remove('hidden');
+      dom.timelineSection.classList.add('hidden');
+    } else {
+      dom.tabTimeline.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+      dom.tabTimeline.classList.remove('text-slate-400', 'hover:text-white');
+      dom.tabGallery.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+      dom.tabGallery.classList.add('text-slate-400', 'hover:text-white');
+
+      dom.gallerySection.classList.add('hidden');
+      dom.timelineSection.classList.remove('hidden');
+    }
   }
 
   function init() {
-    initArtistFilter();
-    initEvents();
+    initSpotlightHero();
+    renderCuratedShelves();
     state.filteredMasterpieces = [...data.masterpieces];
     renderGallery();
-    renderHistoryTimeline();
-    renderArtistsGrid();
-    console.log('Pantheon exhibition initialized successfully.');
+    renderTimeline();
+    initEvents();
+    console.log('Pantheon exhibition initialized.');
   }
 
   if (document.readyState === 'loading') {

@@ -13,32 +13,194 @@
     {
       "id": "all",
       "name": "All Eras (1470–1954)",
-      "description": "The complete 500-year evolution across 13 celebrity masters and 78 curated masterpieces."
+      "short": "All Eras"
     },
     {
       "id": "renaissance",
       "name": "Renaissance Humanism (1470–1564)",
-      "description": "Classical revival, sacred geometry, anatomical heroism, and polymath harmony (Botticelli, Da Vinci, Michelangelo)."
+      "short": "Renaissance"
     },
     {
       "id": "baroque",
       "name": "Baroque & Dutch Golden Age (1595–1675)",
-      "description": "Tenebrist drama, emotional impasto, photographic luminism, and domestic quietude (Caravaggio, Rembrandt, Vermeer)."
+      "short": "Baroque"
     },
     {
       "id": "impressionism",
-      "name": "19th C. Optical Revolution (1872–1893)",
-      "description": "Plein-air atmospheric flux, dissolution of academic contours, and raw emotional impasto (Monet, Van Gogh)."
+      "name": "19th C. Impressionism (1872–1893)",
+      "short": "Impressionism"
     },
     {
       "id": "expressionism",
       "name": "Expressionism & Secession (1893–1918)",
-      "description": "Psychological angst, decorative gold mosaics, and internal existential vulnerability (Munch, Klimt)."
+      "short": "Expressionism"
     },
     {
       "id": "modernism",
-      "name": "20th C. Avant-Garde (1901–1954)",
-      "description": "Cubist perspective deconstruction, Freudian surreal dreamscapes, and raw autobiographical identity (Picasso, Dalí, Kahlo)."
+      "name": "20th C. Modernism (1901–1954)",
+      "short": "Modernism"
+    }
+  ],
+  "spotlights": [
+    {
+      "CuratedIndex": 6,
+      "Artist": "Leonardo da Vinci",
+      "Title": "Mona Lisa",
+      "Year": "1503–1519",
+      "Museum": "Musée du Louvre, Paris",
+      "Width": 5000,
+      "Height": 7452,
+      "Megapixels": 37.26,
+      "FileSizeBytes": 14911729,
+      "FileSizeMB": 14.22,
+      "FileName": "06_Leonardo_da_Vinci_-_Mona_Lisa.jpg",
+      "SourcePath": "paintings_output/002_Leonardo_da_Vinci_-_Mona_Lisa_5000x7452.jpg",
+      "HighResUrl": "https://uploads6.wikiart.org/00142/images/leonardo-da-vinci/mona-lisa.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/06_Leonardo_da_Vinci_-_Mona_Lisa.jpg",
+      "ArtistId": "davinci",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "renaissance"
+    },
+    {
+      "CuratedIndex": 14,
+      "Artist": "Michelangelo",
+      "Title": "The Creation of Adam",
+      "Year": "1512",
+      "Museum": "Sistine Chapel, Vatican Museums",
+      "Width": 4256,
+      "Height": 2843,
+      "Megapixels": 12.1,
+      "FileSizeBytes": 9494881,
+      "FileSizeMB": 9.06,
+      "FileName": "14_Michelangelo_-_The_Creation_of_Adam.jpg",
+      "SourcePath": "paintings_output/057_Michelangelo_-_The_Creation_of_Adam_4256x2843.jpg",
+      "HighResUrl": "https://uploads3.wikiart.org/00255/images/57726d7fedc2cb3880b4805e/creaci-n-de-ad-n.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/14_Michelangelo_-_The_Creation_of_Adam.jpg",
+      "ArtistId": "michelangelo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
+      "EpochId": "renaissance"
+    },
+    {
+      "CuratedIndex": 34,
+      "Artist": "Johannes Vermeer",
+      "Title": "Girl with a Pearl Earring",
+      "Year": "1665",
+      "Museum": "Mauritshuis, The Hague",
+      "Width": 4095,
+      "Height": 4794,
+      "Megapixels": 19.63,
+      "FileSizeBytes": 6229244,
+      "FileSizeMB": 5.94,
+      "FileName": "34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg",
+      "SourcePath": "paintings_output/019_Johannes_Vermeer_-_The_Girl_with_a_Pearl_Earring_4095x4794.jpg",
+      "HighResUrl": "https://uploads5.wikiart.org/00129/images/johannes-vermeer/the-girl-with-a-pearl-earring.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg",
+      "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "baroque"
+    },
+    {
+      "CuratedIndex": 36,
+      "Artist": "Johannes Vermeer",
+      "Title": "The Art of Painting",
+      "Year": "1666–1668",
+      "Museum": "Kunsthistorisches Museum, Vienna",
+      "Width": 6209,
+      "Height": 7377,
+      "Megapixels": 45.8,
+      "FileSizeBytes": 7834640,
+      "FileSizeMB": 7.47,
+      "FileName": "36_Johannes_Vermeer_-_The_Art_of_Painting.jpg",
+      "SourcePath": "artist_paintings/Johannes_Vermeer/0029_The_Art_of_Painting_6209x7377.jpg",
+      "HighResUrl": "https://uploads5.wikiart.org/00129/images/johannes-vermeer/the-art-of-painting.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/36_Johannes_Vermeer_-_The_Art_of_Painting.jpg",
+      "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "baroque"
+    },
+    {
+      "CuratedIndex": 39,
+      "Artist": "Claude Monet",
+      "Title": "Impression, Sunrise",
+      "Year": "1872",
+      "Museum": "Musée Marmottan Monet, Paris",
+      "Width": 5773,
+      "Height": 4478,
+      "Megapixels": 25.85,
+      "FileSizeBytes": 7105965,
+      "FileSizeMB": 6.78,
+      "FileName": "39_Claude_Monet_-_Impression,_Sunrise.jpg",
+      "SourcePath": "paintings_output/006_Claude_Monet_-_Impression,_sunrise_5773x4478.jpg",
+      "HighResUrl": "https://uploads8.wikiart.org/00129/images/claude-monet/impression-sunrise.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/39_Claude_Monet_-_Impression,_Sunrise.jpg",
+      "ArtistId": "monet",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "impressionism"
+    },
+    {
+      "CuratedIndex": 46,
+      "Artist": "Vincent van Gogh",
+      "Title": "The Starry Night",
+      "Year": "1889",
+      "Museum": "Museum of Modern Art, New York",
+      "Width": 5000,
+      "Height": 3959,
+      "Megapixels": 19.8,
+      "FileSizeBytes": 9150166,
+      "FileSizeMB": 8.73,
+      "FileName": "46_Vincent_van_Gogh_-_The_Starry_Night.jpg",
+      "SourcePath": "paintings_output/003_Vincent_van_Gogh_-_The_Starry_Night_5000x3959.jpg",
+      "HighResUrl": "https://uploads3.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/46_Vincent_van_Gogh_-_The_Starry_Night.jpg",
+      "ArtistId": "vangogh",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "impressionism"
+    },
+    {
+      "CuratedIndex": 57,
+      "Artist": "Gustav Klimt",
+      "Title": "The Kiss",
+      "Year": "1907–1908",
+      "Museum": "Österreichische Galerie Belvedere, Vienna",
+      "Width": 5000,
+      "Height": 5017,
+      "Megapixels": 25.09,
+      "FileSizeBytes": 11877975,
+      "FileSizeMB": 11.33,
+      "FileName": "57_Gustav_Klimt_-_The_Kiss.jpg",
+      "SourcePath": "paintings_output/008_Gustav_Klimt_-_The_Kiss_5000x5017.jpg",
+      "HighResUrl": "https://uploads6.wikiart.org/00142/images/57726d7eedc2cb3880b47e13/the-kiss-gustav-klimt-google-cultural-institute.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/57_Gustav_Klimt_-_The_Kiss.jpg",
+      "ArtistId": "klimt",
+      "isCrownJewel": true,
+      "isUltraRes": true,
+      "EpochId": "expressionism"
+    },
+    {
+      "CuratedIndex": 75,
+      "Artist": "Frida Kahlo",
+      "Title": "The Two Fridas",
+      "Year": "1939",
+      "Museum": "Museo de Arte Moderno, Mexico City",
+      "Width": 2206,
+      "Height": 2186,
+      "Megapixels": 4.82,
+      "FileSizeBytes": 1819080,
+      "FileSizeMB": 1.73,
+      "FileName": "75_Frida_Kahlo_-_The_Two_Fridas.jpg",
+      "SourcePath": "paintings_output/040_Frida_Kahlo_-_The_Two_Fridas_2206x2186.jpg",
+      "HighResUrl": "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/75_Frida_Kahlo_-_The_Two_Fridas.jpg",
+      "ArtistId": "kahlo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
+      "EpochId": "modernism"
     }
   ],
   "artists": [
@@ -48,12 +210,18 @@
       "slug": "sandro-botticelli",
       "lifespan": "1445–1510",
       "epochId": "renaissance",
-      "epochName": "Early Renaissance Humanism",
+      "epochName": "Early Renaissance",
       "movement": "Early Renaissance Florentine Humanism",
       "location": "Florence, Medici Court",
       "epithet": "The Poet of Early Renaissance Grace & Myth",
-      "whyBelongs": "Revived classical Greco-Roman mythology, introducing non-religious pagan allegories back into European high art after a millennium of strict medieval dogma. Defined the universal Western archetype of poetic, ethereal female beauty that inspired modern high-fashion aesthetics. The Birth of Venus is among the top 10 most recognized paintings on Earth.",
-      "evolutionRole": "Rejected heavy geometric realism in favor of lyrical contour lines, decorative drapery, and graceful elongation. He bridged the Gothic tradition with Renaissance Neoplatonism, creating harmonious compositions where philosophical ideals of divine love and earthly grace merged into painting.",
+      "tagline": "The poet of Medici Florence who revived classical pagan mythology and ethereal Renaissance grace.",
+      "innovations": [
+        "Mythological Revival",
+        "Lyrical Line",
+        "Neoplatonic Allegory"
+      ],
+      "whyBelongs": "Revived classical Greco-Roman mythology, introducing non-religious pagan allegories back into European high art after a millennium of strict medieval dogma. Defined the universal Western archetype of poetic, ethereal female beauty that inspired modern high-fashion aesthetics.",
+      "evolutionRole": "Rejected heavy geometric realism in favor of lyrical contour lines, decorative drapery, and graceful elongation. Bridged the Gothic tradition with Renaissance Neoplatonism, creating harmonious compositions where divine love and earthly grace merged.",
       "totalWorksCataloged": 137,
       "curatedCount": 5,
       "heroImage": "artist_paintings/Top_Celebrity_Masterpieces/01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg"
@@ -68,6 +236,12 @@
       "movement": "High Renaissance Classicism & Polymath Science",
       "location": "Florence, Milan, Rome, Amboise (France)",
       "epithet": "The Universal Polymath of High Renaissance Harmony",
+      "tagline": "The universal polymath who dissolved rigid outlines into atmospheric sfumato and elevated painting to divine science.",
+      "innovations": [
+        "Sfumato Glazing",
+        "Pyramidal Geometry",
+        "Atmospheric Depth"
+      ],
       "whyBelongs": "The quintessential Renaissance Man—scientist, anatomist, engineer, and painter. Created the single most famous, parodied, analyzed, and valuable visual artwork in recorded human history (Mona Lisa), alongside the masterwork of narrative perspective (The Last Supper).",
       "evolutionRole": "Elevated painting from a craft guild to an intellectual divine science through anatomical dissection of human cadavers. Pioneered sfumato (imperceptible tonal transitions without harsh outlines) and atmospheric perspective, replacing stiff medieval compositions with dynamic triangular geometry.",
       "totalWorksCataloged": 205,
@@ -84,8 +258,14 @@
       "movement": "Monumental Renaissance Classicism",
       "location": "Florence, Vatican City (Rome)",
       "epithet": "The Titan of Monumental Human Drama",
+      "tagline": "The titan who sculpted spiritual torment, heroic defiance, and monumental power into human anatomy.",
+      "innovations": [
+        "Terribilità Dynamism",
+        "Anatomical Heroism",
+        "Sistine Fresco Mastery"
+      ],
       "whyBelongs": "Master of epic anatomical power; redefined human musculature as the ultimate vessel of divine spiritual torment and glory. Executed the greatest fresco commissions in history across the Sistine Chapel ceiling and altar wall, entirely by his own hand.",
-      "evolutionRole": "Michelangelo viewed the human body as an architectural monument. He discarded passive tranquility in favor of terribilità—an awe-inspiring, tense, brooding power. His figures twist through space with unprecedented kinetic energy, establishing anatomy as the central narrative medium of Western art.",
+      "evolutionRole": "Michelangelo viewed the human body as an architectural monument. Discarded passive tranquility in favor of terribilità—an awe-inspiring, brooding power. His figures twist through space with unprecedented kinetic energy, establishing anatomy as the central narrative medium of Western art.",
       "totalWorksCataloged": 183,
       "curatedCount": 8,
       "heroImage": "artist_paintings/Top_Celebrity_Masterpieces/14_Michelangelo_-_The_Creation_of_Adam.jpg"
@@ -100,6 +280,12 @@
       "movement": "Tenebrism & Theatrical Naturalism",
       "location": "Rome, Naples, Malta, Sicily",
       "epithet": "The Rebel Pioneer of Chiaroscuro & Street Naturalism",
+      "tagline": "The outlaw genius who dragged biblical saints into dark Roman alleys under razor-sharp theatrical spotlights.",
+      "innovations": [
+        "Dramatic Tenebrism",
+        "Street Naturalism",
+        "Cinematic Contrast"
+      ],
       "whyBelongs": "Shattered idealized Renaissance mannerisms by casting prostitutes, beggars, and laborers with dirty feet as apostles and saints. Single-handedly launched the Baroque revolution and inspired Rembrandt, Velázquez, and modern cinematic lighting.",
       "evolutionRole": "Revolutionized chiaroscuro into dramatic tenebrism—pitch-black voids pierced by razor-sharp diagonal spotlighting. Transformed passive sacred icons into visceral, violent, psychological crime-scene moments that forced the viewer into active spiritual witness.",
       "totalWorksCataloged": 105,
@@ -116,6 +302,12 @@
       "movement": "Dutch Baroque Realism & Psychological Portraiture",
       "location": "Amsterdam, Dutch Republic",
       "epithet": "The Supreme Chronicler of the Human Soul",
+      "tagline": "The supreme chronicler of the human soul who sculpted warm golden light out of rich, atmospheric shadows.",
+      "innovations": [
+        "Sculpted Impasto",
+        "Psychological Introspection",
+        "Civic Action Staging"
+      ],
       "whyBelongs": "Western art's greatest portraitist and printmaker. Documented human fallibility and mortality with unmatched empathy across over 80 unflinching self-portraits spanning ambitious youth to bankrupt old age. The Night Watch revolutionized civic group portraits.",
       "evolutionRole": "Substituted Italian theatrical perfection with deeply human, tactile, sculpted impasto. Rembrandt handled light not merely as an optical device, but as an emotional medium of introspection and spiritual grace.",
       "totalWorksCataloged": 767,
@@ -132,8 +324,14 @@
       "movement": "Dutch Genre Luminism & Precision Realism",
       "location": "Delft, Dutch Republic",
       "epithet": "The Master of Light & Quietude",
+      "tagline": "The optical poet of Delft who immortalized quiet domestic daylight with camera obscura perfection.",
+      "innovations": [
+        "Photographic Luminism",
+        "Pointillist Highlights",
+        "Lapis Lazuli Depth"
+      ],
       "whyBelongs": "The Sphinx of Delft produced an exceptionally rare, precious jewel-box catalog of only ~35 surviving masterpieces. Girl with a Pearl Earring is revered globally as the \"Dutch Mona Lisa\", and The Art of Painting stands at 45.80 Megapixels as one of history's greatest optical triumphs.",
-      "evolutionRole": "Achieved an uncanny photographic photorealism two centuries before the invention of the camera. Employed camera obscura techniques, globular pointillistic specular highlights, and costly genuine lapis lazuli pigment to monumentalize intimate domestic rituals into timeless moments of grace.",
+      "evolutionRole": "Achieved an uncanny photographic photorealism two centuries before the camera. Employed camera obscura techniques, globular pointillistic specular highlights, and costly genuine lapis lazuli pigment to monumentalize intimate domestic rituals into timeless moments of grace.",
       "totalWorksCataloged": 44,
       "curatedCount": 5,
       "heroImage": "artist_paintings/Top_Celebrity_Masterpieces/34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg"
@@ -148,6 +346,12 @@
       "movement": "French Impressionism & Plein-Air Luminism",
       "location": "Paris, Argenteuil, Giverny (France)",
       "epithet": "The Father of Impressionism & Pure Light",
+      "tagline": "The father of Impressionism who dissolved solid forms into fleeting, vibrant optical vibrations of light.",
+      "innovations": [
+        "En Plein Air",
+        "Retinal Color Vibration",
+        "Lyrical Seriality"
+      ],
       "whyBelongs": "Founder and ideological anchor of French Impressionism. His 1872 painting Impression, Sunrise christened the most influential modern art movement in history. His monumental late Water Lilies installations anticipated 20th-century Abstract Expressionism.",
       "evolutionRole": "Shattered centuries of dark studio academic painting by taking his easel outdoors (en plein air) to paint light itself rather than physical objects. Deconstructed form into rapid, unblended optical color vibrations that merge on the viewer's retina.",
       "totalWorksCataloged": 1367,
@@ -164,8 +368,14 @@
       "movement": "Post-Impressionism & Emotional Expressive Impasto",
       "location": "Netherlands, Paris, Arles, Saint-Rémy, Auvers-sur-Oise",
       "epithet": "The Torrent of Emotional Color & Spiritual Vision",
+      "tagline": "The torrent of raw passion who transformed thick, swirling paint into pure spiritual ecstasy and cosmic wonder.",
+      "innovations": [
+        "Expressive Impasto",
+        "Symbolic Emotion in Color",
+        "Dynamic Brush Rhythms"
+      ],
       "whyBelongs": "The archetype of pure, uncompromised artistic devotion. Created over 2,000 artworks in a single feverish decade despite enduring profound mental anguish and extreme poverty. The Starry Night and Sunflowers are among the most celebrated visual monuments of humanity.",
-      "evolutionRole": "Liberated color and brushstrokes from literal representation, turning thick impasto paint into a dynamic direct conductor of psychic ecstasy, despair, and cosmic awe. Van Gogh became the direct spiritual forefather of 20th-century German Expressionism and modern abstract art.",
+      "evolutionRole": "Liberated color and brushstrokes from literal representation, turning thick impasto paint into a dynamic direct conductor of psychic ecstasy, despair, and cosmic awe. Van Gogh became the direct spiritual forefather of German Expressionism and modern abstract art.",
       "totalWorksCataloged": 1932,
       "curatedCount": 6,
       "heroImage": "artist_paintings/Top_Celebrity_Masterpieces/46_Vincent_van_Gogh_-_The_Starry_Night.jpg"
@@ -180,6 +390,12 @@
       "movement": "Psychological Expressionism & Symbolism",
       "location": "Kristiania (Oslo), Berlin, Paris",
       "epithet": "The Herald of Modern Existential Angst",
+      "tagline": "The chronicler of existential vertigo who gave visual voice to the silent scream passing through modern nature.",
+      "innovations": [
+        "Psychic Interiority",
+        "Wavy Symbolic Contours",
+        "The Frieze of Life"
+      ],
       "whyBelongs": "Creator of The Scream, the universal Western shorthand for psychological dread, existential vertigo, and modern angst—second only to the Mona Lisa in global visual recognition.",
       "evolutionRole": "Radically abandoned traditional naturalism to paint internal psychological states: grief, jealousy, sexual obsession, illness, and despair. Developed fluid, undulating rhythmic contours that visualize internal scream vibrations passing through external nature.",
       "totalWorksCataloged": 196,
@@ -192,10 +408,16 @@
       "slug": "gustav-klimt",
       "lifespan": "1862–1918",
       "epochId": "expressionism",
-      "epochName": "Vienna Secession & Golden Phase",
+      "epochName": "Vienna Secession",
       "movement": "Vienna Secession, Art Nouveau & Symbolism",
       "location": "Vienna, Austria-Hungary",
       "epithet": "The Alchemist of Gold, Sensuality & Secession",
+      "tagline": "The Vienna Secession visionary who wove erotic intimacy, Byzantine gold leaf, and modern decorative abstraction.",
+      "innovations": [
+        "Golden Leaf Mosaics",
+        "Symbolist Eroticism",
+        "Secession Modernism"
+      ],
       "whyBelongs": "Founding president of the revolutionary Vienna Secession. His Golden Phase culminated in The Kiss and Portrait of Adele Bloch-Bauer I, uniting classical eroticism with opulent decorative splendor.",
       "evolutionRole": "Synthesized Byzantine mosaic gold leaf with Japanese print flat ornamentation, erotic Freudian psychology, and organic Art Nouveau spirals. Dissolved realistic academic depth into shimmering abstract tapestries.",
       "totalWorksCataloged": 169,
@@ -209,11 +431,17 @@
       "lifespan": "1881–1973",
       "epochId": "modernism",
       "epochName": "20th Century Avant-Garde",
-      "movement": "Cubism, Blue/Rose Periods, Surrealism, Modernism",
+      "movement": "Cubism, Blue/Rose Periods, Modernism",
       "location": "Malaga, Barcelona, Paris, French Riviera",
       "epithet": "The Demiurge of 20th Century Visual Modernism",
+      "tagline": "The demiurge of the modern avant-garde who shattered 500 years of Renaissance perspective into Cubist planes.",
+      "innovations": [
+        "Cubist Perspective",
+        "Multifaceted Planes",
+        "Radical Stylistic Reinvention"
+      ],
       "whyBelongs": "The undisputed colossus of modern art. Over seven decades, Picasso dismantled and rebuilt the visual grammar of civilization, traversing Blue, Rose, African, Cubist, Neoclassical, and Surrealist phases.",
-      "evolutionRole": "Co-founded Cubism, obliterating 500 years of Renaissance perspective by shattering three-dimensional space onto a flat surface seen from multiple vantage points simultaneously. Painted Guernica, modern history's greatest, most searing condemnation of fascist violence and warfare.",
+      "evolutionRole": "Co-founded Cubism, obliterating 500 years of Renaissance perspective by shattering three-dimensional space onto a flat surface seen from multiple vantage points simultaneously. Painted Guernica, modern history's greatest, most searing condemnation of fascist warfare.",
       "totalWorksCataloged": 1169,
       "curatedCount": 5,
       "heroImage": "artist_paintings/Top_Celebrity_Masterpieces/62_Pablo_Picasso_-_Guernica.jpg"
@@ -228,6 +456,12 @@
       "movement": "Surrealism & Paranoiac-Critical Method",
       "location": "Figueres, Cadaqués, Paris, New York",
       "epithet": "The Wizard of Paranoiac-Critical Subconscious Dreams",
+      "tagline": "The wizard of the subconscious who rendered irrational, delirious dreamscapes with hyper-precise optical realism.",
+      "innovations": [
+        "Paranoiac-Critical Method",
+        "Double Imagery",
+        "Dream Photographs"
+      ],
       "whyBelongs": "The definitive face of Surrealism and 20th-century showmanship. His melting watches in The Persistence of Memory became the quintessential modern visualization of the malleability of time, mortality, and the Freudian unconscious.",
       "evolutionRole": "Pioneered the Paranoiac-Critical method: cultivating irrational subconscious associations, hallucinations, and double-images while executing them with hyper-precise 17th-century Dutch optical miniature technique (\"hand-painted dream photographs\").",
       "totalWorksCataloged": 1178,
@@ -240,10 +474,16 @@
       "slug": "frida-kahlo",
       "lifespan": "1907–1954",
       "epochId": "modernism",
-      "epochName": "Mexican Modernism & Identity",
+      "epochName": "Mexican Modernism",
       "movement": "Autobiographical Surrealism & Mexicanidad",
       "location": "Coyoacán (Mexico City), New York, Paris",
       "epithet": "The Global Cultural Icon of Resilience & Identity",
+      "tagline": "The global icon of resilience who painted not dreams, but the raw, mythic reality of her own beating heart.",
+      "innovations": [
+        "Autobiographical Surrealism",
+        "Mexicanidad Folk Heritage",
+        "Unflinching Vulnerability"
+      ],
       "whyBelongs": "Has achieved unprecedented global cultural and feminist iconography (\"Fridamania\"). Transmuted profound chronic physical pain, personal heartbreak, and indigenous Mexican heritage into unflinching, mythic autobiographical masterpieces (The Two Fridas, The Broken Column).",
       "evolutionRole": "Rejected orthodox European Surrealism to paint her direct internal reality (\"I never painted dreams. I painted my own reality\"). Blended traditional Mexican retablo folk devotional painting with raw anatomical, psychological, and matriarchal symbolism.",
       "totalWorksCataloged": 100,
@@ -268,6 +508,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/00142/images/57726d7dedc2cb3880b47c88/sandro-botticelli-la-nascita-di-venere-google-art-project-edited.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg",
       "ArtistId": "botticelli",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -286,6 +528,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/00129/images/sandro-botticelli/primavera.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/02_Sandro_Botticelli_-_The_Spring_(Primavera).jpg",
       "ArtistId": "botticelli",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -304,6 +548,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/sandro-botticelli/the-mystical-nativity(1).jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/03_Sandro_Botticelli_-_The_Mystical_Nativity.jpg",
       "ArtistId": "botticelli",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -322,6 +568,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/sandro-botticelli/the-story-of-nastagio-degli-onesti-the-banquet-in-the-pine-forest-1483(1).jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/04_Sandro_Botticelli_-_The_Story_of_Nastagio_Degli_Onesti.jpg",
       "ArtistId": "botticelli",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -340,6 +588,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/images/sandro-botticelli/calumny-of-apelles(1).jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/05_Sandro_Botticelli_-_Calumny_of_Apelles.jpg",
       "ArtistId": "botticelli",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -358,6 +608,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/00142/images/leonardo-da-vinci/mona-lisa.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/06_Leonardo_da_Vinci_-_Mona_Lisa.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -376,6 +628,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/00178/images/leonardo-da-vinci/ltima-cena-da-vinci-5.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/07_Leonardo_da_Vinci_-_The_Last_Supper.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -394,6 +648,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/00180/images/leonardo-da-vinci/dama-z-gronostajem.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/08_Leonardo_da_Vinci_-_Lady_with_an_Ermine.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -412,6 +668,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/00180/images/leonardo-da-vinci/da-vinci-vitruve-luc-viatour.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/09_Leonardo_da_Vinci_-_Vitruvian_Man.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -430,6 +688,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/leonardo-da-vinci/portrait-of-ginevra-benci.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/10_Leonardo_da_Vinci_-_Portrait_of_Ginevra_de'_Benci.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -448,6 +708,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/images/leonardo-da-vinci/annunciation-1.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/11_Leonardo_da_Vinci_-_Annunciation.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -466,6 +728,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00142/images/leonardo-da-vinci/the-virgin-and-child-with-st.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/12_Leonardo_da_Vinci_-_The_Virgin_and_Child_with_St._Anne.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -484,6 +748,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00339/images/leonardo-da-vinci/st-john-the-baptist.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/13_Leonardo_da_Vinci_-_St._John_the_Baptist.jpg",
       "ArtistId": "davinci",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -502,6 +768,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/00255/images/57726d7fedc2cb3880b4805e/creaci-n-de-ad-n.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/14_Michelangelo_-_The_Creation_of_Adam.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -520,6 +788,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/michelangelo/the-last-judgement-1541.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/15_Michelangelo_-_The_Last_Judgement.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "renaissance"
     },
     {
@@ -538,6 +808,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/michelangelo/sistine-chapel-ceiling-the-flood-1512-1.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/16_Michelangelo_-_Sistine_Chapel_The_Flood.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -556,6 +828,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/images/michelangelo/sistine-chapel-ceiling-libyan-sibyl.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/17_Michelangelo_-_Sistine_Chapel_Libyan_Sibyl.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -574,6 +848,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/michelangelo/sistine-chapel-ceiling-cumaean-sibyl-1510.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/18_Michelangelo_-_Sistine_Chapel_Cumaean_Sibyl.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -592,6 +868,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/images/michelangelo/sistine-chapel-ceiling-david-and-goliath-1509.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/19_Michelangelo_-_Sistine_Chapel_David_and_Goliath.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -610,6 +888,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/michelangelo/the-entombment.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/20_Michelangelo_-_The_Entombment.jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -628,6 +908,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/michelangelo/studies-for-pieta-or-the-last-judgement.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/21_Michelangelo_-_Pieta_(Studies).jpg",
       "ArtistId": "michelangelo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "renaissance"
     },
     {
@@ -646,6 +928,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/00340/images/caravaggio/the-callinf-of-saint-matthew.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/22_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg",
       "ArtistId": "caravaggio",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -664,6 +948,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/00142/images/caravaggio/martyrdom-of-saint-matthew.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/23_Caravaggio_-_The_Martyrdom_of_Saint_Matthew.jpg",
       "ArtistId": "caravaggio",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "baroque"
     },
     {
@@ -682,6 +968,8 @@
       "HighResUrl": "https://uploads0.wikiart.org/00340/images/caravaggio/judith-beheading-holofernes.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/24_Caravaggio_-_Judith_Beheading_Holofernes.jpg",
       "ArtistId": "caravaggio",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -700,6 +988,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00142/images/57726d7cedc2cb3880b47b1a/self-portrait-as-the-sick-bacchus-by-caravaggio.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/25_Caravaggio_-_Bacchus.jpg",
       "ArtistId": "caravaggio",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -718,6 +1008,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/00129/images/caravaggio/david-and-goliath.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/26_Caravaggio_-_David_with_the_Head_of_Goliath.jpg",
       "ArtistId": "caravaggio",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -736,6 +1028,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00121/images/rembrandt/2.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/27_Rembrandt_-_The_Night_Watch.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -754,6 +1048,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/images/rembrandt/the-anatomy-lesson-of-dr-nicolaes-tulp-1632.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/28_Rembrandt_-_The_Anatomy_Lesson_of_Dr._Nicolaes.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -772,6 +1068,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/00142/images/rembrandt/christ-in-the-storm.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/29_Rembrandt_-_The_Storm_on_the_Sea_of_Galilee.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -790,6 +1088,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/images/rembrandt/self-portrait-in-at-the-age-of-63-1669.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/30_Rembrandt_-_Self-Portrait_at_the_Age_of_63.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -808,6 +1108,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/rembrandt/self-portrait-at-the-age-of-34-1640.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/31_Rembrandt_-_Self-Portrait_at_the_Age_of_34.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -826,6 +1128,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/rembrandt/portrait-of-saskia-van-uylenburgh.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/32_Rembrandt_-_Portrait_of_Saskia_van_Uylenburgh.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -844,6 +1148,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/images/rembrandt/self-portrait-in-studio-attire.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/33_Rembrandt_-_Self-Portrait_in_Studio_Attire.jpg",
       "ArtistId": "rembrandt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -862,6 +1168,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/00129/images/johannes-vermeer/the-girl-with-a-pearl-earring.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg",
       "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "baroque"
     },
     {
@@ -880,6 +1188,8 @@
       "HighResUrl": "https://uploads0.wikiart.org/images/johannes-vermeer/the-milkmaid.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/35_Johannes_Vermeer_-_The_Milkmaid.jpg",
       "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "baroque"
     },
     {
@@ -898,6 +1208,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/00129/images/johannes-vermeer/the-art-of-painting.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/36_Johannes_Vermeer_-_The_Art_of_Painting.jpg",
       "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "baroque"
     },
     {
@@ -916,6 +1228,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00380/images/johannes-vermeer/5-the-astronomer-johannes-vermeer.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/37_Johannes_Vermeer_-_The_Astronomer.jpg",
       "ArtistId": "vermeer",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "baroque"
     },
     {
@@ -934,6 +1248,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/images/johannes-vermeer/young-woman-with-a-pearl-necklace.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/38_Johannes_Vermeer_-_Young_Woman_with_a_Pearl_Necklace.jpg",
       "ArtistId": "vermeer",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "baroque"
     },
     {
@@ -952,6 +1268,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/00129/images/claude-monet/impression-sunrise.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/39_Claude_Monet_-_Impression,_Sunrise.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "impressionism"
     },
     {
@@ -970,6 +1288,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/claude-monet/water-lilies-11.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/40_Claude_Monet_-_Water_Lilies_(The_Clouds).jpg",
       "ArtistId": "monet",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -988,6 +1308,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/claude-monet/the-japanese-bridge-the-water-lily-pond.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/41_Claude_Monet_-_The_Japanese_Bridge_(Water-Lily_Pon.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1006,6 +1328,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/claude-monet/madame-monet-and-child(1).jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/42_Claude_Monet_-_Camille_Monet_and_a_Child_in_the_Ga.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1024,6 +1348,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/images/claude-monet/women-in-the-garden.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/43_Claude_Monet_-_Women_in_the_Garden.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1042,6 +1368,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/claude-monet/waterloo-bridge-sunlight-effect-1.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/44_Claude_Monet_-_Waterloo_Bridge,_Sunlight_Effect.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1060,6 +1388,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/00282/images/claude-monet/the-water-lily-pond-and-bridge-1905.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/45_Claude_Monet_-_The_Water_Lily_Pond_and_Bridge.jpg",
       "ArtistId": "monet",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1078,6 +1408,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/46_Vincent_van_Gogh_-_The_Starry_Night.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "impressionism"
     },
     {
@@ -1096,6 +1428,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/00220/images/vincent-van-gogh/antique-3937521.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/47_Vincent_van_Gogh_-_Still_Life_Vase_with_Fifteen_Sunflo.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1114,6 +1448,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/00129/images/vincent-van-gogh/the-potato-eaters.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/48_Vincent_van_Gogh_-_The_Potato_Eaters.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1132,6 +1468,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/vincent-van-gogh/peasant-woman-lifting-potatoes-5-1885.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/49_Vincent_van_Gogh_-_Peasant_Woman_Lifting_Potatoes.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1150,6 +1488,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/vincent-van-gogh/still-life-with-three-birds-nests-1885.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/50_Vincent_van_Gogh_-_Still_Life_with_Three_Birds'_Nests.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1168,6 +1508,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/images/vincent-van-gogh/portrait-of-a-woman-with-a-red-ribbon-1885.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/51_Vincent_van_Gogh_-_Portrait_of_a_Woman_with_a_Red_Ribb.jpg",
       "ArtistId": "vangogh",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "impressionism"
     },
     {
@@ -1186,6 +1528,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/00130/images/edvard-munch/the-scream.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/52_Edvard_Munch_-_The_Scream.jpg",
       "ArtistId": "munch",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1204,6 +1548,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/edvard-munch/madonna-1894.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/53_Edvard_Munch_-_Madonna.jpg",
       "ArtistId": "munch",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1222,6 +1568,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/images/edvard-munch/the-sick-child-ii-1896.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/55_Edvard_Munch_-_The_Sick_Child.jpg",
       "ArtistId": "munch",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1240,6 +1588,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/edvard-munch/eye-in-eye-1894.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/56_Edvard_Munch_-_Eye_in_Eye.jpg",
       "ArtistId": "munch",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1258,6 +1608,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/00142/images/57726d7eedc2cb3880b47e13/the-kiss-gustav-klimt-google-cultural-institute.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/57_Gustav_Klimt_-_The_Kiss.jpg",
       "ArtistId": "klimt",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "expressionism"
     },
     {
@@ -1276,6 +1628,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/gustav-klimt/portrait-of-adele-bloch-bauer-i(1).jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/58_Gustav_Klimt_-_Portrait_of_Adele_Bloch-Bauer_I.jpg",
       "ArtistId": "klimt",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1294,6 +1648,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00475/images/gustav-klimt/judith-and-the-head-of-holofernes-1901.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/59_Gustav_Klimt_-_Judith_and_the_Head_of_Holofernes.jpg",
       "ArtistId": "klimt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1312,6 +1668,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/00475/images/gustav-klimt/portrait-of-emilie-fl-ge-1902.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/60_Gustav_Klimt_-_Portrait_of_Emilie_Flöge.jpg",
       "ArtistId": "klimt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1330,6 +1688,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/images/gustav-klimt/the-dancer-1918.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/61_Gustav_Klimt_-_The_Dancer.jpg",
       "ArtistId": "klimt",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "expressionism"
     },
     {
@@ -1348,6 +1708,8 @@
       "HighResUrl": "https://uploads8.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/62_Pablo_Picasso_-_Guernica.jpg",
       "ArtistId": "picasso",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1366,6 +1728,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/00198/images/pablo-picasso/old-guitarist-chicago.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/63_Pablo_Picasso_-_The_Old_Blind_Guitarist.jpg",
       "ArtistId": "picasso",
+      "isCrownJewel": true,
+      "isUltraRes": true,
       "EpochId": "modernism"
     },
     {
@@ -1384,6 +1748,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/images/pablo-picasso/self-portrait-1906.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/64_Pablo_Picasso_-_Self-Portrait_(1907).jpg",
       "ArtistId": "picasso",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1402,6 +1768,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/pablo-picasso/portrait-of-dora-maar-1937-2.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/65_Pablo_Picasso_-_Portrait_of_Dora_Maar.jpg",
       "ArtistId": "picasso",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1420,6 +1788,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/pablo-picasso/child-with-dove-1901.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/66_Pablo_Picasso_-_Child_with_a_Dove.jpg",
       "ArtistId": "picasso",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1438,6 +1808,8 @@
       "HighResUrl": "https://uploads5.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/67_Salvador_Dali_-_The_Persistence_of_Memory.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1456,6 +1828,8 @@
       "HighResUrl": "https://uploads2.wikiart.org/00475/images/salvador-dali/salvador-dali-the-great-masturbator-1929-obelisk-art-history.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/68_Salvador_Dali_-_The_Great_Masturbator.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1474,6 +1848,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/images/salvador-dali/cygnes-refletant-des-elephants.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/69_Salvador_Dali_-_Swans_Reflecting_Elephants.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1492,6 +1868,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/images/salvador-dali/the-metamorphosis-of-narcissus.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/70_Salvador_Dali_-_The_Metamorphosis_of_Narcissus.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1510,6 +1888,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/salvador-dali/the-temptation-of-st-anthony.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/71_Salvador_Dali_-_The_Temptation_of_St._Anthony.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1528,6 +1908,8 @@
       "HighResUrl": "https://uploads3.wikiart.org/images/salvador-dali/crucifixion-corpus-hypercubicus-1954.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/72_Salvador_Dali_-_Crucifixion_(Corpus_Hypercubicus).jpg",
       "ArtistId": "dali",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1546,6 +1928,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/salvador-dali/galatea-of-the-spheres.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/73_Salvador_Dali_-_Galatea_of_the_Spheres.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1564,6 +1948,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/salvador-dali/the-disintegration-of-the-persistence-of-memory.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/74_Salvador_Dali_-_The_Disintegration_of_the_Persisten.jpg",
       "ArtistId": "dali",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1582,6 +1968,8 @@
       "HighResUrl": "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/75_Frida_Kahlo_-_The_Two_Fridas.jpg",
       "ArtistId": "kahlo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1600,6 +1988,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-broken-column-1944.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/76_Frida_Kahlo_-_The_Broken_Column.jpg",
       "ArtistId": "kahlo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1618,6 +2008,8 @@
       "HighResUrl": "https://uploads1.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/viva-la-vida-watermelons.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/77_Frida_Kahlo_-_Viva_la_Vida,_Watermelons.jpg",
       "ArtistId": "kahlo",
+      "isCrownJewel": true,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1636,6 +2028,8 @@
       "HighResUrl": "https://uploads6.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/henry-ford-hospital-the-flying-bed-1932.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/78_Frida_Kahlo_-_Henry_Ford_Hospital.jpg",
       "ArtistId": "kahlo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     },
     {
@@ -1654,6 +2048,8 @@
       "HighResUrl": "https://uploads7.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/my-birth-1932.jpg",
       "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/79_Frida_Kahlo_-_My_Birth.jpg",
       "ArtistId": "kahlo",
+      "isCrownJewel": false,
+      "isUltraRes": false,
       "EpochId": "modernism"
     }
   ],
