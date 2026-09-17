@@ -1,13 +1,13 @@
 # System Specification & Architecture Report: Pantheon Fine Art Suite
 
-**Document Identifier**: SPEC-ART-2026-09-V2.2  
+**Document Identifier**: SPEC-ART-2026-09-V2.3  
 **System Name**: Pantheon: Ultra-HD Fine Art Ingestion, Processing, Curation & Web Exhibition Suite  
-**Version**: 2.2.0 (Cross-Platform Python/`uv` & GitHub Pages Web Exhibition Release)  
+**Version**: 2.3.0 (Real-Life Scale, 5-Minute Guided Tour & Detail Loupe Exhibition Release)  
 **Author**: Antigravity AI Engineering  
 **GitHub Repository**: [`https://github.com/lgtkgtv/pantheon-art`](https://github.com/lgtkgtv/pantheon-art)  
 **Live Web Exhibition**: [`https://lgtkgtv.github.io/pantheon-art/`](https://lgtkgtv.github.io/pantheon-art/)  
 **Target Platforms**: Cross-Platform — Linux (Ubuntu 24.04 LTS), macOS, Windows 11 (PowerShell 5.1+ & WSL 2)  
-**Execution Date**: September 17, 2026  
+**Execution Date**: September 18, 2026  
 **Status**: Production Verified & Deployed to GitHub Pages  
 
 ---
@@ -280,3 +280,38 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 * **HTTP Endpoint Verification**: All static site endpoints (`index.html`, `css/style.css`, `js/catalog-data.js`, `js/app.js`, `data/pantheon_catalog.json`, `404.html`) verified returning `HTTP 200 OK`.
 * **Zero-CORS Client Compatibility**: The static web app runs seamlessly across both local `file:///` protocols and cloud HTTPS on GitHub Pages.
 * **GitHub Repository Synchronization**: All changes versioned and tracked on branch `main` at `https://github.com/lgtkgtv/pantheon-art`.
+
+---
+
+## 9. Advanced Web Exhibition Architecture (v2.3.0 Release)
+
+### 9.1. The 5-Minute Guided Tour (Story Mode Engine)
+* **Chronological 10-Milestone Flow**: Guided narrative path traversing 1485 Early Renaissance to 1937 Late Modernism:
+  1. Botticelli (1485, *The Birth of Venus*) — Rebirth of Myth & Classical Beauty
+  2. Da Vinci (1503, *Mona Lisa*) — Invention of Living Sfumato Shadows
+  3. Michelangelo (1512, *The Creation of Adam*) — Anatomical Grandeur & The Divine Spark
+  4. Caravaggio (1600, *The Calling of Saint Matthew*) — Theatrical Tenebrism in Gritty Tavern Light
+  5. Rembrandt (1642, *The Night Watch*) — Explosive Motion & Golden Dutch Impasto
+  6. Vermeer (1665, *Girl with a Pearl Earring*) — Sacred Domestic Stillness & Lapis Lazuli
+  7. Monet (1872, *Impression, Sunrise*) — Plein-Air Revolution & Outdoor Sunlight
+  8. Van Gogh (1889, *The Starry Night*) — Painting Inner Emotion Instead of Reality
+  9. Munch (1893, *The Scream*) — The Birth of Expressionism & Modern Existential Anxiety
+  10. Picasso (1937, *Guernica*) — Cubism Unleashed into Monumental Political Protest
+* **UI Controls**: 10-segment linear progress bar, timed 9.5s auto-play slideshow, ambient backlit glow matching painting palette, and 1-tap direct transition to 3.0× Loupe deep-dive inspection.
+
+### 9.2. "Real-Life Size" on Museum Wall (Scale Visualizer)
+* **Human Benchmark Reference**: 175 cm (5'9") human silhouette placed directly adjacent to artworks.
+* **Proportional Scaling Algorithm**: Computes physical canvas dimensions in centimeters (`physicalWidthCm`, `physicalHeightCm`) relative to the human reference:
+  $$px\_per\_cm = \frac{H_{human\_px}}{175.0}$$
+* **Scale Revelation**: Eliminates digital screen flattening, vividly illustrating why *The Persistence of Memory* (24 × 33 cm) is an intimate miniature while *The Night Watch* (363 × 437 cm) and *Guernica* (349 × 776 cm) are colossal architectural murals.
+
+### 9.3. Curator's 3.0× Detail Loupe
+* Circular 180×180px high-magnification overlay with gold rim and `3.0× ULTRA-HD` badge.
+* **Desktop**: Dynamically tracks cursor with crosshair cursor canvas styling (`L` key shortcut).
+* **Mobile**: Offset **-65px vertically** above touch coordinates to prevent the user's thumb from obstructing the magnified inspection view.
+
+### 9.4. Zero-Failure CDN Hotlink Protection & Social Sharing Cards
+* `<meta name="referrer" content="no-referrer">` prevents 403 Forbidden hotlink rejections by stripping external referrers.
+* Vector SVG favicon (`data:image/svg+xml,...`) eliminates 404 browser requests.
+* Complete OpenGraph (`og:image`, `og:title`, `og:description`) and Twitter card tags provide instant rich preview cards across social messaging platforms.
+
