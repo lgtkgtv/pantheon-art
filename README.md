@@ -91,9 +91,9 @@ uv run extract_paintings.py --count 100 --max-workers 8
 
 ### 3. Entry-Point CLI Shortcuts
 If installed via `uv pip install -e .` or `pip install -e .`:
-* `art-artist --artist leonardo-da-vinci`
-* `art-curate`
-* `art-popular --count 100`
+* `pantheon-artist --artist leonardo-da-vinci` (or `art-artist`)
+* `pantheon-curate` (or `art-curate`)
+* `pantheon-popular --count 100` (or `art-popular`)
 
 ---
 
@@ -180,6 +180,8 @@ The repository includes a museum-grade interactive web application configured fo
 │   └── app.js                             # Interactive exhibition, search, filters & zoom modal
 ├── data/
 │   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
+├── docs/
+│   └── SOFTWARE_SPEC.md                   # Comprehensive system specification & architecture report
 │
 ├── pyproject.toml                         # PEP 621 project configuration for uv / pip
 ├── README.md                              # Comprehensive technical documentation
