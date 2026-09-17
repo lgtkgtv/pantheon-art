@@ -129,19 +129,31 @@ powershell -ExecutionPolicy Bypass -File extract_paintings.ps1 -Count 100
 
 ---
 
-## 🎨 Visual Storytelling & Exhibition
+## 🌐 Live Web Exhibition (GitHub Pages)
 
-The repository includes visual storytelling tools to explore the collection:
+The repository includes a museum-grade interactive web application configured for zero-friction hosting on **GitHub Pages**:
 
-1. **Interactive Web Chronicle (`visual_chronicle_masters.html`)**:
-   * Open directly in any modern browser: `file:///c:/agy/art/visual_chronicle_masters.html` (or serve via `uv run python3 -m http.server 8000`).
-   * Features:
-     * Chronological 500-year timeline (1470–1954).
-     * Era filter buttons (Renaissance, Baroque & Golden Age, Impressionism, Expressionism, Modernism).
-     * Resolution badges displaying megapixels and dimensions.
-     * Full-screen modal zoom with direct links to raw master scans.
-2. **Illustrated Art History Guide (`celebrity_masters_visual_story.md`)**:
-   * Comprehensive historical guide covering each master's biographical significance, evolutionary role in Western art, and deep-dive analyses of their most celebrated works.
+* **Live Exhibition URL**: **`https://lgtkgtv.github.io/pantheon-art/`**
+* **Local Offline Viewing**: Simply open `index.html` in any modern web browser or serve locally with `uv run python3 -m http.server 8080`.
+
+### 🚀 Activating GitHub Pages in Your Repository
+1. Navigate to your GitHub repository: [github.com/lgtkgtv/pantheon-art](https://github.com/lgtkgtv/pantheon-art).
+2. Go to **Settings** &rarr; **Pages** (in the left sidebar under *Code and automation*).
+3. Under **Build and deployment** &rarr; **Source**, select **Deploy from a branch**.
+4. Select branch **`main`** and folder **`/ (root)`**, then click **Save**.
+5. Within 1–2 minutes, GitHub will publish your museum exhibition live at `https://lgtkgtv.github.io/pantheon-art/`.
+
+### 🎨 Key Website Features
+1. **The Crown Jewels Master Gallery**:
+   * Interactive high-resolution inspection of the 78 world-famous paintings.
+   * Epoch filter tabs (Renaissance, Baroque, Impressionism, Expressionism, Modernism).
+   * Live search by title, artist, museum, or year; multi-criteria sorting (Chronological, Megapixels, Title, File Size).
+   * Lightbox modal with zoom/pan controls and direct links to authentic uncompressed museum scans.
+2. **500-Year Art History Odyssey**:
+   * Interactive chronological narrative spanning Botticelli (1470) to Frida Kahlo (1954).
+   * Curatorial breakdowns of **Why They Belong** and their **Role in the Evolution of Western Art**.
+3. **The 13 Celebrity Masters Index**:
+   * Comprehensive artist profiles with total ingested works, lifespan, movement, and quick jump into the gallery.
 
 ---
 
@@ -158,6 +170,17 @@ The repository includes visual storytelling tools to explore the collection:
 
 ```text
 .
+├── index.html                             # Museum-grade exhibition web app (GitHub Pages entry)
+├── .nojekyll                              # Bypasses Jekyll for GitHub Pages
+├── 404.html                               # Fallback redirect for GitHub Pages
+├── css/
+│   └── style.css                          # Museum aesthetics, typography & responsive styling
+├── js/
+│   ├── catalog-data.js                    # Curated data bundle (78 Masterpieces + 13 Masters)
+│   └── app.js                             # Interactive exhibition, search, filters & zoom modal
+├── data/
+│   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
+│
 ├── pyproject.toml                         # PEP 621 project configuration for uv / pip
 ├── README.md                              # Comprehensive technical documentation
 ├── .gitignore                             # Git ignore rules (excludes multi-GB image files)
@@ -165,13 +188,12 @@ The repository includes visual storytelling tools to explore the collection:
 ├── extract_artist.py                      # Cross-platform CLI for artist catalog ingestion
 ├── curate_masterpieces.py                 # Cross-platform CLI to curate top masterpieces
 ├── extract_paintings.py                   # Cross-platform CLI for top popular paintings
+├── build_catalog_data.py                  # Utility script compiling catalog metadata
 │
 ├── batch_extract_artist.ps1               # Windows PowerShell single-artist batch downloader
 ├── extract_artist_paintings.ps1           # Windows PowerShell multi-artist extractor
 ├── curate_top_masterpieces.ps1            # Windows PowerShell crown jewel curator
 ├── extract_paintings.ps1                  # Windows PowerShell popular paintings extractor
-│
-├── visual_chronicle_masters.html          # Standalone interactive visual gallery web app
 │
 ├── artist_paintings/                      # 13 Artist directories (7,552 works + metadata)
 │   ├── Leonardo_da_Vinci/

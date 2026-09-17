@@ -1,0 +1,206 @@
+﻿/* ==========================================================================
+   PANTHEON: Fine Art Exhibition & Museum Aesthetics
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #080b11;
+  --bg-secondary: #0f1523;
+  --bg-card: #131a2c;
+  --bg-card-hover: #19233b;
+  --border-subtle: rgba(212, 175, 55, 0.15);
+  --border-gold: rgba(212, 175, 55, 0.4);
+  --gold-primary: #e5b94c;
+  --gold-light: #f8df8c;
+  --gold-dark: #b38927;
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --accent-emerald: #10b981;
+  --accent-cyan: #06b6d4;
+  --font-serif-monumental: 'Cinzel', serif;
+  --font-serif-editorial: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 50%, rgba(14, 116, 144, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Typography Helpers */
+.font-monumental {
+  font-family: var(--font-serif-monumental);
+  letter-spacing: 0.06em;
+}
+
+.font-editorial {
+  font-family: var(--font-serif-editorial);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff2c6 0%, #e5b94c 50%, #b38927 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(229, 185, 76, 0.15);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 35px rgba(229, 185, 76, 0.25);
+  border-color: var(--gold-primary);
+}
+
+/* Artwork Card Image Shimmer / Loading */
+.img-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #0b0f19;
+}
+
+.img-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 200%;
+  }
+}
+
+/* Epoch Tag Badges */
+.badge-renaissance {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fcd34d;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-baroque {
+  background: rgba(168, 85, 247, 0.12);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-impressionism {
+  background: rgba(59, 130, 246, 0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge-expressionism {
+  background: rgba(239, 68, 68, 0.12);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-modernism {
+  background: rgba(16, 185, 129, 0.12);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Timeline Stylings */
+.timeline-stem {
+  position: relative;
+}
+
+.timeline-stem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 185, 76, 0.6) 0%,
+    rgba(16, 185, 129, 0.5) 50%,
+    rgba(229, 185, 76, 0.6) 100%
+  );
+}
+
+@media (min-width: 768px) {
+  .timeline-stem::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Lightbox Modal */
+#lightboxModal {
+  transition: opacity 0.25s ease-out, backdrop-filter 0.25s ease-out;
+}
+
+#lightboxModal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#lightboxModal:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.zoom-pan-container {
+  cursor: grab;
+  transition: transform 0.15s ease-out;
+}
+
+.zoom-pan-container:active {
+  cursor: grabbing;
+}
