@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / virtual envs
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+build/
+dist/
+*.egg-info/
+.uv/
+
+# Ignore large downloaded image files (preserve code and metadata)
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.JPG
+*.JPEG
+*.PNG
+
+# Allow tracking metadata within output directories if needed
+!*.json
+!*.csv
+!*.md
+
+# System & OS artifacts
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+.system_generated/

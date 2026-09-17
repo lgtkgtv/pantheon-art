@@ -1,0 +1,38 @@
+[project]
+name = "art-vault"
+version = "2.1.0"
+description = "Ultra-HD Fine Art Ingestion, Processing & Curation Suite for Museum Master Scans"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Antigravity Engineering" }
+]
+keywords = [
+    "fine-art",
+    "museum-scans",
+    "wikiart",
+    "image-downloader",
+    "art-history",
+    "curation",
+    "high-resolution"
+]
+dependencies = []
+
+[project.optional-dependencies]
+fast = [
+    "httpx>=0.27.0",
+    "rich>=13.7.0"
+]
+
+[project.scripts]
+art-popular = "extract_paintings:main"
+art-artist = "extract_artist:main"
+art-curate = "curate_masterpieces:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["extract_paintings", "extract_artist", "curate_masterpieces"]
