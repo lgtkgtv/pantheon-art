@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    PANTHEON: Fine Art Exhibition & Museum Aesthetics
    ========================================================================== */
 
@@ -204,25 +204,41 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    max-height: 92vh;
+    height: 90vh;
+    max-height: 90vh;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
     background: #090e17;
-    border-top: 1px solid rgba(229, 185, 76, 0.3);
-    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(229, 185, 76, 0.4);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.95);
     transform: translateY(0);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .sheet-handle-zone {
+    width: 100%;
+    padding: 10px 0 6px 0;
+    cursor: grab;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    touch-action: none;
   }
 
   .sheet-handle {
-    width: 36px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.25);
-    border-radius: 2px;
-    margin: 8px auto 4px auto;
+    width: 42px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    transition: background 0.2s;
+  }
+
+  .sheet-handle-zone:active .sheet-handle {
+    background: var(--gold-primary);
   }
 }
 
@@ -233,4 +249,46 @@ body {
 
 .zoom-pan-container:active {
   cursor: grabbing;
+}
+
+/* Curator's Detail Loupe */
+.curator-loupe {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--gold-primary);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.9), 0 0 15px rgba(229, 185, 76, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  background-repeat: no-repeat;
+  display: none;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+}
+
+.curator-loupe.active {
+  display: block;
+}
+
+.curator-loupe-badge {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #070a0f;
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-light);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.loupe-active-canvas {
+  cursor: crosshair !important;
 }

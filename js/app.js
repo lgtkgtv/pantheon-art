@@ -1,6 +1,7 @@
-﻿/**
+/**
  * PANTHEON: Fine Art Exhibition & 500-Year History Engine
  * Minimalist, Intuitive, Visual-First Architecture
+ * Phase 2: Curator's Detail Loupe, Mobile Bottom Sheet, & Curated Shelves
  */
 
 (function() {
@@ -21,8 +22,15 @@
     spotlightTimer: null,
     filteredMasterpieces: [],
     modalIndex: -1,
-    zoomScale: 1.0
+    zoomScale: 1.0,
+    loupeActive: false,
+    isDraggingSheet: false,
+    sheetStartY: 0,
+    sheetCurrentDeltaY: 0
   };
+
+  // Magnification constant for Curator's Detail Loupe
+  const LOUPE_ZOOM = 3.0;
 
   // DOM Elements Cache
   const dom = {
@@ -52,6 +60,12 @@
     noResultsNotice: document.getElementById('noResultsNotice'),
     // Lightbox / Bottom Sheet
     lightboxModal: document.getElementById('lightboxModal'),
+    modalSheetContainer: document.querySelector('.modal-sheet-container'),
+    sheetHandleZone: document.getElementById('sheetHandleZone'),
+    modalHeader: document.querySelector('.modal-sheet-container .h-14'),
+    zoomContainer: document.getElementById('zoomContainer'),
+    curatorLoupe: document.getElementById('curatorLoupe'),
+    loupeToggleBtn: document.getElementById('loupeToggleBtn'),
     modalImage: document.getElementById('modalImage'),
     modalTitle: document.getElementById('modalTitle'),
     modalArtist: document.getElementById('modalArtist'),
@@ -152,45 +166,67 @@
 
     const shelves = [
       {
+        id: 'shelf-crown-jewels',
         title: '👑 The Crown Jewels of Art History',
-        subtitle: 'The 10 most universally recognized masterworks in human civilization.',
-        items: data.masterpieces.filter(m => m.isCrownJewel).slice(0, 10)
+        subtitle: 'The universally recognized masterworks defining half a millennium of artistic genius.',
+        items: data.masterpieces.filter(m => m.isCrownJewel).slice(0, 12)
       },
       {
+        id: 'shelf-ultra-res',
         title: '🔬 Ultra-HD Museum Scans (20+ Megapixels)',
-        subtitle: 'Peak resolution master captures—inspect microscopic brushstrokes and cracked glaze.',
+        subtitle: 'Peak resolution master captures—inspect microscopic brushstrokes, impasto, and cracked glaze.',
         items: data.masterpieces.filter(m => m.Megapixels >= 20.0)
       },
       {
+        id: 'shelf-shadow-light',
         title: '🕯️ Masters of Shadow & Light (Baroque)',
         subtitle: 'The dramatic tenebrism of Caravaggio & the golden psychological impasto of Rembrandt.',
         items: data.masterpieces.filter(m => m.ArtistId === 'caravaggio' || m.ArtistId === 'rembrandt')
       },
       {
+        id: 'shelf-impressionism',
         title: '🌸 The Plein-Air Revolution (Impressionism)',
         subtitle: 'Claude Monet’s fleeting optical vibrations & Vincent van Gogh’s raw emotional swirls.',
-        items: data.masterpieces.filter(m => m.ArtistId === 'monet' || m.ArtistId === 'vangogh').slice(0, 10)
+        items: data.masterpieces.filter(m => m.ArtistId === 'monet' || m.ArtistId === 'vangogh').slice(0, 12)
       }
     ];
 
     dom.shelvesSection.innerHTML = '';
 
-    shelves.forEach(shelf => {
+    shelves.forEach((shelf, idx) => {
       const block = document.createElement('div');
       block.className = 'space-y-3';
 
       block.innerHTML = `
-        <div class="flex items-baseline justify-between px-1">
+        <div class="flex items-end justify-between px-1">
           <div>
-            <h3 class="font-monumental text-lg sm:text-xl font-bold text-white">${shelf.title}</h3>
-            <p class="font-editorial text-xs sm:text-sm text-slate-400 italic">${shelf.subtitle}</p>
+            <h3 class="font-monumental text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              ${shelf.title}
+            </h3>
+            <p class="font-editorial text-xs sm:text-sm text-slate-400 italic mt-0.5">${shelf.subtitle}</p>
+          </div>
+          <div class="hidden sm:flex items-center gap-1.5 flex-shrink-0">
+            <button 
+              onclick="window.scrollShelf('${shelf.id}', -420)" 
+              title="Scroll Left" 
+              class="w-7 h-7 rounded-full bg-slate-800/90 hover:bg-amber-500 hover:text-slate-950 text-slate-300 text-xs flex items-center justify-center border border-slate-700 transition shadow cursor-pointer select-none"
+            >
+              &#10094;
+            </button>
+            <button 
+              onclick="window.scrollShelf('${shelf.id}', 420)" 
+              title="Scroll Right" 
+              class="w-7 h-7 rounded-full bg-slate-800/90 hover:bg-amber-500 hover:text-slate-950 text-slate-300 text-xs flex items-center justify-center border border-slate-700 transition shadow cursor-pointer select-none"
+            >
+              &#10095;
+            </button>
           </div>
         </div>
         
-        <div class="flex gap-4 overflow-x-auto no-scrollbar shelf-snap py-2 px-1">
+        <div id="${shelf.id}" class="flex gap-4 overflow-x-auto no-scrollbar shelf-snap py-2 px-1 scroll-smooth">
           ${shelf.items.map(item => `
             <div 
-              class="group flex-shrink-0 w-60 sm:w-72 bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col"
+              class="group flex-shrink-0 w-60 sm:w-72 bg-slate-900/80 border border-slate-800 hover:border-amber-400/50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col"
               onclick="window.openMasterpieceModal('${item.FileName}')"
             >
               <div class="aspect-[4/3] w-full relative overflow-hidden bg-slate-950">
@@ -201,13 +237,18 @@
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   onerror="if (this.src !== '${item.HighResUrl}') { this.src = '${item.HighResUrl}'; }"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-70"></div>
-                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-75 group-hover:opacity-40 transition-opacity"></div>
+                <span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${item.Megapixels >= 20.0 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 animate-pulse' : 'bg-amber-500/20 text-amber-300 border-amber-500/30'} backdrop-blur-md border">
                   ${item.Megapixels.toFixed(1)} MP
                 </span>
                 <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md text-[10px] font-mono bg-black/60 text-slate-300 backdrop-blur-md">
                   ${item.Year}
                 </span>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20">
+                  <span class="bg-amber-500 text-slate-950 px-3 py-1 rounded-full text-xs font-bold shadow-xl">
+                    🔍 Inspect Loupe
+                  </span>
+                </div>
               </div>
               <div class="p-3 flex-1 flex flex-col justify-between">
                 <div>
@@ -224,6 +265,14 @@
       dom.shelvesSection.appendChild(block);
     });
   }
+
+  // Horizontal Shelf Smooth Scroll
+  window.scrollShelf = function(shelfId, offset) {
+    const el = document.getElementById(shelfId);
+    if (el) {
+      el.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+  };
 
   // =========================================================================
   // 3. MASTER GALLERY ENGINE (Grid View)
@@ -416,7 +465,7 @@
         <!-- Progressive Disclosure: Expandable Curator Drawer -->
         <div class="mt-4 pt-4 border-t border-slate-800/80">
           <button 
-            class="curator-toggle-btn text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition-colors focus:outline-none"
+            class="curator-toggle-btn text-xs font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 transition-colors focus:outline-none cursor-pointer"
             onclick="window.toggleCuratorDrawer(this)"
           >
             <span>📖</span>
@@ -472,17 +521,27 @@
 
     state.modalIndex = index;
     state.zoomScale = 1.0;
+    deactivateLoupe();
     updateModalContent();
 
     dom.lightboxModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+
+    // Reset bottom sheet transform
+    if (dom.modalSheetContainer) {
+      dom.modalSheetContainer.style.transform = '';
+    }
   }
 
   function closeModal() {
+    deactivateLoupe();
     dom.lightboxModal.classList.add('hidden');
     document.body.style.overflow = '';
     state.modalIndex = -1;
     state.zoomScale = 1.0;
+    if (dom.modalSheetContainer) {
+      dom.modalSheetContainer.style.transform = '';
+    }
   }
 
   function updateModalContent() {
@@ -507,6 +566,11 @@
     dom.modalSize.textContent = `${item.FileSizeMB} MB`;
 
     dom.modalRawLink.href = item.HighResUrl || item.LocalRelativePath;
+
+    // Refresh loupe if active
+    if (state.loupeActive) {
+      dom.curatorLoupe.style.backgroundImage = `url('${item.HighResUrl || imgSrc}')`;
+    }
   }
 
   function stepModal(dir) {
@@ -547,7 +611,153 @@
   };
 
   // =========================================================================
-  // 6. EVENT LISTENERS & INITIALIZATION
+  // 6. CURATOR'S DETAIL LOUPE ENGINE (3.0× Magnification)
+  // =========================================================================
+  function toggleLoupe() {
+    if (state.loupeActive) {
+      deactivateLoupe();
+    } else {
+      activateLoupe();
+    }
+  }
+
+  function activateLoupe() {
+    state.loupeActive = true;
+    if (dom.loupeToggleBtn) {
+      dom.loupeToggleBtn.classList.add('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-400');
+      dom.loupeToggleBtn.classList.remove('bg-slate-800', 'text-slate-300');
+    }
+    if (dom.zoomContainer) dom.zoomContainer.classList.add('loupe-active-canvas');
+    if (dom.modalImage) dom.modalImage.classList.add('loupe-active-canvas');
+
+    const item = state.filteredMasterpieces[state.modalIndex];
+    if (item && dom.curatorLoupe) {
+      const highRes = item.HighResUrl || resolveImgSrc(item);
+      dom.curatorLoupe.style.backgroundImage = `url('${highRes}')`;
+    }
+  }
+
+  function deactivateLoupe() {
+    state.loupeActive = false;
+    if (dom.loupeToggleBtn) {
+      dom.loupeToggleBtn.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold', 'border-amber-400');
+      dom.loupeToggleBtn.classList.add('bg-slate-800', 'text-slate-300');
+    }
+    if (dom.zoomContainer) dom.zoomContainer.classList.remove('loupe-active-canvas');
+    if (dom.modalImage) dom.modalImage.classList.remove('loupe-active-canvas');
+    if (dom.curatorLoupe) dom.curatorLoupe.classList.remove('active');
+  }
+
+  function handleLoupeMove(e) {
+    if (!state.loupeActive || !dom.curatorLoupe || !dom.modalImage || !dom.zoomContainer) return;
+
+    const imgRect = dom.modalImage.getBoundingClientRect();
+    const containerRect = dom.zoomContainer.getBoundingClientRect();
+
+    const isTouch = !!e.touches;
+    const clientX = isTouch ? e.touches[0].clientX : e.clientX;
+    const clientY = isTouch ? e.touches[0].clientY : e.clientY;
+
+    // Check bounds: within artwork image with a small tolerance
+    if (
+      clientX < imgRect.left - 5 || 
+      clientX > imgRect.right + 5 || 
+      clientY < imgRect.top - 5 || 
+      clientY > imgRect.bottom + 5
+    ) {
+      dom.curatorLoupe.classList.remove('active');
+      return;
+    }
+
+    dom.curatorLoupe.classList.add('active');
+
+    // On mobile touch: position loupe 65px above finger contact so thumb doesn't obscure magnification!
+    const offsetY = isTouch ? -65 : 0;
+    const loupeX = clientX - containerRect.left;
+    const loupeY = clientY - containerRect.top + offsetY;
+
+    dom.curatorLoupe.style.left = `${loupeX}px`;
+    dom.curatorLoupe.style.top = `${loupeY}px`;
+
+    // High resolution background calculations
+    const bgW = imgRect.width * LOUPE_ZOOM;
+    const bgH = imgRect.height * LOUPE_ZOOM;
+    dom.curatorLoupe.style.backgroundSize = `${bgW}px ${bgH}px`;
+
+    const normX = Math.max(0, Math.min(1, (clientX - imgRect.left) / imgRect.width));
+    const normY = Math.max(0, Math.min(1, (clientY - imgRect.top) / imgRect.height));
+
+    const bgPosX = -(normX * bgW - 90);
+    const bgPosY = -(normY * bgH - 90);
+    dom.curatorLoupe.style.backgroundPosition = `${bgPosX}px ${bgPosY}px`;
+  }
+
+  // =========================================================================
+  // 7. MOBILE BOTTOM SHEET TOUCH SWIPE GESTURES
+  // =========================================================================
+  function initMobileSheetGestures() {
+    const handleZone = dom.sheetHandleZone;
+    const header = dom.modalHeader;
+    const sheet = dom.modalSheetContainer;
+    if (!sheet) return;
+
+    function onTouchStart(e) {
+      if (window.innerWidth > 768) return; // Desktop uses standard modal
+      state.isDraggingSheet = true;
+      state.sheetStartY = e.touches[0].clientY;
+      state.sheetCurrentDeltaY = 0;
+      sheet.style.transition = 'none';
+    }
+
+    function onTouchMove(e) {
+      if (!state.isDraggingSheet) return;
+      const currentY = e.touches[0].clientY;
+      const deltaY = currentY - state.sheetStartY;
+
+      if (deltaY > 0) {
+        // Dragging downwards
+        state.sheetCurrentDeltaY = deltaY;
+        sheet.style.transform = `translateY(${deltaY}px)`;
+      } else {
+        // Slight resistance when pulling upwards
+        sheet.style.transform = `translateY(${deltaY * 0.15}px)`;
+      }
+    }
+
+    function onTouchEnd(e) {
+      if (!state.isDraggingSheet) return;
+      state.isDraggingSheet = false;
+      sheet.style.transition = 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)';
+
+      if (state.sheetCurrentDeltaY > 80) {
+        // Threshold passed -> Dismiss bottom sheet
+        sheet.style.transform = 'translateY(100%)';
+        setTimeout(() => {
+          closeModal();
+          sheet.style.transform = '';
+        }, 220);
+      } else {
+        // Snap back to open position
+        sheet.style.transform = 'translateY(0)';
+      }
+      state.sheetCurrentDeltaY = 0;
+    }
+
+    if (handleZone) {
+      handleZone.addEventListener('touchstart', onTouchStart, { passive: true });
+      handleZone.addEventListener('touchmove', onTouchMove, { passive: true });
+      handleZone.addEventListener('touchend', onTouchEnd, { passive: true });
+    }
+
+    if (header) {
+      header.addEventListener('touchstart', onTouchStart, { passive: true });
+      header.addEventListener('touchmove', onTouchMove, { passive: true });
+      header.addEventListener('touchend', onTouchEnd, { passive: true });
+    }
+  }
+
+  // =========================================================================
+  // 8. EVENT LISTENERS & INITIALIZATION
   // =========================================================================
   function initEvents() {
     // View tabs: Gallery vs Timeline
@@ -605,11 +815,31 @@
     if (dom.zoomOutBtn) dom.zoomOutBtn.onclick = () => adjustZoom(-0.3);
     if (dom.zoomResetBtn) dom.zoomResetBtn.onclick = resetZoom;
 
+    // Loupe toggle
+    if (dom.loupeToggleBtn) {
+      dom.loupeToggleBtn.onclick = toggleLoupe;
+    }
+
+    // Loupe cursor & touch tracking
+    if (dom.zoomContainer) {
+      dom.zoomContainer.addEventListener('mousemove', handleLoupeMove);
+      dom.zoomContainer.addEventListener('touchmove', handleLoupeMove, { passive: true });
+      dom.zoomContainer.addEventListener('mouseleave', () => {
+        if (dom.curatorLoupe) dom.curatorLoupe.classList.remove('active');
+      });
+      dom.zoomContainer.addEventListener('touchend', () => {
+        if (dom.curatorLoupe) dom.curatorLoupe.classList.remove('active');
+      });
+    }
+
     if (dom.lightboxModal) {
       dom.lightboxModal.onclick = (e) => {
         if (e.target === dom.lightboxModal) closeModal();
       };
     }
+
+    // Mobile bottom sheet drag-to-dismiss gesture
+    initMobileSheetGestures();
 
     // Keyboard shortcuts
     window.onkeydown = (e) => {
@@ -620,6 +850,7 @@
       else if (e.key === '+' || e.key === '=') adjustZoom(0.2);
       else if (e.key === '-') adjustZoom(-0.2);
       else if (e.key === '0') resetZoom();
+      else if (e.key === 'l' || e.key === 'L') toggleLoupe();
     };
   }
 
@@ -651,7 +882,7 @@
     renderGallery();
     renderTimeline();
     initEvents();
-    console.log('Pantheon exhibition initialized.');
+    console.log('Pantheon exhibition initialized with Phase 2 capabilities.');
   }
 
   if (document.readyState === 'loading') {
