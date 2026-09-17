@@ -865,8 +865,21 @@
     if (dom.tourStoryText) dom.tourStoryText.textContent = `"${stop.story}"`;
     if (dom.tourBreakthroughText) dom.tourBreakthroughText.textContent = stop.breakthrough;
 
-    const imgSrc = resolveImgSrc(stop);
-    if (dom.tourImage) dom.tourImage.src = imgSrc;
+    const matchFallback = data.masterpieces.find(m => m.Title.toLowerCase() === stop.title.toLowerCase() || m.FileName === stop.fileName);
+    const imgSrc = resolveImgSrc(stop) || (matchFallback ? matchFallback.HighResUrl : '');
+
+    if (dom.tourImage) {
+      dom.tourImage.classList.add('img-loading-shimmer');
+      dom.tourImage.onload = () => dom.tourImage.classList.remove('img-loading-shimmer');
+      dom.tourImage.onerror = () => {
+        dom.tourImage.classList.remove('img-loading-shimmer');
+        if (matchFallback && dom.tourImage.src !== matchFallback.HighResUrl) {
+          dom.tourImage.src = matchFallback.HighResUrl;
+          if (dom.tourAmbientBg) dom.tourAmbientBg.src = matchFallback.HighResUrl;
+        }
+      };
+      dom.tourImage.src = imgSrc;
+    }
     if (dom.tourAmbientBg) dom.tourAmbientBg.src = imgSrc;
 
     // Update progress segments

@@ -290,10 +290,15 @@
       "epoch": "Baroque",
       "artist": "Caravaggio",
       "title": "The Calling of Saint Matthew",
-      "fileName": "18_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg",
+      "fileName": "22_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg",
       "headline": "Theatrical Tenebrism: Miracles in Gritty Tavern Light",
       "story": "Caravaggio dragged sacred art off divine pedestals and into dusty Roman taverns. A harsh, cinematic beam of light pierces pitch darkness, capturing the exact second of divine awakening.",
-      "breakthrough": "Tenebrism (violent light vs. shadow) & street realism"
+      "breakthrough": "Tenebrism (violent light vs. shadow) & street realism",
+      "HighResUrl": "https://uploads1.wikiart.org/00340/images/caravaggio/the-callinf-of-saint-matthew.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/22_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg",
+      "Megapixels": 1.48,
+      "Museum": "San Luigi dei Francesi, Rome",
+      "physicalDimensionsStr": "340 × 322 cm (133.9 × 126.8 in) • Monumental Contarelli Chapel Canvas"
     },
     {
       "step": 5,
@@ -301,10 +306,15 @@
       "epoch": "Dutch Golden Age",
       "artist": "Rembrandt van Rijn",
       "title": "The Night Watch",
-      "fileName": "24_Rembrandt_-_The_Night_Watch.jpg",
+      "fileName": "27_Rembrandt_-_The_Night_Watch.jpg",
       "headline": "Explosive Motion & Golden Dutch Impasto",
       "story": "Refusing to paint a stiff, orderly military lineup, Rembrandt threw the Amsterdam civic guard into kinetic chaos. Thick golden impasto catches the light as the captain marches forward right off the canvas.",
-      "breakthrough": "Dynamic group action & golden psychological impasto"
+      "breakthrough": "Dynamic group action & golden psychological impasto",
+      "HighResUrl": "https://uploads7.wikiart.org/00121/images/rembrandt/2.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/27_Rembrandt_-_The_Night_Watch.jpg",
+      "Megapixels": 1.29,
+      "Museum": "Rijksmuseum, Amsterdam",
+      "physicalDimensionsStr": "437 × 363 cm (14.3 × 11.9 ft) • Colossal Civic Guard Canvas"
     },
     {
       "step": 6,
@@ -360,10 +370,15 @@
       "epoch": "Expressionism",
       "artist": "Edvard Munch",
       "title": "The Scream",
-      "fileName": "53_Edvard_Munch_-_The_Scream.jpg",
+      "fileName": "52_Edvard_Munch_-_The_Scream.jpg",
       "headline": "The Birth of Expressionism & Modern Anxiety",
       "story": "Walking across a bridge at sunset, Munch sensed \"an infinite scream passing through nature.\" The blood-red sky, melting contours, and sexless skull-like figure captured the existential dread of modern civilization.",
-      "breakthrough": "Psychic symbolism & the birth of 20th-century Expressionism"
+      "breakthrough": "Psychic symbolism & the birth of 20th-century Expressionism",
+      "HighResUrl": "https://uploads1.wikiart.org/00130/images/edvard-munch/the-scream.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/52_Edvard_Munch_-_The_Scream.jpg",
+      "Megapixels": 11.47,
+      "Museum": "National Gallery of Norway, Oslo",
+      "physicalDimensionsStr": "73.5 × 91 cm (28.9 × 35.8 in) • Cardboard Tempera & Pastel Icon"
     },
     {
       "step": 10,
@@ -371,10 +386,15 @@
       "epoch": "Modernism / Cubism",
       "artist": "Pablo Picasso",
       "title": "Guernica",
-      "fileName": "64_Pablo_Picasso_-_Guernica.jpg",
+      "fileName": "62_Pablo_Picasso_-_Guernica.jpg",
       "headline": "Cubism Unleashed: The Ultimate Anti-War Scream",
       "story": "Horrified by the saturation bombing of a defenseless Basque town, Picasso shattered physical space into monochromatic black, white, and grey geometric knives. The screaming horse and weeping mother became humanity's universal protest against cruelty.",
-      "breakthrough": "Synthetic Cubism weaponized into monumental political protest"
+      "breakthrough": "Synthetic Cubism weaponized into monumental political protest",
+      "HighResUrl": "https://uploads8.wikiart.org/00139/images/pablo-picasso/guernica-by-pablo-picasso.jpg",
+      "LocalRelativePath": "artist_paintings/Top_Celebrity_Masterpieces/62_Pablo_Picasso_-_Guernica.jpg",
+      "Megapixels": 5.13,
+      "Museum": "Museo Reina Sofía, Madrid",
+      "physicalDimensionsStr": "776.6 × 349.3 cm (25.5 × 11.5 ft) • Colossal Anti-War Monumental Canvas"
     }
   ],
   "artists": [

@@ -511,7 +511,7 @@ guided_tour = [
         'epoch': 'Baroque',
         'artist': 'Caravaggio',
         'title': 'The Calling of Saint Matthew',
-        'fileName': '18_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg',
+        'fileName': '22_Caravaggio_-_The_Calling_of_Saint_Matthew.jpg',
         'headline': 'Theatrical Tenebrism: Miracles in Gritty Tavern Light',
         'story': 'Caravaggio dragged sacred art off divine pedestals and into dusty Roman taverns. A harsh, cinematic beam of light pierces pitch darkness, capturing the exact second of divine awakening.',
         'breakthrough': 'Tenebrism (violent light vs. shadow) & street realism'
@@ -522,7 +522,7 @@ guided_tour = [
         'epoch': 'Dutch Golden Age',
         'artist': 'Rembrandt van Rijn',
         'title': 'The Night Watch',
-        'fileName': '24_Rembrandt_-_The_Night_Watch.jpg',
+        'fileName': '27_Rembrandt_-_The_Night_Watch.jpg',
         'headline': 'Explosive Motion & Golden Dutch Impasto',
         'story': 'Refusing to paint a stiff, orderly military lineup, Rembrandt threw the Amsterdam civic guard into kinetic chaos. Thick golden impasto catches the light as the captain marches forward right off the canvas.',
         'breakthrough': 'Dynamic group action & golden psychological impasto'
@@ -566,7 +566,7 @@ guided_tour = [
         'epoch': 'Expressionism',
         'artist': 'Edvard Munch',
         'title': 'The Scream',
-        'fileName': '53_Edvard_Munch_-_The_Scream.jpg',
+        'fileName': '52_Edvard_Munch_-_The_Scream.jpg',
         'headline': 'The Birth of Expressionism & Modern Anxiety',
         'story': 'Walking across a bridge at sunset, Munch sensed "an infinite scream passing through nature." The blood-red sky, melting contours, and sexless skull-like figure captured the existential dread of modern civilization.',
         'breakthrough': 'Psychic symbolism & the birth of 20th-century Expressionism'
@@ -577,23 +577,35 @@ guided_tour = [
         'epoch': 'Modernism / Cubism',
         'artist': 'Pablo Picasso',
         'title': 'Guernica',
-        'fileName': '64_Pablo_Picasso_-_Guernica.jpg',
+        'fileName': '62_Pablo_Picasso_-_Guernica.jpg',
         'headline': 'Cubism Unleashed: The Ultimate Anti-War Scream',
         'story': 'Horrified by the saturation bombing of a defenseless Basque town, Picasso shattered physical space into monochromatic black, white, and grey geometric knives. The screaming horse and weeping mother became humanity\'s universal protest against cruelty.',
         'breakthrough': 'Synthetic Cubism weaponized into monumental political protest'
     }
 ]
 
-# Attach resolved image URLs to guided tour stops
+# Attach resolved image URLs to guided tour stops with strict validation
 for stop in guided_tour:
+    matched = None
     for item in curated:
         if item['FileName'] == stop['fileName']:
-            stop['HighResUrl'] = item['HighResUrl']
-            stop['LocalRelativePath'] = item['LocalRelativePath']
-            stop['Megapixels'] = item['Megapixels']
-            stop['Museum'] = item['Museum']
-            stop['physicalDimensionsStr'] = item.get('physicalDimensionsStr', '')
+            matched = item
             break
+    if not matched:
+        for item in curated:
+            if stop['title'].lower() in item['Title'].lower():
+                matched = item
+                stop['fileName'] = item['FileName']
+                break
+    if not matched or not matched.get('HighResUrl'):
+        raise ValueError(f"CRITICAL: Failed to resolve HighResUrl for tour milestone: {stop['title']}")
+    
+    stop['HighResUrl'] = matched['HighResUrl']
+    stop['LocalRelativePath'] = matched['LocalRelativePath']
+    stop['Megapixels'] = matched['Megapixels']
+    stop['Museum'] = matched['Museum']
+    stop['physicalDimensionsStr'] = matched.get('physicalDimensionsStr', '')
+
 
 stats = {
     'totalArtists': len(artists_meta),
