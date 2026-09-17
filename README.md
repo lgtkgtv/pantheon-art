@@ -1,4 +1,4 @@
-# Ultra-HD Fine Art Ingestion, Curation & Visual Storytelling Toolkit
+# 🏛️ Pantheon: Ultra-HD Fine Art Ingestion, Curation & Visual Storytelling Toolkit
 
 A high-performance, cross-platform fine art data extraction, curation, and visual storytelling engine. Built with **Python 3 / `uv`** for headless Linux, macOS, and WSL 2, alongside native **Windows PowerShell 5.1 / .NET `System.Net.Http`** automation. Ingests authentic, uncompressed museum master scans from global archives without watermarks or downsampling.
 

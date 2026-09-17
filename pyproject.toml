@@ -1,5 +1,5 @@
 [project]
-name = "art-vault"
+name = "pantheon-art"
 version = "2.1.0"
 description = "Ultra-HD Fine Art Ingestion, Processing & Curation Suite for Museum Master Scans"
 readme = "README.md"
@@ -26,9 +26,12 @@ fast = [
 ]
 
 [project.scripts]
-art-popular = "extract_paintings:main"
+pantheon-artist = "extract_artist:main"
+pantheon-curate = "curate_masterpieces:main"
+pantheon-popular = "extract_paintings:main"
 art-artist = "extract_artist:main"
 art-curate = "curate_masterpieces:main"
+art-popular = "extract_paintings:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]
