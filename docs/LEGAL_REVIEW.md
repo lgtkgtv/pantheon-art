@@ -201,23 +201,13 @@ To transition from legacy index references to fully authorized, institution-sanc
 
 ---
 
-## 8. Compliance & Takedown Protocol (DMCA Notice)
+## 8. Attribution Inquiries & Content Removal
 
-Pantheon respects the intellectual property rights of artists, their heirs, and managing foundations. In accordance with the **Digital Millennium Copyright Act (17 U.S.C. § 512)**:
+Pantheon respects the rights of artists, their heirs, and managing foundations. As an open, non-commercial educational project, our policy is to promptly address any inquiries regarding provenance, attribution, or content removal:
+* **Curator Email**: `lgtkgtv@gmail.com`
+* **GitHub Repository Issues**: [github.com/lgtkgtv/pantheon-art/issues](https://github.com/lgtkgtv/pantheon-art/issues)
 
-### 8.1. Designated Notification Contact
-If you are a copyright owner or authorized representative of an artist estate and believe that any material featured in Pantheon exceeds fair use or infringes your rights, please submit a formal notification:
-* **Repository Issues**: [github.com/lgtkgtv/pantheon-art/issues](https://github.com/lgtkgtv/pantheon-art/issues)
-* **Designated Email**: `legal@pantheon-art.org` (or maintainer contact via GitHub profile)
-
-### 8.2. Required Notice Elements
-1. Identification of the copyrighted work claimed to be infringed.
-2. Direct URL or catalog index of the specific material to be removed.
-3. Your contact information (name, address, telephone number, email).
-4. A statement affirming your good-faith belief that the disputed use is not authorized by the copyright owner, agent, or the law.
-5. A statement, under penalty of perjury, that the information in the notification is accurate.
-
-Upon receipt of a valid notification, Pantheon will promptly suppress or replace the referenced work within **24 hours**.
+Any referenced artwork or asset will be promptly removed, updated, or re-attributed within **24 hours** upon request.
 
 ---
 

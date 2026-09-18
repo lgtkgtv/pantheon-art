@@ -186,8 +186,8 @@ Pantheon maintains a strict asset decoupling architecture:
 * **Zero Bulk Media in Git**: The repository contains code and metadata only; multi-gigabyte scans are excluded via `.gitignore`.
 * **The Server Test (*Perfect 10 v. Amazon*)**: Images are resolved on the client side from decentralized cultural CDNs, avoiding direct reproduction or distribution of copyrighted files on the hosting server.
 
-### 4. Open Access API Roadmap & DMCA Protocol
-Pantheon is actively integrating institutional **CC0 / Open Access APIs** (Metropolitan Museum of Art, National Gallery of Art, Rijksmuseum, and Wikimedia Commons). For inquiries or takedown requests under 17 U.S.C. § 512, see our [Compliance & DMCA Protocol](docs/LEGAL_REVIEW.md#8-compliance--takedown-protocol-dmca-notice) with a guaranteed 24-hour response window.
+### 4. Open Access API Roadmap & Curator Inquiries
+Pantheon is actively expanding ingestion to institutional **CC0 / Open Access APIs** (Metropolitan Museum of Art, National Gallery of Art, Rijksmuseum, and Wikimedia Commons). For inquiries, attribution updates, or suggestions, please contact **`lgtkgtv@gmail.com`** or open an issue on GitHub. All inquiries receive prompt attention within 24 hours.
 
 ---
 
