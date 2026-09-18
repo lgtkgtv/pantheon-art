@@ -1,14 +1,14 @@
-# 🏛️ Pantheon: Ultra-HD Fine Art Ingestion, Curation & Visual Storytelling Toolkit
+# 🏛️ Pantheon: Open Cultural Heritage & Fine Art Exhibition Engine
 
-A high-performance, cross-platform fine art data extraction, curation, and visual storytelling engine. Built with **Python 3 / `uv`** for headless Linux, macOS, and WSL 2, alongside native **Windows PowerShell 5.1 / .NET `System.Net.Http`** automation. Ingests authentic, uncompressed museum master scans from global archives without watermarks or downsampling.
+A high-performance, cross-platform research toolkit and interactive museum exhibition engine for historic public-domain fine art. Built with **Python 3 / `uv`** for headless Linux, macOS, and WSL 2, alongside native **Windows PowerShell 5.1 / .NET `System.Net.Http`** automation. Pairs structured multi-thousand-work datasets with visual web applications: true-scale physical visualizers, a 3.0× curator's detail loupe, and a 10-milestone chronological guided tour.
 
 ---
 
-## 🏛️ Ingestion Scope & Collections
+## 🏛️ Collections & Research Scope
 
-### 1. Complete Career Catalogs of 13 Celebrity Masters (7,552 Artworks)
-Extracted into: [`artist_paintings/`](file:///c:/agy/art/artist_paintings)  
-Each artist directory contains complete high-resolution image assets alongside synchronized `metadata.json` and `metadata.csv` databases:
+### 1. Career Catalogs of 13 Landmark Masters (7,552 Artworks)
+Archived into: [`artist_paintings/`](file:///c:/agy/art/artist_paintings)  
+Each master's directory contains image assets alongside synchronized, standardized `metadata.json` and `metadata.csv` databases:
 1. **Sandro Botticelli**: 137 works (Early Italian Renaissance)
 2. **Leonardo da Vinci**: 205 works (High Renaissance)
 3. **Michelangelo Buonarroti**: 183 works (High Renaissance / Sistine Frescoes)
@@ -23,22 +23,21 @@ Each artist directory contains complete high-resolution image assets alongside s
 12. **Salvador Dalí**: 1,178 works (Surrealism)
 13. **Frida Kahlo**: 100 works (Mexican Modernism / Autobiographical Surrealism)
 
-### 2. Top Celebrated Masterpieces Suite (78 Crown Jewels)
+### 2. The Crown Jewels Suite (78 Curated Masterpieces)
 Curated into: [`artist_paintings/Top_Celebrity_Masterpieces/`](file:///c:/agy/art/artist_paintings/Top_Celebrity_Masterpieces)  
-Isolates the world's most famous cultural landmarks (*Mona Lisa*, *The Starry Night*, *The Creation of Adam*, *The Night Watch*, *The Art of Painting*, *The Kiss*, *The Scream*, *The Birth of Venus*, *Guernica*, *The Persistence of Memory*, *The Two Fridas*) at peak museum resolutions.
+Isolates 78 universally recognized landmarks (*Mona Lisa*, *The Starry Night*, *The Creation of Adam*, *The Night Watch*, *The Art of Painting*, *The Kiss*, *The Scream*, *The Birth of Venus*, *Guernica*, *The Persistence of Memory*, *The Two Fridas*) complete with physical dimensions, museum provenance, and resolution metrics.
 
-### 3. The Most Popular Paintings of All Time
-Extracted into: [`paintings_output/`](file:///c:/agy/art/paintings_output)  
-Cross-references WikiArt's museum archives with global popularity rankings, downloading uncompressed master scans up to 8,533 px wide.
+### 3. Historical Popularity Catalog (Top 100 Paintings)
+Archived into: [`paintings_output/`](file:///c:/agy/art/paintings_output)  
+Cross-references cultural archives with global public recognition rankings, indexing master captures up to 8,533 px wide.
 
 ---
 
-## ⚡ Resolution Optimization Engine
+## ⚡ Archival Resolution Engine
 
-To guarantee authentic **maximum museum resolution**:
-1. **CDN Thumbnail Bypass**: WikiArt CDN query tags (e.g. `!Large.jpg`, `!PinterestLarge.jpg`, `!Blog.jpg`) are stripped automatically to fetch the raw master image.
-2. **Multi-Variant Resolution Selection**: Ingest pipelines scan both base `image` and `images[]` gallery arrays, selecting `max(width * height)` to extract ultra-HD captures.
-3. **Record Resolutions Ingested**:
+To preserve genuine **museum-grade inspection fidelity**:
+1. **Full-Resolution Source Selection**: Ingest pipelines parse catalog records across multiple image variants, selecting `max(width * height)` to preserve uncompressed archival master captures.
+2. **High-Resolution Masterpieces in Collection**:
    * *The Art of Painting* (Vermeer): **6,209 × 7,377 px** (45.80 Megapixels)
    * *Mona Lisa* (Da Vinci): **5,000 × 7,452 px** (37.26 Megapixels)
    * *The Garden of Earthly Delights* (Bosch): **8,533 × 4,325 px** (36.90 Megapixels)
@@ -51,7 +50,7 @@ To guarantee authentic **maximum museum resolution**:
 
 ## 🐧 Linux / WSL 2 / Cross-Platform Quickstart (`uv`)
 
-The project includes a PEP 621 compliant [`pyproject.toml`](file:///c:/agy/art/pyproject.toml) and zero-dependency standard library Python scripts tested on **Ubuntu 24.04 (WSL 2)**, Debian, macOS, and Linux servers.
+The pipeline includes a PEP 621 compliant [`pyproject.toml`](file:///c:/agy/art/pyproject.toml) and zero-dependency standard library Python scripts tested on **Ubuntu 24.04 (WSL 2)**, Debian, macOS, and Linux servers.
 
 ### 1. Install `uv` (Fastest Python Package & Project Manager)
 ```bash
@@ -60,20 +59,20 @@ source $HOME/.local/bin/env
 ```
 
 ### 2. Run CLI Commands with `uv`
-No manual virtual environment activation needed; `uv` handles dependencies automatically:
+No manual virtual environment management needed; `uv` manages execution environments automatically:
 
 #### Download Single Artist (Full Catalog or Batched):
 ```bash
 # Ingest all works for Johannes Vermeer
 uv run extract_artist.py --artist johannes-vermeer
 
-# Download first 50 works for Vincent van Gogh
+# Ingest first 50 works for Vincent van Gogh
 uv run extract_artist.py --artist vincent-van-gogh --batch-size 50 --offset 0
 
 # Fetch metadata only (no image downloads)
 uv run extract_artist.py --artist frida-kahlo --metadata-only
 
-# Ingest all 13 celebrity masters sequentially
+# Ingest all 13 masters sequentially with rate throttling
 uv run extract_artist.py --all --max-workers 8
 ```
 
@@ -90,7 +89,7 @@ uv run extract_paintings.py --count 100 --max-workers 8
 ```
 
 ### 3. Entry-Point CLI Shortcuts
-If installed via `uv pip install -e .` or `pip install -e .`:
+If installed in editable mode via `uv pip install -e .` or `pip install -e .`:
 * `pantheon-artist --artist leonardo-da-vinci` (or `art-artist`)
 * `pantheon-curate` (or `art-curate`)
 * `pantheon-popular --count 100` (or `art-popular`)
@@ -131,28 +130,21 @@ powershell -ExecutionPolicy Bypass -File extract_paintings.ps1 -Count 100
 
 ## 🌐 Live Web Exhibition (GitHub Pages)
 
-The repository includes a museum-grade interactive web application configured for zero-friction hosting on **GitHub Pages**:
+The repository includes a museum-grade interactive web application configured for static hosting on **GitHub Pages**:
 
-* **Live Exhibition URL**: **`https://lgtkgtv.github.io/pantheon-art/`**
-* **Local Offline Viewing**: Simply open `index.html` in any modern web browser or serve locally with `uv run python3 -m http.server 8080`.
+* **Live Exhibition URL**: **[`https://lgtkgtv.github.io/pantheon-art/`](https://lgtkgtv.github.io/pantheon-art/)**
+* **Local Offline Viewing**: Open `index.html` directly in any modern browser, or run a local web server via `uv run python3 -m http.server 8080`.
 
-### 🚀 Activating GitHub Pages in Your Repository
-1. Navigate to your GitHub repository: [github.com/lgtkgtv/pantheon-art](https://github.com/lgtkgtv/pantheon-art).
-2. Go to **Settings** &rarr; **Pages** (in the left sidebar under *Code and automation*).
-3. Under **Build and deployment** &rarr; **Source**, select **Deploy from a branch**.
-4. Select branch **`main`** and folder **`/ (root)`**, then click **Save**.
-5. Within 1–2 minutes, GitHub will publish your museum exhibition live at `https://lgtkgtv.github.io/pantheon-art/`.
-
-### 🎨 Key Website Features
+### 🎨 Key Exhibition Capabilities
 1. **🎧 The 5-Minute Guided Tour (Story Mode)**:
    * 1-tap automated chronological narrative journey through **10 landmark turning points** in art history (1485 &rarr; 1937) from Botticelli to Picasso.
-   * Features bite-sized 2-sentence evolutionary story cards, breakthrough tags, segmented progress bars, and timed auto-play slideshow.
+   * Features bite-sized 2-sentence evolutionary story cards, breakthrough badges, segmented progress indicators, and timed auto-play slideshow.
 2. **🖼️ "Real-Life Size" on Museum Wall Visualizer**:
-   * Solves digital scale distortion by displaying framed artworks on an architectural gallery wall beside an average-height human silhouette (175 cm / 5'9").
+   * Solves digital scale distortion by displaying framed artworks on an architectural gallery wall beside an accurate human silhouette (175 cm / 5'9").
    * Visually reveals why *Mona Lisa* (30 in) is intimate, *The Night Watch* (14 ft) is colossal, and *Guernica* (25 ft) fills an entire room.
 3. **🔬 Interactive Curator's Detail Loupe (3.0× Ultra-HD)**:
    * Circular 180×180px high-magnification lens with museum gold rim.
-   * Tracks cursor dynamically on desktop (with shortcut `L`) and follows touch contacts with a **-65px vertical offset** on mobile so fingers never obstruct the magnified view.
+   * Tracks cursor dynamically on desktop (shortcut `L`) and follows touch contacts with an ergonomic **-65px vertical offset** on mobile so fingers never obstruct the inspection area.
 4. **👑 Curated Horizontal Discovery Shelves**:
    * Frictionless visual browsing with smooth desktop left/right chevrons (`‹` and `›`) and mobile touch flicking:
    * Shelves for **The Crown Jewels**, **Ultra-HD Scans (20+ MP)**, **Masters of Shadow & Light**, and **The Plein-Air Revolution**.
@@ -163,12 +155,32 @@ The repository includes a museum-grade interactive web application configured fo
 
 ---
 
-## 🛡️ Resilience & Architecture Details
+## 🛡️ Engineering Hygiene & Data Pipeline Design
 
-1. **Anti-Scraping Bypass**: WikiArt endpoints return HTTP 403 Forbidden to standard automated tools. Both Python and PowerShell engines include browser emulation headers (`User-Agent` and `Referer: https://www.wikiart.org/`).
-2. **Zero-Redundancy Local Cache**: Before dispatching network requests, files on disk are verified in `< 1ms` (`file.stat().st_size > 10000`). If a valid file exists, the network request is skipped.
-3. **Strict Portability**: Python scripts use relative paths and standard POSIX-compliant path handling, ensuring flawless execution across Linux, WSL, and Windows.
-4. **Structured Databases**: Every extraction produces both UTF-8 CSV and JSON databases containing titles, dates, museum collections, pixel dimensions, megapixels, and file sizes.
+1. **Client-Side Disk Caching**: Before dispatching network requests, local disk files are verified in `< 1ms` (`file.stat().st_size > 10000`). If a valid file exists, the network request is skipped to conserve bandwidth and prevent redundant server load.
+2. **Standard HTTP Client Configuration**: Both Python (`urllib.request`) and PowerShell (`System.Net.Http.HttpClient`) routines send explicit, well-formed request headers with descriptive User-Agent identification and polite thread pools (`max-workers 8`).
+3. **Cross-Platform Portability**: Python scripts use standard POSIX-compliant relative pathing (`pathlib.Path`), ensuring identical execution across Linux, WSL 2, and native Windows.
+4. **Standardized Metadata Schemas**: Extraction pipelines output both UTF-8 CSV and JSON databases containing titles, creation years, museum collections, pixel dimensions, megapixels, and file sizes.
+
+---
+
+## 📜 Provenance, Legal Context & Ethical Sourcing
+
+### 1. Underlying Artworks in the Public Domain
+All master artworks featured in Pantheon were created between **1470 and 1954** by artists who passed away more than 70 years ago. Under international copyright law (including Title 17 of the United States Code and the Berne Convention), the underlying artistic works reside in the **worldwide public domain**.
+
+### 2. Photographic Reproductions & Legal Doctrine
+In the United States, the landmark federal court ruling in ***The Bridgeman Art Library, Ltd. v. Corel Corp.*** (36 F. Supp. 2d 191, S.D.N.Y. 1999) established that slavish photographic reproductions of two-dimensional public domain artworks lack independent originality and are therefore not subject to new copyright protection. While this principle is recognized in US jurisprudence and adopted by institutions like Wikimedia Commons, other jurisdictions (such as parts of the European Union under *sui generis* database directives) maintain differing interpretations regarding digitization rights.
+
+### 3. Open Access API Roadmap
+Pantheon is committed to sustainable cultural heritage access. While early cataloging relied on public art index references, our architecture is actively expanding ingestion backends to institutional **Open Access / CC0 APIs**:
+* **[Metropolitan Museum of Art Open Access (CC0)](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access)**
+* **[National Gallery of Art Open Access](https://www.nga.gov/open-access-images.html)**
+* **[Wikimedia Commons Cultural Heritage](https://commons.wikimedia.org/)**
+* **[Rijksmuseum Open Data API](https://data.rijksmuseum.nl/)**
+
+### 4. Non-Commercial Educational Notice
+Pantheon is developed strictly as an open-source, non-commercial educational portfolio project. It is intended for art historians, educators, students, and museum enthusiasts to explore art history and visual scale.
 
 ---
 
@@ -179,6 +191,8 @@ The repository includes a museum-grade interactive web application configured fo
 ├── index.html                             # Museum-grade exhibition web app (GitHub Pages entry)
 ├── .nojekyll                              # Bypasses Jekyll for GitHub Pages
 ├── 404.html                               # Fallback redirect for GitHub Pages
+├── assets/                                # Self-hosted UI and social preview assets
+│   └── og-preview.jpg                     # Optimized OpenGraph / Twitter social card (1200×754 px)
 ├── css/
 │   └── style.css                          # Museum aesthetics, typography & responsive styling
 ├── js/

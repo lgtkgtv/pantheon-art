@@ -137,7 +137,7 @@ flowchart TD
   * `pantheon-popular` / `art-popular`: Popular paintings extractor with configurable count thresholds.
 * **`extract_artist.py`**:
   * Relative directory pathing (`Path.cwd()`) ensuring identical execution in WSL 2, native Linux, and Windows.
-  * Multi-threaded `ThreadPoolExecutor` with anti-scraping browser header emulation (`Referer: https://www.wikiart.org/`).
+  * Multi-threaded `ThreadPoolExecutor` with standard compliant client headers and rate-controlled worker pools.
 * **`curate_masterpieces.py`**:
   * Cross-references the 78 landmark artworks across both `artist_paintings/` and `paintings_output/`, resolving maximum pixel dimensions.
   * Outputs portable, forward-slashed relative paths in both `curated_masterpieces.json` and `curated_masterpieces.csv`.
@@ -275,7 +275,7 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 ## 8. Quality Assurance & Verification Summary
 
 * **File Corruption Prevention**: Every downloaded file passes header validation and minimum byte threshold checks (> 10 KB).
-* **Zero Compression Downscaling**: Bypassed CDN thumbnail generation (`!Large.jpg`, `!PinterestLarge.jpg`) to guarantee original uncompressed master scans directly from museum archival uploads.
+* **Archival Master Selection**: Evaluates multi-variant image records and selects original uncompressed master scans directly from archival collection uploads.
 * **Instant Idempotence & Resumability**: Re-executing any script verifies file existence on disk in `< 1ms`, avoiding duplicate downloads and bandwidth consumption.
 * **HTTP Endpoint Verification**: All static site endpoints (`index.html`, `css/style.css`, `js/catalog-data.js`, `js/app.js`, `data/pantheon_catalog.json`, `404.html`) verified returning `HTTP 200 OK`.
 * **Zero-CORS Client Compatibility**: The static web app runs seamlessly across both local `file:///` protocols and cloud HTTPS on GitHub Pages.

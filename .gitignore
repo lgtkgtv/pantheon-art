@@ -19,10 +19,12 @@ dist/
 *.JPEG
 *.PNG
 
-# Allow tracking metadata within output directories if needed
+# Allow tracking metadata and repository UI assets
 !*.json
 !*.csv
 !*.md
+!assets/
+!assets/**
 
 # System & OS artifacts
 .DS_Store
