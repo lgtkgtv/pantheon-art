@@ -335,6 +335,7 @@
 
     state.filteredMasterpieces = list;
     renderGallery();
+    renderTimeline();
   }
 
   function renderGallery() {
@@ -428,7 +429,41 @@
     if (!dom.timelineContainer) return;
     dom.timelineContainer.innerHTML = '';
 
-    const list = data.artists;
+    let list = [...data.artists];
+
+    // Filter by epoch if active
+    if (state.activeEpoch !== 'all') {
+      list = list.filter(artist => artist.epochId === state.activeEpoch);
+    }
+
+    // Filter by search query if active
+    if (state.searchQuery.trim()) {
+      const q = state.searchQuery.toLowerCase().trim();
+      list = list.filter(artist => {
+        const works = data.masterpieces.filter(m => m.ArtistId === artist.id);
+        const matchesArtist = (artist.name && artist.name.toLowerCase().includes(q)) ||
+                              (artist.epochName && artist.epochName.toLowerCase().includes(q)) ||
+                              (artist.tagline && artist.tagline.toLowerCase().includes(q));
+        const matchesWorks = works.some(w => w.Title.toLowerCase().includes(q));
+        return matchesArtist || matchesWorks;
+      });
+    }
+
+    if (dom.galleryCountBadge && state.currentView === 'timeline') {
+      dom.galleryCountBadge.textContent = `${list.length} Masters`;
+    }
+
+    if (list.length === 0) {
+      dom.timelineContainer.innerHTML = `
+        <div class="text-center py-16 bg-slate-900/40 rounded-3xl border border-slate-800">
+          <span class="text-3xl">🔍</span>
+          <h3 class="font-editorial text-base font-bold text-white mt-2">No Masters Found</h3>
+          <p class="text-xs text-slate-400 mt-1">Try resetting your epoch filter or searching another master name.</p>
+        </div>
+      `;
+      return;
+    }
+
     const fragment = document.createDocumentFragment();
 
     list.forEach((artist) => {
@@ -659,6 +694,19 @@
     } else {
       state.activeEpoch = 'all';
       state.searchQuery = '';
+      if (dom.searchInput) dom.searchInput.value = '';
+      if (dom.searchClearBtn) dom.searchClearBtn.classList.add('hidden');
+      if (dom.epochPills) {
+        dom.epochPills.forEach(p => {
+          if (p.dataset.epoch === 'all') {
+            p.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+            p.classList.remove('bg-slate-800/80', 'text-slate-300');
+          } else {
+            p.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+            p.classList.add('bg-slate-800/80', 'text-slate-300');
+          }
+        });
+      }
       applyFilters();
       const newIdx = state.filteredMasterpieces.findIndex(m => m.FileName === fileName);
       if (newIdx !== -1) openModal(newIdx);
@@ -1123,24 +1171,96 @@
     };
   }
 
+  // =========================================================================
+  // UNIFIED NAVIGATION & SECTION ROUTER
+  // =========================================================================
+  window.navigateToSection = function(target) {
+    const headerOffset = 72; // 64px header height + padding
+    if (target === 'shelves') {
+      const el = document.getElementById('shelvesSection');
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+    } else if (target === 'gallery') {
+      switchView('gallery');
+      const el = document.getElementById('exhibitionSection') || document.getElementById('gallerySection');
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+    } else if (target === 'timeline') {
+      switchView('timeline');
+      const el = document.getElementById('exhibitionSection') || document.getElementById('timelineSection');
+      if (el) {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }
+    } else if (target === 'tour') {
+      window.startTour();
+    }
+  };
+
   function switchView(view) {
     state.currentView = view;
+
+    const navGallery = document.getElementById('navBtnGallery');
+    const navTimeline = document.getElementById('navBtnTimeline');
+    const exhibitionTitle = document.getElementById('exhibitionTitle');
+    const exhibitionSubtitle = document.getElementById('exhibitionSubtitle');
+
     if (view === 'gallery') {
-      dom.tabGallery.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
-      dom.tabGallery.classList.remove('text-slate-400', 'hover:text-white');
-      dom.tabTimeline.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
-      dom.tabTimeline.classList.add('text-slate-400', 'hover:text-white');
+      if (dom.tabGallery) {
+        dom.tabGallery.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+        dom.tabGallery.classList.remove('text-slate-400', 'hover:text-white');
+      }
+      if (dom.tabTimeline) {
+        dom.tabTimeline.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+        dom.tabTimeline.classList.add('text-slate-400', 'hover:text-white');
+      }
 
-      dom.gallerySection.classList.remove('hidden');
-      dom.timelineSection.classList.add('hidden');
+      if (navGallery) {
+        navGallery.classList.add('text-amber-400', 'bg-slate-800/80');
+      }
+      if (navTimeline) {
+        navTimeline.classList.remove('text-amber-400', 'bg-slate-800/80');
+      }
+
+      if (exhibitionTitle) exhibitionTitle.textContent = 'Crown Jewels Master Gallery';
+      if (exhibitionSubtitle) exhibitionSubtitle.textContent = 'High-resolution master scans curated at peak museum fidelity across 5 centuries.';
+
+      if (dom.gallerySection) dom.gallerySection.classList.remove('hidden');
+      if (dom.timelineSection) dom.timelineSection.classList.add('hidden');
+
+      if (dom.galleryCountBadge) {
+        dom.galleryCountBadge.textContent = `${state.filteredMasterpieces.length} Works`;
+      }
+
+      renderGallery();
     } else {
-      dom.tabTimeline.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
-      dom.tabTimeline.classList.remove('text-slate-400', 'hover:text-white');
-      dom.tabGallery.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
-      dom.tabGallery.classList.add('text-slate-400', 'hover:text-white');
+      if (dom.tabTimeline) {
+        dom.tabTimeline.classList.add('bg-amber-500', 'text-slate-950', 'font-bold');
+        dom.tabTimeline.classList.remove('text-slate-400', 'hover:text-white');
+      }
+      if (dom.tabGallery) {
+        dom.tabGallery.classList.remove('bg-amber-500', 'text-slate-950', 'font-bold');
+        dom.tabGallery.classList.add('text-slate-400', 'hover:text-white');
+      }
 
-      dom.gallerySection.classList.add('hidden');
-      dom.timelineSection.classList.remove('hidden');
+      if (navTimeline) {
+        navTimeline.classList.add('text-amber-400', 'bg-slate-800/80');
+      }
+      if (navGallery) {
+        navGallery.classList.remove('text-amber-400', 'bg-slate-800/80');
+      }
+
+      if (exhibitionTitle) exhibitionTitle.textContent = '500-Year Evolutionary Chronology';
+      if (exhibitionSubtitle) exhibitionSubtitle.textContent = 'Bite-sized micro-plaques tracking the 13 celebrity masters from Botticelli (1470) to Kahlo (1954).';
+
+      if (dom.gallerySection) dom.gallerySection.classList.add('hidden');
+      if (dom.timelineSection) dom.timelineSection.classList.remove('hidden');
+
+      renderTimeline();
     }
   }
 
