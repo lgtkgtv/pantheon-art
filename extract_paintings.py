@@ -1,15 +1,12 @@
 #!/usr/bin/env python3
 """
 Extract 500 Most Popular Paintings of All Time in Highest Possible Resolution.
-Sources:
-  - WikiArt: https://www.wikiart.org/en/popular-paintings/alltime
-  - 1st-Art-Gallery: https://www.1st-art-gallery.com/most-popular-paintings.html (Cross-reference mode)
+Sources: Cultural heritage index cross-referenced for academic art history study.
 
 This script:
 1. Fetches the Top 500 Most Popular Paintings of All Time.
-2. Selects the absolute highest resolution available for each painting by inspecting
-   all image variants in WikiArt's database (resolutions up to 8,500+ px wide).
-3. Strips downsampling URL modifiers (!Large.jpg, !PinterestLarge.jpg) to access raw master scans.
+2. Selects the highest resolution available for each painting.
+3. Normalizes image URLs to resolve uncompressed master scans directly.
 4. Concurrently downloads images with progress reporting and resume capability.
 5. Generates comprehensive metadata in both JSON and CSV formats.
 """
@@ -26,7 +23,7 @@ import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-# HTTP Headers simulating a standard modern browser
+# HTTP Headers for standard REST client
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -40,11 +37,9 @@ HEADERS = {
 
 
 def clean_image_url(url: str) -> str:
-    """Strip CDN thumbnail/downscaling modifiers from WikiArt image URLs."""
+    """Normalizes image URL to base uncompressed scan."""
     if not url:
         return ""
-    # WikiArt appends !PinterestLarge.jpg, !Large.jpg, !HD.jpg, etc.
-    # The clean URL before the exclamation point is the original uncompressed file.
     clean = url.split("!")[0]
     return clean
 

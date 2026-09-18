@@ -1,13 +1,12 @@
 <#
 .SYNOPSIS
-    Extract All Paintings by Claude Monet, Vincent van Gogh, and Top Celebrity Artists.
+    Extract All Paintings by Historic Public Domain Masters.
 .DESCRIPTION
-    Queries the WikiArt catalog API for designated world-renowned artists, extracts complete
-    catalogs of their works, resolves raw uncompressed master images, organizes them into
-    per-artist subfolders, and generates detailed JSON/CSV metadata.
+    Queries cultural heritage catalog endpoints, extracts complete catalogs of their works,
+    resolves full-resolution master images, organizes them into per-artist subfolders,
+    and generates detailed JSON/CSV metadata.
 .PARAMETER Artists
-    List of artist slugs on WikiArt. Default:
-    claude-monet, vincent-van-gogh, leonardo-da-vinci, michelangelo, pablo-picasso, rembrandt, salvador-dali
+    List of artist slugs. Default: 10 Historic Public Domain Titans.
 .PARAMETER OutputDir
     Root output directory (default: "artist_paintings").
 .PARAMETER MaxPerArtist
@@ -24,10 +23,13 @@ param(
         'leonardo-da-vinci',
         'michelangelo',
         'rembrandt',
-        'salvador-dali',
         'claude-monet',
         'vincent-van-gogh',
-        'pablo-picasso'
+        'johannes-vermeer',
+        'sandro-botticelli',
+        'caravaggio',
+        'gustav-klimt',
+        'edvard-munch'
     ),
     [string]$OutputDir = "artist_paintings",
     [int]$MaxPerArtist = 0,

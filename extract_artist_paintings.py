@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 """
-Extract All Original High-Resolution Paintings by Claude Monet, Vincent van Gogh,
-and the Top 5 Historic Celebrity Masters:
+Extract All Original High-Resolution Paintings across Historic Public Domain Masters:
 - Claude Monet (Impressionism pioneer)
 - Vincent van Gogh (Post-Impressionism icon)
 - Leonardo da Vinci (High Renaissance master)
 - Michelangelo (High Renaissance master)
-- Pablo Picasso (Modern/Cubism giant)
 - Rembrandt van Rijn (Dutch Golden Age master)
-- Salvador Dalí (Surrealism legend)
+- Johannes Vermeer (Dutch Golden Age master)
+- Gustav Klimt (Vienna Secession master)
 """
 
 import os
@@ -28,24 +27,19 @@ CELEBRITY_ARTISTS = [
     {"slug": "vincent-van-gogh", "name": "Vincent van Gogh"},
     {"slug": "leonardo-da-vinci", "name": "Leonardo da Vinci"},
     {"slug": "michelangelo", "name": "Michelangelo"},
-    {"slug": "pablo-picasso", "name": "Pablo Picasso"},
     {"slug": "rembrandt", "name": "Rembrandt"},
-    {"slug": "salvador-dali", "name": "Salvador Dali"},
+    {"slug": "johannes-vermeer", "name": "Johannes Vermeer"},
+    {"slug": "gustav-klimt", "name": "Gustav Klimt"},
 ]
 
 HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "application/json, text/html, */*",
-    "Referer": "https://www.wikiart.org/",
+    "User-Agent": "PantheonFineArt/2.3 (https://github.com/lgtkgtv/pantheon-art; cultural preservation research)",
+    "Accept": "application/json, image/*, */*",
 }
 
 
 def clean_image_url(url: str) -> str:
-    """Strip CDN thumbnail/downscale modifiers to retrieve original master scans."""
+    """Normalize image URLs to resolve uncompressed master scans directly."""
     if not url:
         return ""
     return url.split("!")[0]

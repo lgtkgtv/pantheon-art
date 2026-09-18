@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Ultra-HD Celebrity Masterpieces Curator Engine.
-==============================================
-Identifies, validates, and curates the undisputed crown jewels across the 13 Celebrity Masters:
+Historic Masterpieces Curator Engine.
+=====================================
+Identifies, validates, and curates landmark crown jewels across 10 historic public-domain titans:
   - Sandro Botticelli   (Birth of Venus, Primavera, Mystical Nativity)
   - Leonardo da Vinci   (Mona Lisa, Last Supper, Lady with an Ermine, Vitruvian Man)
   - Michelangelo        (Creation of Adam, Last Judgement, Libyan Sibyl)
@@ -13,12 +13,9 @@ Identifies, validates, and curates the undisputed crown jewels across the 13 Cel
   - Vincent van Gogh    (Starry Night, Sunflowers, Potato Eaters)
   - Edvard Munch        (The Scream, Madonna, Dance of Life, Sick Child)
   - Gustav Klimt        (The Kiss, Adele Bloch-Bauer, Judith, Emilie Flöge)
-  - Pablo Picasso       (Guernica, Old Blind Guitarist, Dora Maar, Self-Portrait)
-  - Salvador Dalí       (Persistence of Memory, Great Masturbator, Swans Reflecting Elephants)
-  - Frida Kahlo         (The Two Fridas, Broken Column, Viva la Vida, Henry Ford Hospital)
 
-Cross-references both artist directories and popular paintings archives to select the
-highest resolution scan available (up to 45.80 Megapixels).
+Cross-references collection metadata to select the highest resolution uncompressed
+scan available (up to 45.80 Megapixels).
 """
 
 import os
@@ -112,30 +109,6 @@ MASTERPIECE_SIGNATURES = [
     {"artist": "Gustav Klimt", "slug": "Gustav_Klimt", "title": "Judith and the Head of Holofernes", "patterns": ["*Judith*"], "year": "1901", "museum": "Österreichische Galerie Belvedere, Vienna"},
     {"artist": "Gustav Klimt", "slug": "Gustav_Klimt", "title": "Portrait of Emilie Flöge", "patterns": ["*Portrait_of_Emilie*"], "year": "1902", "museum": "Wien Museum, Vienna"},
     {"artist": "Gustav Klimt", "slug": "Gustav_Klimt", "title": "The Dancer", "patterns": ["*The_dancer*"], "year": "1916–1918", "museum": "Neue Galerie, New York"},
-
-    # 11. Pablo Picasso
-    {"artist": "Pablo Picasso", "slug": "Pablo_Picasso", "title": "Guernica", "patterns": ["*Guernica*"], "year": "1937", "museum": "Museo Reina Sofía, Madrid"},
-    {"artist": "Pablo Picasso", "slug": "Pablo_Picasso", "title": "The Old Blind Guitarist", "patterns": ["*The_old_blind_guitarist*"], "year": "1903", "museum": "Art Institute of Chicago"},
-    {"artist": "Pablo Picasso", "slug": "Pablo_Picasso", "title": "Self-Portrait (1907)", "patterns": ["*Self-Portrait*"], "year": "1907", "museum": "National Gallery, Prague"},
-    {"artist": "Pablo Picasso", "slug": "Pablo_Picasso", "title": "Portrait of Dora Maar", "patterns": ["*Portrait_of_Dora_Maar*"], "year": "1937", "museum": "Musée Picasso, Paris"},
-    {"artist": "Pablo Picasso", "slug": "Pablo_Picasso", "title": "Child with a Dove", "patterns": ["*Child_with_dove*"], "year": "1901", "museum": "National Gallery, London"},
-
-    # 12. Salvador Dalí
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "The Persistence of Memory", "patterns": ["*The_Persistence_of_Memory*"], "year": "1931", "museum": "Museum of Modern Art, New York"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "The Great Masturbator", "patterns": ["*The_Great_Masturbator*"], "year": "1929", "museum": "Museo Reina Sofía, Madrid"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "Swans Reflecting Elephants", "patterns": ["*Swans_Reflecting_Elephants*"], "year": "1937", "museum": "Private Collection"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "The Metamorphosis of Narcissus", "patterns": ["*The_Metamorphosis_of_Narcissus*"], "year": "1937", "museum": "Tate Modern, London"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "The Temptation of St. Anthony", "patterns": ["*The_Temptation_of_St._Anthony*"], "year": "1946", "museum": "Royal Museums of Fine Arts of Belgium"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "Crucifixion (Corpus Hypercubicus)", "patterns": ["*Crucifixion_(Corpus_Hypercubicus)*"], "year": "1954", "museum": "Metropolitan Museum of Art, New York"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "Galatea of the Spheres", "patterns": ["*Galatea_of_the_Spheres*"], "year": "1952", "museum": "Dalí Theatre and Museum, Figueres"},
-    {"artist": "Salvador Dali", "slug": "Salvador_Dali", "title": "The Disintegration of the Persistence of Memory", "patterns": ["*Disintegration_of_the_Persisten*"], "year": "1954", "museum": "Salvador Dalí Museum, St. Petersburg, FL"},
-
-    # 13. Frida Kahlo
-    {"artist": "Frida Kahlo", "slug": "Frida_Kahlo", "title": "The Two Fridas", "patterns": ["*The_Two_Fridas*"], "year": "1939", "museum": "Museo de Arte Moderno, Mexico City"},
-    {"artist": "Frida Kahlo", "slug": "Frida_Kahlo", "title": "The Broken Column", "patterns": ["*The_Broken_Column*"], "year": "1944", "museum": "Museo Dolores Olmedo, Mexico City"},
-    {"artist": "Frida Kahlo", "slug": "Frida_Kahlo", "title": "Viva la Vida, Watermelons", "patterns": ["*Viva_la_Vida*"], "year": "1954", "museum": "Frida Kahlo Museum, Mexico City"},
-    {"artist": "Frida Kahlo", "slug": "Frida_Kahlo", "title": "Henry Ford Hospital", "patterns": ["*Henry_Ford_Hospital*"], "year": "1932", "museum": "Museo Dolores Olmedo, Mexico City"},
-    {"artist": "Frida Kahlo", "slug": "Frida_Kahlo", "title": "My Birth", "patterns": ["*My_Birth*"], "year": "1932", "museum": "Private Collection"},
 ]
 
 

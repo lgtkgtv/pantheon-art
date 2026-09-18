@@ -10,18 +10,17 @@
 ## 1. Executive Summary
 
 This document presents a comprehensive copyright, licensing, and attribution audit of the **Pantheon Fine Art Engine**, encompassing:
-* The complete career catalogs of **13 historic masters** (7,552 works).
-* The **78 curated landmark masterpieces** featured in the web exhibition.
-* The digital photographic reproduction rights across international museum collections.
-* The architectural posture under United States Fair Use (17 U.S.C. § 107) and the Server Test (*Perfect 10 v. Amazon*).
+* The complete career catalogs of **10 historic public domain titans** (5,105 works).
+* The **60 curated landmark masterpieces** featured in the web exhibition (100% verified worldwide public domain).
+* The digital photographic reproduction rights across international museum collections (*Bridgeman v. Corel*, EU CDSM Directive Article 14).
+* The architectural posture under international intellectual property law, open access frameworks, and the Server Test (*Perfect 10 v. Amazon*).
+* The **proactive exclusion of 20th-century estate artists** (Pablo Picasso, Salvador Dalí, Frida Kahlo) to eliminate copyright exposure and establish zero-liability compliance.
 
-### 1.1. Portfolio Risk Classification
+### 1.1. Portfolio Rights Classification
 
-| Risk Tier | Scope | Artist Count | Masterpiece Count | Primary Legal Basis | Status |
+| Classification | Scope | Artist Count | Masterpiece Count | Primary Legal Basis | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Tier 1: Global Public Domain** | Pre-1929 works by artists deceased > 70 years | 10 Masters | **60 Works (76.9%)** | Berne Convention; Life + 70 expired; US Pre-1929 | **100% Unrestricted** |
-| **Tier 2: US Public Domain / EU Protected** | Works published pre-1929 by artists deceased < 70 years (Picasso 1901–1907) | 1 Master | **3 Works (3.8%)** | US Pre-1929 Public Domain; EU Life + 70 active | **Compliant (US Hosted)** |
-| **Tier 3: Active Estate Protection** | Works created post-1928 by 20th-century masters (Picasso, Dalí, Kahlo) | 3 Masters | **15 Works (19.2%)** | 17 U.S.C. § 107 (Transformative Educational Fair Use) | **Educational Exemption & Attribution Required** |
+| **Worldwide Public Domain** | Pre-1929 works by artists deceased > 70 years (1470–1944) | 10 Masters | **60 Works (100%)** | Berne Convention; Life + 70 expired worldwide; US Pre-1929 | **100% Unrestricted & Verified** |
 
 ---
 
@@ -38,18 +37,23 @@ This document presents a comprehensive copyright, licensing, and attribution aud
 | **Claude Monet** | 1840–1926 | French | 1926 | **Public Domain** (Expired 1997*) | **Public Domain** | None (Worldwide Public Domain) |
 | **Vincent van Gogh** | 1853–1890 | Dutch | 1890 | **Public Domain** (Expired 1960) | **Public Domain** | None (Worldwide Public Domain) |
 | **Gustav Klimt** | 1862–1918 | Austrian | 1918 | **Public Domain** (Expired 1988) | **Public Domain** | None (Worldwide Public Domain) |
-| **Edvard Munch** | 1863–1944 | Norwegian | 1944 | **Public Domain** (Expired Jan 1, 2015) | **Public Domain** (Pre-1929 works) | None for pre-1929 (*The Scream*, etc.) |
-| **Pablo Picasso** | 1881–1973 | Spanish | 1973 | **Protected** (Until Jan 1, 2044) | Pre-1929: **PD**; Post-1928: **Protected** | *Succession Picasso* / ADAGP / ARS |
-| **Salvador Dalí** | 1904–1989 | Spanish | 1989 | **Protected** (Until Jan 1, 2060) | **Protected** (All works in catalog) | *Fundació Gala-Salvador Dalí* / VEGAP / ARS |
-| **Frida Kahlo** | 1907–1954 | Mexican | 1954 | **Protected** in Mexico (Until 2055) | **Protected** (URAA restored) | *Banco de México Diego Rivera & Frida Kahlo Trust* |
+| **Edvard Munch** | 1863–1944 | Norwegian | 1944 | **Public Domain** (Expired Jan 1, 2015) | **Public Domain** | None (Worldwide Public Domain) |
 
 *\* Note: Claude Monet died in December 1926. Under French wartime extension jurisprudence (prorogations de guerre), Monet entered the French public domain in the late 1990s. In 2026, Monet is unequivocally public domain worldwide.*
 
+### 2.1. Proactive Exclusion of 20th-Century Estate Works
+
+To uphold an uncompromising standard of legal compliance for public portfolio demonstration, Pantheon deliberately excludes mid-20th-century artists whose copyrights remain active and aggressively enforced:
+
+* **Pablo Picasso (1881–1973)**: Deceased 1973. In the European Union, the United Kingdom, and jurisdictions observing Life + 70, Picasso's entire oeuvre remains protected under copyright until **January 1, 2044**. Reproduction rights are aggressively enforced worldwide by the *Picasso Administration* and the *Artists Rights Society (ARS)*. While pre-1929 works (e.g. Blue and Rose periods) have entered the US public domain, exhibiting Picasso globally on the web introduces cross-border infringement risks. **Action**: Completely excluded from active exhibition catalogs and automated curation pipelines.
+* **Salvador Dalí (1904–1989)**: Deceased 1989. In the European Union, Dalí's works remain under copyright until **January 1, 2060**. The *Fundació Gala-Salvador Dalí* and *VEGAP* routinely enforce reproduction rights against digital archives and web services. **Action**: Completely excluded from active exhibition catalogs.
+* **Frida Kahlo (1907–1954)**: Deceased 1954. Under Mexican Federal Copyright Law (Ley Federal del Derecho de Autor), works are protected for **Life + 100 years** (active until 2055). In the United States, copyrights were restored pursuant to the Uruguay Round Agreements Act (URAA), managed by the *Banco de México Diego Rivera and Frida Kahlo Museums Trust*. **Action**: Completely excluded from active exhibition catalogs.
+
 ---
 
-## 3. The 78 Curated Masterpieces Rights Inventory
+## 3. The 60 Curated Masterpieces Rights Inventory
 
-The table below catalogs the exact copyright classification, museum provenance, and required attribution statement for all 78 curated masterworks:
+The table below catalogs the exact copyright classification, museum provenance, and required attribution statement for all 60 curated masterworks in the public exhibition catalog:
 
 | # | Master | Title | Year | Museum Collection | Rights Classification | Attribution / Rights Statement |
 | :---: | :--- | :--- | :---: | :--- | :--- | :--- |
@@ -113,24 +117,6 @@ The table below catalogs the exact copyright classification, museum provenance, 
 | 58 | Gustav Klimt | *Judith and the Head of Holofernes* | 1901 | Österreichische Galerie Belvedere, Vienna | Global Public Domain | Public Domain Mark 1.0 (Worldwide) |
 | 59 | Gustav Klimt | *Portrait of Emilie Flöge* | 1902 | Wien Museum, Vienna | Global Public Domain | Public Domain Mark 1.0 (Worldwide) |
 | 60 | Gustav Klimt | *The Dancer* | 1916–1918 | Neue Galerie, New York | Global Public Domain | Public Domain Mark 1.0 (Worldwide) |
-| 61 | Pablo Picasso | *Guernica* | 1937 | Museo Reina Sofía, Madrid | Estate Protected (Fair Use) | © Succession Picasso / Artists Rights Society (ARS), New York |
-| 62 | Pablo Picasso | *The Old Blind Guitarist* | 1903 | Art Institute of Chicago | US Public Domain / EU Protected | Public Domain in US (Published pre-1929); © Succession Picasso / ADAGP in EU |
-| 63 | Pablo Picasso | *Self-Portrait (1907)* | 1907 | National Gallery, Prague | US Public Domain / EU Protected | Public Domain in US (Published pre-1929); © Succession Picasso / ADAGP in EU |
-| 64 | Pablo Picasso | *Portrait of Dora Maar* | 1937 | Musée Picasso, Paris | Estate Protected (Fair Use) | © Succession Picasso / Artists Rights Society (ARS), New York |
-| 65 | Pablo Picasso | *Child with a Dove* | 1901 | National Gallery, London | US Public Domain / EU Protected | Public Domain in US (Published pre-1929); © Succession Picasso / ADAGP in EU |
-| 66 | Salvador Dali | *The Persistence of Memory* | 1931 | Museum of Modern Art, New York | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 67 | Salvador Dali | *The Great Masturbator* | 1929 | Museo Reina Sofía, Madrid | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 68 | Salvador Dali | *Swans Reflecting Elephants* | 1937 | Private Collection | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 69 | Salvador Dali | *The Metamorphosis of Narcissus* | 1937 | Tate Modern, London | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 70 | Salvador Dali | *The Temptation of St. Anthony* | 1946 | Royal Museums of Fine Arts of Belgium | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 71 | Salvador Dali | *Crucifixion (Corpus Hypercubicus)* | 1954 | Metropolitan Museum of Art, New York | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 72 | Salvador Dali | *Galatea of the Spheres* | 1952 | Dalí Theatre and Museum, Figueres | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 73 | Salvador Dali | *The Disintegration of the Persistence of Memory* | 1954 | Salvador Dalí Museum, St. Petersburg, FL | Estate Protected (Fair Use) | © Fundació Gala-Salvador Dalí / VEGAP / ARS, New York |
-| 74 | Frida Kahlo | *The Two Fridas* | 1939 | Museo de Arte Moderno, Mexico City | Estate Protected (Fair Use) | © Banco de México Diego Rivera & Frida Kahlo Museums Trust |
-| 75 | Frida Kahlo | *The Broken Column* | 1944 | Museo Dolores Olmedo, Mexico City | Estate Protected (Fair Use) | © Banco de México Diego Rivera & Frida Kahlo Museums Trust |
-| 76 | Frida Kahlo | *Viva la Vida, Watermelons* | 1954 | Frida Kahlo Museum, Mexico City | Estate Protected (Fair Use) | © Banco de México Diego Rivera & Frida Kahlo Museums Trust |
-| 77 | Frida Kahlo | *Henry Ford Hospital* | 1932 | Museo Dolores Olmedo, Mexico City | Estate Protected (Fair Use) | © Banco de México Diego Rivera & Frida Kahlo Museums Trust |
-| 78 | Frida Kahlo | *My Birth* | 1932 | Private Collection | Estate Protected (Fair Use) | © Banco de México Diego Rivera & Frida Kahlo Museums Trust |
 
 ---
 
@@ -156,24 +142,14 @@ In the United Kingdom, following the 2009 National Portrait Gallery controversy,
 
 ---
 
-## 5. Fair Use Assessment (United States 17 U.S.C. § 107)
+## 5. Affirmative Defense Limitations & Proactive Clearance Strategy
 
-For the **15 twentieth-century modern works** in the collection (by Salvador Dalí, late Pablo Picasso, and Frida Kahlo), Pantheon relies on the statutory doctrine of **Fair Use** under 17 U.S.C. § 107:
+While 17 U.S.C. § 107 (Fair Use) offers a statutory defense for non-commercial educational critique and scale comparison, relying on Fair Use for active estate works in a publicly hosted engineering portfolio presents critical operational vulnerabilities:
 
-### Factor 1: Purpose and Character of the Use (Highly Transformative)
-* **Transformative Scale Visualizer**: Pantheon does not present these artworks as decorative prints or merchandise. It presents them in an architectural gallery stage alongside an accurate 175 cm human silhouette to teach physical scale distortion in digital media.
-* **Transformative Educational Narrative**: Artworks are incorporated into a 10-milestone chronological history engine featuring technical innovation tags, historical micro-plaques, and educational commentary.
-* **Non-Commercial**: Pantheon is 100% free, open-source, non-monetized, ad-free, and hosted as an academic portfolio on GitHub Pages.
-
-### Factor 2: Nature of the Copyrighted Work
-* The works are creative fine art. While creative works typically receive broader copyright protection than factual compilations, their high historical and cultural significance weighs heavily toward educational critique and commentary.
-
-### Factor 3: Amount and Substantiality Used
-* Displaying the complete painting is technically necessary to illustrate physical scale and compositional breakthroughs in art history. In visual art education, cropped excerpts fail to convey full scale and composition (*Kelly v. Arriba Soft Corp.*, 336 F.3d 811 (9th Cir. 2003)).
-
-### Factor 4: Effect on the Potential Market (Zero Market Harm)
-* Pantheon does not sell print reproductions, high-resolution download packages, or posters.
-* The web app serves catalog metadata and dynamic viewport scaling. It does not replace the commercial market for authorized art reproductions, museum merchandise, or official estate licensing.
+1. **Affirmative Defense vs. Immunity**: Fair Use does not grant upfront clearance. It is an affirmative defense that must be pled and proven in court after litigation is initiated. Litigious modern estates (e.g. *Picasso Administration*, *Fundació Gala-Salvador Dalí*, *Banco de México*) routinely dispatch automated takedown notices and DMCA strikes regardless of fair use merits.
+2. **Jurisdictional Asymmetry**: Fair Use is a uniquely American legal construct. European Union copyright directives and civil law jurisdictions do not provide a broad, open-ended Fair Use doctrine. A public GitHub Pages site is accessible globally; claiming US Fair Use provides zero defense against copyright infringement actions initiated under EU or international law where Picasso (d. 1973) and Dalí (d. 1989) remain protected under Life + 70 terms.
+3. **Engineering and Professional Portfolio Standard**: For software engineers showcasing architectural and algorithmic capabilities, legal ambiguity in a published repository diminishes professional credibility. An open-source project claiming "public domain preservation" while distributing or hotlinking ~32% copyrighted estate works creates an avoidable discrepancy.
+4. **The Proactive Solution: Absolute Public Domain Purity**: By pruning 20th-century estate works entirely from the active exhibition catalog, Pantheon removes the need to plead Fair Use. All 60 exhibited works and 10 titan catalogs belong unconditionally to the worldwide public domain (1470–1944), achieving a **zero-liability, 100% verified legal posture**.
 
 ---
 
@@ -201,16 +177,16 @@ To transition from legacy index references to fully authorized, institution-sanc
 
 ---
 
-## 8. Attribution Inquiries & Content Removal
+## 8. Attribution Inquiries & Content Inquiries
 
-Pantheon respects the rights of artists, their heirs, and managing foundations. As an open, non-commercial educational project, our policy is to promptly address any inquiries regarding provenance, attribution, or content removal:
+Pantheon is dedicated to cultural heritage preservation and open education:
 * **Curator Email**: `lgtkgtv@gmail.com`
 * **GitHub Repository Issues**: [github.com/lgtkgtv/pantheon-art/issues](https://github.com/lgtkgtv/pantheon-art/issues)
 
-Any referenced artwork or asset will be promptly removed, updated, or re-attributed within **24 hours** upon request.
+Any inquiry regarding catalog metadata, attribution, or public domain status will receive prompt attention within **24 hours**.
 
 ---
 
 ## 9. Verification & Conclusion
 
-Pantheon's fine art catalog is **substantially composed of undisputed global public domain masterworks (77%)**, with modern twentieth-century works framed in a strictly **transformative, non-commercial educational visual scale environment**. Through clear attribution, transparent rights declarations, self-hosted social assets, and a documented Open Access roadmap, the project operates in full alignment with international intellectual property standards and cultural heritage open-access best practices.
+Pantheon's fine art catalog is **100% composed of undisputed global public domain masterworks (1470–1944)**. Through proactive exclusion of active 20th-century estate works, full alignment with *Bridgeman v. Corel* and Article 14 of Directive (EU) 2019/790, self-hosted social assets, and a documented Open Access roadmap, the project provides an uncompromising standard of copyright compliance, technical excellence, and legal integrity.

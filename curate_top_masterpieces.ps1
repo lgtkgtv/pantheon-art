@@ -1,10 +1,9 @@
 <#
 .SYNOPSIS
-    Curate Top Celebrated Masterpieces for the 7 Celebrity Masters.
+    Curate Top Celebrated Masterpieces for Historic Public Domain Titans.
 .DESCRIPTION
     Selects, cross-references, and organizes the highest-resolution, most iconic
-    paintings by Claude Monet, Vincent van Gogh, Leonardo da Vinci, Michelangelo,
-    Rembrandt, Salvador Dali, and Pablo Picasso into a premier curated collection.
+    public-domain paintings by historic masters into a premier curated collection.
 #>
 
 [CmdletBinding()]
@@ -25,7 +24,7 @@ if (-not (Test-Path $resolvedOut)) {
 }
 
 Write-Host ("=" * 75) -ForegroundColor Cyan
-Write-Host " CURATING TOP CELEBRATED MASTERPIECES ACROSS 7 CELEBRITY MASTERS" -ForegroundColor Yellow
+Write-Host " CURATING TOP CELEBRATED MASTERPIECES ACROSS HISTORIC TITANS" -ForegroundColor Yellow
 Write-Host ("=" * 75) -ForegroundColor Cyan
 Write-Host "Source Artist Dir : $resolvedSource"
 Write-Host "Top 100 Source    : $resolvedTop100"
@@ -62,17 +61,6 @@ $masterpieceSignatures = @(
     @{ Artist = "Rembrandt"; Slug = "Rembrandt"; Title = "Self-Portrait at the Age of 34"; Patterns = @("*Self-portrait_at_the_Age_of_34*"); Year = "1640"; Museum = "National Gallery, London" },
     @{ Artist = "Rembrandt"; Slug = "Rembrandt"; Title = "Portrait of Saskia van Uylenburgh"; Patterns = @("*Portrait_of_Saskia_van_Uylenburgh*"); Year = "1635"; Museum = "National Gallery of Art, Washington" },
     @{ Artist = "Rembrandt"; Slug = "Rembrandt"; Title = "Self-Portrait in Studio Attire"; Patterns = @("*Self-portrait_in_studio_attire*"); Year = "1655"; Museum = "Kunsthistorisches Museum, Vienna" },
-
-    # Salvador Dali
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "The Persistence of Memory"; Patterns = @("*The_Persistence_of_Memory*"); Year = "1931"; Museum = "Museum of Modern Art, New York" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "The Great Masturbator"; Patterns = @("*The_Great_Masturbator*"); Year = "1929"; Museum = "Museo Reina Sofía, Madrid" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "Swans Reflecting Elephants"; Patterns = @("*Swans_Reflecting_Elephants*"); Year = "1937"; Museum = "Private Collection" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "The Metamorphosis of Narcissus"; Patterns = @("*The_Metamorphosis_of_Narcissus*"); Year = "1937"; Museum = "Tate Modern, London" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "The Temptation of St. Anthony"; Patterns = @("*The_Temptation_of_St._Anthony*"); Year = "1946"; Museum = "Royal Museums of Fine Arts of Belgium" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "Crucifixion (Corpus Hypercubicus)"; Patterns = @("*Crucifixion_(Corpus_Hypercubicus)*"); Year = "1954"; Museum = "Metropolitan Museum of Art, New York" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "Galatea of the Spheres"; Patterns = @("*Galatea_of_the_Spheres*"); Year = "1952"; Museum = "Dalí Theatre and Museum, Figueres" },
-    @{ Artist = "Salvador Dali"; Slug = "Salvador_Dali"; Title = "The Disintegration of the Persistence of Memory"; Patterns = @("*Disintegration_of_the_Persisten*"); Year = "1954"; Museum = "Salvador Dalí Museum, St. Petersburg, FL" },
-
     # Claude Monet
     @{ Artist = "Claude Monet"; Slug = "Claude_Monet"; Title = "Impression, Sunrise"; Patterns = @("*Impression,_sunrise*"); Year = "1872"; Museum = "Musée Marmottan Monet, Paris" },
     @{ Artist = "Claude Monet"; Slug = "Claude_Monet"; Title = "Water Lilies (The Clouds)"; Patterns = @("*Water_Lilies,_The_Clouds*", "*Water_Lilies*"); Year = "1903"; Museum = "Musée de l'Orangerie, Paris" },
@@ -90,26 +78,12 @@ $masterpieceSignatures = @(
     @{ Artist = "Vincent van Gogh"; Slug = "Vincent_van_Gogh"; Title = "Still Life with Three Birds' Nests"; Patterns = @("*Still_Life_with_Three_Birds_Nests*"); Year = "1885"; Museum = "Kröller-Müller Museum" },
     @{ Artist = "Vincent van Gogh"; Slug = "Vincent_van_Gogh"; Title = "Portrait of a Woman with a Red Ribbon"; Patterns = @("*Portrait_of_a_Woman_with_a_Red_Ribbon*"); Year = "1885"; Museum = "Van Gogh Museum, Amsterdam" },
 
-    # Pablo Picasso
-    @{ Artist = "Pablo Picasso"; Slug = "Pablo_Picasso"; Title = "Guernica"; Patterns = @("*Guernica*"); Year = "1937"; Museum = "Museo Reina Sofía, Madrid" },
-    @{ Artist = "Pablo Picasso"; Slug = "Pablo_Picasso"; Title = "The Old Blind Guitarist"; Patterns = @("*The_old_blind_guitarist*"); Year = "1903"; Museum = "Art Institute of Chicago" },
-    @{ Artist = "Pablo Picasso"; Slug = "Pablo_Picasso"; Title = "Self-Portrait (1907)"; Patterns = @("*Self-Portrait*"); Year = "1907"; Museum = "National Gallery, Prague" },
-    @{ Artist = "Pablo Picasso"; Slug = "Pablo_Picasso"; Title = "Portrait of Dora Maar"; Patterns = @("*Portrait_of_Dora_Maar*"); Year = "1937"; Museum = "Musée Picasso, Paris" },
-    @{ Artist = "Pablo Picasso"; Slug = "Pablo_Picasso"; Title = "Child with a Dove"; Patterns = @("*Child_with_dove*"); Year = "1901"; Museum = "National Gallery, London" },
-
     # Johannes Vermeer
     @{ Artist = "Johannes Vermeer"; Slug = "Johannes_Vermeer"; Title = "Girl with a Pearl Earring"; Patterns = @("*Girl_with_a_Pearl_Earring*"); Year = "1665"; Museum = "Mauritshuis, The Hague" },
     @{ Artist = "Johannes Vermeer"; Slug = "Johannes_Vermeer"; Title = "The Milkmaid"; Patterns = @("*The_Milkmaid*", "*milkmaid*"); Year = "1657-1658"; Museum = "Rijksmuseum, Amsterdam" },
     @{ Artist = "Johannes Vermeer"; Slug = "Johannes_Vermeer"; Title = "The Art of Painting"; Patterns = @("*The_Art_of_Painting*", "*Allegory_of_Painting*"); Year = "1666-1668"; Museum = "Kunsthistorisches Museum, Vienna" },
     @{ Artist = "Johannes Vermeer"; Slug = "Johannes_Vermeer"; Title = "The Astronomer"; Patterns = @("*The_astronomer*"); Year = "1668"; Museum = "Musée du Louvre, Paris" },
     @{ Artist = "Johannes Vermeer"; Slug = "Johannes_Vermeer"; Title = "Young Woman with a Pearl Necklace"; Patterns = @("*Young_Woman_with_a_Pearl_Necklace*"); Year = "1662-1664"; Museum = "Gemäldegalerie, Berlin" },
-
-    # Frida Kahlo
-    @{ Artist = "Frida Kahlo"; Slug = "Frida_Kahlo"; Title = "The Two Fridas"; Patterns = @("*The_Two_Fridas*"); Year = "1939"; Museum = "Museo de Arte Moderno, Mexico City" },
-    @{ Artist = "Frida Kahlo"; Slug = "Frida_Kahlo"; Title = "The Broken Column"; Patterns = @("*The_Broken_Column*"); Year = "1944"; Museum = "Museo Dolores Olmedo, Mexico City" },
-    @{ Artist = "Frida Kahlo"; Slug = "Frida_Kahlo"; Title = "Viva la Vida, Watermelons"; Patterns = @("*Viva_la_Vida*"); Year = "1954"; Museum = "Frida Kahlo Museum, Mexico City" },
-    @{ Artist = "Frida Kahlo"; Slug = "Frida_Kahlo"; Title = "Henry Ford Hospital"; Patterns = @("*Henry_Ford_Hospital*"); Year = "1932"; Museum = "Museo Dolores Olmedo, Mexico City" },
-    @{ Artist = "Frida Kahlo"; Slug = "Frida_Kahlo"; Title = "My Birth"; Patterns = @("*My_Birth*"); Year = "1932"; Museum = "Private Collection" },
 
     # Caravaggio
     @{ Artist = "Caravaggio"; Slug = "Caravaggio"; Title = "The Calling of Saint Matthew"; Patterns = @("*The_Calling_of_Saint_Matthew*", "*Calling_of_Saint_Matthew*"); Year = "1599-1600"; Museum = "San Luigi dei Francesi, Rome" },

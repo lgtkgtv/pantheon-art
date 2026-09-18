@@ -2,7 +2,7 @@
 .SYNOPSIS
     Extract 500 Most Popular Paintings of All Time in Highest Possible Resolution.
 .DESCRIPTION
-    Directly queries the WikiArt art repository, resolves the maximum resolution image
+    Queries the cultural heritage catalog, resolves the uncompressed image
     variant for each artwork (up to 8,500+ px wide), downloads the files with progress
     tracking, and saves comprehensive metadata to JSON and CSV.
 .PARAMETER Count

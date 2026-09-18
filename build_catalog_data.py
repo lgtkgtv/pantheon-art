@@ -51,7 +51,7 @@ for item in curated:
     fname = item["FileName"]
     item['LocalRelativePath'] = f'artist_paintings/Top_Celebrity_Masterpieces/{fname}'
 
-# Crown jewel title matcher
+# Crown jewel title matcher (strictly 10 public domain titans)
 crown_jewel_titles = {
     'the birth of venus', 'the spring (primavera)', 'mona lisa', 'the last supper',
     'lady with an ermine', 'the creation of adam', 'the last judgement',
@@ -59,9 +59,7 @@ crown_jewel_titles = {
     'the night watch', 'the anatomy lesson of dr. nicolaes tulp', 'girl with a pearl earring',
     'the milkmaid', 'the art of painting', 'impression, sunrise', 'water lilies (the clouds)',
     'the japanese bridge (water-lily pond)', 'the starry night', 'still life: vase with fifteen sunflowers',
-    'the potato eaters', 'the scream', 'madonna', 'the kiss', 'portrait of adele bloch-bauer i',
-    'guernica', 'the old blind guitarist', 'the persistence of memory', 'the great masturbator',
-    'swans reflecting elephants', 'the two fridas', 'the broken column', 'viva la vida, watermelons'
+    'the potato eaters', 'the scream', 'madonna', 'the kiss', 'portrait of adele bloch-bauer i'
 }
 
 artist_slug_to_id = {
@@ -74,11 +72,10 @@ artist_slug_to_id = {
     'claude monet': 'monet',
     'vincent van gogh': 'vangogh',
     'edvard munch': 'munch',
-    'gustav klimt': 'klimt',
-    'pablo picasso': 'picasso',
-    'salvador dali': 'dali',
-    'frida kahlo': 'kahlo'
+    'gustav klimt': 'klimt'
 }
+
+PUBLIC_DOMAIN_ARTISTS = set(artist_slug_to_id.values())
 
 for item in curated:
     art_norm = item['Artist'].strip().lower()
@@ -86,6 +83,9 @@ for item in curated:
     title_norm = item['Title'].strip().lower()
     item['isCrownJewel'] = title_norm in crown_jewel_titles or item.get('Megapixels', 0) >= 20.0
     item['isUltraRes'] = item.get('Megapixels', 0) >= 15.0
+
+# Filter curated catalog strictly to the 10 undisputed public domain masters
+curated = [item for item in curated if item['ArtistId'] in PUBLIC_DOMAIN_ARTISTS]
 
 # Canonical Physical Dimensions Table (cm width, cm height, architectural type)
 physical_dims = {
@@ -196,38 +196,11 @@ for item in curated:
     else:
         item['physicalDimensionsStr'] = f'{w_cm:g} × {h_cm:g} cm ({w_in:g} × {h_in:g} in) • {p_type}'
 
-    # Legal Rights & Provenance Classification
-    y_raw = str(item.get('Year', ''))
-    y_matches = re.findall(r'\b(1[4-9]\d{2}|20\d{2})\b', y_raw)
-    y_val = int(y_matches[0]) if y_matches else 1900
-    a_val = item.get('ArtistId', '')
-
-    if a_val in ['picasso', 'dali', 'kahlo']:
-        if a_val == 'picasso' and y_val < 1929:
-            item['rightsStatus'] = 'us_public_domain'
-            item['rightsStatement'] = 'Public Domain in US (Published Pre-1929); © Succession Picasso in EU'
-            item['rightsBadge'] = 'US Public Domain'
-            item['rightsHolder'] = 'Succession Picasso / ADAGP'
-        elif a_val == 'picasso':
-            item['rightsStatus'] = 'estate_protected'
-            item['rightsStatement'] = '© Succession Picasso / Artists Rights Society (ARS), New York • Educational Fair Use Preview'
-            item['rightsBadge'] = '© Estate Protected'
-            item['rightsHolder'] = 'Succession Picasso / Artists Rights Society (ARS), New York'
-        elif a_val == 'dali':
-            item['rightsStatus'] = 'estate_protected'
-            item['rightsStatement'] = '© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview'
-            item['rightsBadge'] = '© Estate Protected'
-            item['rightsHolder'] = 'Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York'
-        else: # kahlo
-            item['rightsStatus'] = 'estate_protected'
-            item['rightsStatement'] = '© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview'
-            item['rightsBadge'] = '© Estate Protected'
-            item['rightsHolder'] = 'Banco de México Diego Rivera & Frida Kahlo Museums Trust'
-    else:
-        item['rightsStatus'] = 'public_domain'
-        item['rightsStatement'] = '🏛️ Public Domain Worldwide (Public Domain Mark 1.0)'
-        item['rightsBadge'] = 'Public Domain'
-        item['rightsHolder'] = 'Public Domain'
+    # Legal Rights & Provenance Classification (100% Public Domain)
+    item['rightsStatus'] = 'public_domain'
+    item['rightsStatement'] = '🏛️ Public Domain Worldwide (Life + 70 Years Expired)'
+    item['rightsBadge'] = 'Public Domain'
+    item['rightsHolder'] = 'Worldwide Public Domain'
 
 print(f'Total Curated Paintings: {len(curated)}')
 matched_urls = sum(1 for x in curated if x['HighResUrl'])
@@ -414,64 +387,10 @@ artists_meta = [
         'totalWorksCataloged': 169,
         'curatedCount': sum(1 for c in curated if c['Artist'] == 'Gustav Klimt'),
         'heroImage': 'artist_paintings/Top_Celebrity_Masterpieces/57_Gustav_Klimt_-_The_Kiss.jpg'
-    },
-    {
-        'id': 'picasso',
-        'name': 'Pablo Picasso',
-        'slug': 'pablo-picasso',
-        'lifespan': '1881–1973',
-        'epochId': 'modernism',
-        'epochName': '20th Century Avant-Garde',
-        'movement': 'Cubism, Blue/Rose Periods, Modernism',
-        'location': 'Malaga, Barcelona, Paris, French Riviera',
-        'epithet': 'The Demiurge of 20th Century Visual Modernism',
-        'tagline': 'The demiurge of the modern avant-garde who shattered 500 years of Renaissance perspective into Cubist planes.',
-        'innovations': ['Cubist Perspective', 'Multifaceted Planes', 'Radical Stylistic Reinvention'],
-        'whyBelongs': 'The undisputed colossus of modern art. Over seven decades, Picasso dismantled and rebuilt the visual grammar of civilization, traversing Blue, Rose, African, Cubist, Neoclassical, and Surrealist phases.',
-        'evolutionRole': 'Co-founded Cubism, obliterating 500 years of Renaissance perspective by shattering three-dimensional space onto a flat surface seen from multiple vantage points simultaneously. Painted Guernica, modern history\'s greatest, most searing condemnation of fascist warfare.',
-        'totalWorksCataloged': 1169,
-        'curatedCount': sum(1 for c in curated if c['Artist'] == 'Pablo Picasso'),
-        'heroImage': 'artist_paintings/Top_Celebrity_Masterpieces/62_Pablo_Picasso_-_Guernica.jpg'
-    },
-    {
-        'id': 'dali',
-        'name': 'Salvador Dalí',
-        'slug': 'salvador-dali',
-        'lifespan': '1904–1989',
-        'epochId': 'modernism',
-        'epochName': 'Surrealism & Dreamscapes',
-        'movement': 'Surrealism & Paranoiac-Critical Method',
-        'location': 'Figueres, Cadaqués, Paris, New York',
-        'epithet': 'The Wizard of Paranoiac-Critical Subconscious Dreams',
-        'tagline': 'The wizard of the subconscious who rendered irrational, delirious dreamscapes with hyper-precise optical realism.',
-        'innovations': ['Paranoiac-Critical Method', 'Double Imagery', 'Dream Photographs'],
-        'whyBelongs': 'The definitive face of Surrealism and 20th-century showmanship. His melting watches in The Persistence of Memory became the quintessential modern visualization of the malleability of time, mortality, and the Freudian unconscious.',
-        'evolutionRole': 'Pioneered the Paranoiac-Critical method: cultivating irrational subconscious associations, hallucinations, and double-images while executing them with hyper-precise 17th-century Dutch optical miniature technique (\"hand-painted dream photographs\").',
-        'totalWorksCataloged': 1178,
-        'curatedCount': sum(1 for c in curated if c['Artist'] == 'Salvador Dali'),
-        'heroImage': 'artist_paintings/Top_Celebrity_Masterpieces/67_Salvador_Dali_-_The_Persistence_of_Memory.jpg'
-    },
-    {
-        'id': 'kahlo',
-        'name': 'Frida Kahlo',
-        'slug': 'frida-kahlo',
-        'lifespan': '1907–1954',
-        'epochId': 'modernism',
-        'epochName': 'Mexican Modernism',
-        'movement': 'Autobiographical Surrealism & Mexicanidad',
-        'location': 'Coyoacán (Mexico City), New York, Paris',
-        'epithet': 'The Global Cultural Icon of Resilience & Identity',
-        'tagline': 'The global icon of resilience who painted not dreams, but the raw, mythic reality of her own beating heart.',
-        'innovations': ['Autobiographical Surrealism', 'Mexicanidad Folk Heritage', 'Unflinching Vulnerability'],
-        'whyBelongs': 'Has achieved unprecedented global cultural and feminist iconography (\"Fridamania\"). Transmuted profound chronic physical pain, personal heartbreak, and indigenous Mexican heritage into unflinching, mythic autobiographical masterpieces (The Two Fridas, The Broken Column).',
-        'evolutionRole': 'Rejected orthodox European Surrealism to paint her direct internal reality (\"I never painted dreams. I painted my own reality\"). Blended traditional Mexican retablo folk devotional painting with raw anatomical, psychological, and matriarchal symbolism.',
-        'totalWorksCataloged': 100,
-        'curatedCount': sum(1 for c in curated if c['Artist'] == 'Frida Kahlo'),
-        'heroImage': 'artist_paintings/Top_Celebrity_Masterpieces/75_Frida_Kahlo_-_The_Two_Fridas.jpg'
     }
 ]
 
-# Curated Spotlight Masterpieces for Hero rotation
+# Curated Spotlight Masterpieces for Hero rotation (100% Public Domain Icons)
 spotlight_candidates = [
     '06_Leonardo_da_Vinci_-_Mona_Lisa.jpg',
     '36_Johannes_Vermeer_-_The_Art_of_Painting.jpg',
@@ -480,7 +399,7 @@ spotlight_candidates = [
     '14_Michelangelo_-_The_Creation_of_Adam.jpg',
     '34_Johannes_Vermeer_-_Girl_with_a_Pearl_Earring.jpg',
     '39_Claude_Monet_-_Impression,_Sunrise.jpg',
-    '75_Frida_Kahlo_-_The_Two_Fridas.jpg'
+    '01_Sandro_Botticelli_-_The_Birth_of_Venus.jpg'
 ]
 
 spotlights = []
@@ -489,12 +408,11 @@ for c in curated:
         spotlights.append(c)
 
 epochs = [
-    {'id': 'all', 'name': 'All Eras (1470–1954)', 'short': 'All Eras'},
+    {'id': 'all', 'name': 'All Eras (1470–1944)', 'short': 'All Eras'},
     {'id': 'renaissance', 'name': 'Renaissance Humanism (1470–1564)', 'short': 'Renaissance'},
     {'id': 'baroque', 'name': 'Baroque & Dutch Golden Age (1595–1675)', 'short': 'Baroque'},
-    {'id': 'impressionism', 'name': '19th C. Impressionism (1872–1893)', 'short': 'Impressionism'},
-    {'id': 'expressionism', 'name': 'Expressionism & Secession (1893–1918)', 'short': 'Expressionism'},
-    {'id': 'modernism', 'name': '20th C. Modernism (1901–1954)', 'short': 'Modernism'}
+    {'id': 'impressionism', 'name': '19th C. Impressionism (1872–1890)', 'short': 'Impressionism'},
+    {'id': 'expressionism', 'name': 'Expressionism & Secession (1893–1944)', 'short': 'Expressionism'}
 ]
 
 # Assign epoch IDs to curated items
@@ -607,14 +525,14 @@ guided_tour = [
     },
     {
         'step': 10,
-        'year': '1937',
-        'epoch': 'Modernism / Cubism',
-        'artist': 'Pablo Picasso',
-        'title': 'Guernica',
-        'fileName': '62_Pablo_Picasso_-_Guernica.jpg',
-        'headline': 'Cubism Unleashed: The Ultimate Anti-War Scream',
-        'story': 'Horrified by the saturation bombing of a defenseless Basque town, Picasso shattered physical space into monochromatic black, white, and grey geometric knives. The screaming horse and weeping mother became humanity\'s universal protest against cruelty.',
-        'breakthrough': 'Synthetic Cubism weaponized into monumental political protest'
+        'year': '1907',
+        'epoch': 'Vienna Secession & Golden Phase',
+        'artist': 'Gustav Klimt',
+        'title': 'The Kiss',
+        'fileName': '57_Gustav_Klimt_-_The_Kiss.jpg',
+        'headline': 'The Golden Phase: Vienna Secession & Transcendent Love',
+        'story': 'In a shimmering cocoon of real gold leaf, Byzantine geometry, and delicate floral spirals, Klimt dissolved classical academic realism into pure decorative ecstasy. The Kiss stands as the breathtaking golden summit of European Fin-de-Siècle Art Nouveau.',
+        'breakthrough': 'Gold-leaf mosaic abstraction, Art Nouveau intimacy, and the Vienna Secession revolution'
     }
 ]
 
@@ -644,13 +562,21 @@ for stop in guided_tour:
 stats = {
     'totalArtists': len(artists_meta),
     'totalCuratedWorks': len(curated),
-    'totalIngestedPaintings': 7652,
-    'totalIngestedGB': '4.35 GB',
+    'totalIngestedPaintings': 5105,
+    'totalIngestedGB': '3.28 GB',
     'peakMegapixels': 45.80,
     'peakPainting': 'The Art of Painting (Johannes Vermeer)',
-    'timeSpan': '1470 – 1954 (484 Years)',
+    'timeSpan': '1470 – 1944 (474 Years)',
     'museumCollectionsCount': len(set(x['Museum'] for x in curated if x.get('Museum'))),
+    'publicDomainPercentage': '100%'
 }
+
+# Filter popular catalog strictly to public domain works (exclude active 20th-century estate artists)
+EXCLUDED_ESTATE_ARTISTS = {
+    'salvador dali', 'pablo picasso', 'frida kahlo', 'rene magritte',
+    'marcel duchamp', 'andy warhol', 'georgia o\'keeffe', 'edward hopper'
+}
+popular_pd = [p for p in popular if p.get('Artist', '').strip().lower() not in EXCLUDED_ESTATE_ARTISTS]
 
 full_data = {
     'stats': stats,
@@ -659,7 +585,7 @@ full_data = {
     'guidedTour': guided_tour,
     'artists': artists_meta,
     'masterpieces': curated,
-    'topPopular': popular[:50]
+    'topPopular': popular_pd[:50]
 }
 
 with open('data/pantheon_catalog.json', 'w', encoding='utf-8') as f:

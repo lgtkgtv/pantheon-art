@@ -7,7 +7,7 @@
 .EXAMPLE
     .\batch_extract_artist.ps1 -Artist "vincent-van-gogh" -BatchSize 100 -Offset 0
     .\batch_extract_artist.ps1 -Artist "claude-monet" -BatchSize 50 -Offset 100
-    .\batch_extract_artist.ps1 -Artist "pablo-picasso" -BatchSize 100
+    .\batch_extract_artist.ps1 -Artist "johannes-vermeer" -BatchSize 50
 #>
 
 [CmdletBinding()]
@@ -34,9 +34,8 @@ if (-not (Test-Path -Path $resolvedRoot)) {
 }
 
 $headers = @{
-    "User-Agent" = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-    "Accept"     = "application/json, text/html, */*"
-    "Referer"    = "https://www.wikiart.org/"
+    "User-Agent" = "PantheonFineArt/2.3 (https://github.com/lgtkgtv/pantheon-art; cultural preservation research)"
+    "Accept"     = "application/json, image/*, */*"
 }
 
 function Sanitize-FileName([string]$name, [int]$maxLen = 40) {

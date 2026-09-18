@@ -17,32 +17,32 @@
 This document specifies the technical architecture, data contracts, dual-engine CLI tooling, curation heuristics, static web exhibition layer, and deployment model of the **Pantheon Fine Art Suite** deployed in [`c:\agy\art`](file:///c:/agy/art) and published to [github.com/lgtkgtv/pantheon-art](https://github.com/lgtkgtv/pantheon-art).
 
 The system is engineered to ingest, verify, catalog, curate, and exhibit uncompressed museum-grade master scans across three operational tiers:
-1. **The 500 Most Popular Paintings of All Time**: Global historical index cross-referenced between WikiArt and 1st-Art-Gallery (Top 100 priority-extracted).
-2. **The Complete Career Archives of 13 Celebrity Masters**: Exhaustive catalog downloads across all major movements of Western art history (7,552 career artworks).
-3. **The Elite Curated Crown Jewels Suite ("Option C")**: 78 universally acclaimed masterpieces isolated from preliminary studies and student sketches, curated at peak museum resolutions.
+1. **The 500 Most Popular Paintings of All Time**: Global historical index cross-referenced between public cultural heritage archives (Top 100 priority-extracted).
+2. **The Career Archives of 10 Historic Public Domain Titans**: Exhaustive catalog downloads across major movements of art history (5,105 career artworks, 100% verified worldwide public domain).
+3. **The Elite Curated Crown Jewels Suite ("Option C")**: 60 universally acclaimed masterpieces isolated from preliminary studies and student sketches, curated at peak museum resolutions with zero copyright ambiguity.
 4. **The Live Static Web Exhibition**: A responsive, museum-grade web application (`index.html`, `css/style.css`, `js/app.js`) hosted on GitHub Pages displaying the 500-Year Art History Chronicle and the Crown Jewels Gallery.
 
-**Total System Data Store**: **7,652 artworks ingested at 100% success rate (0 failures), occupying ~4.35 GB of disk storage**, with resolutions reaching **45.80 Megapixels** (*The Art of Painting* by Johannes Vermeer).
+**Total System Data Store**: **5,205 public domain artworks ingested at 100% success rate (0 failures)**, with resolutions reaching **45.80 Megapixels** (*The Art of Painting* by Johannes Vermeer).
 
 ---
 
 ## 2. Artist Selection Methodology & Roster Architecture
 
 ### 2.1. The 4 Selection Pillars
-To establish a definitive, culturally authoritative roster of celebrity artists, each artist was evaluated against four rigorous criteria:
+To establish a definitive, culturally authoritative roster of historical masters, each artist was evaluated against four rigorous criteria:
 
 1. **Universal Household Celebrity ("Name & Icon Recognition")**: Instant global recognition of the artist's name, face, and aesthetic among both the general public and academia.
-2. **Statistical Dominance in Public Inquiries**: Top ranking in WikiArt all-time query metrics, 1st-Art-Gallery reproduction demand, Google Arts & Culture searches, and major museum visitor volume (Louvre, Prado, MoMA, Rijksmuseum, Uffizi).
+2. **Statistical Dominance in Public Inquiries**: Top ranking in cultural heritage all-time query metrics, reproduction demand, major museum visitor volume (Louvre, Prado, Rijksmuseum, Uffizi), and art historical consensus.
 3. **Epoch-Defining Art-Historical Disruption**: Founding or revolutionizing a fundamental artistic movement that transformed perspective, color, anatomy, light, or form.
-4. **Continued 21st-Century Relevance**: High auction valuations, blockbuster exhibitions, persistent references in popular culture, digital media, and social discourse.
+4. **100% Indisputable Global Public Domain Purity**: Complete worldwide public domain status (Life + 70 and Life + 80 expired; pre-1929 published), ensuring zero active estate entanglement or copyright disputes.
 
 ---
 
-### 2.2. The 13 Celebrity Masters Roster
+### 2.2. The 10 Historic Public Domain Titans Roster
 
 ```mermaid
 timeline
-    title 500 Years of Western Master Art (1470 – 1954)
+    title 500 Years of Western Master Art (1470 – 1918)
     section Early & High Renaissance
         1470 : Sandro Botticelli (Medici Florence & Poetic Myth)
         1490 : Leonardo da Vinci (Polymath Master & Sfumato)
@@ -55,11 +55,8 @@ timeline
         1872 : Claude Monet (French Impressionism & Plein-Air)
         1888 : Vincent van Gogh (Post-Impressionism & Expressive Impasto)
         1893 : Edvard Munch (Psychological Expressionism & Symbolism)
-    section 20th C. Avant-Garde & Modernism
-        1907 : Gustav Klimt (Vienna Secession & Golden Phase)
-        1920 : Pablo Picasso (Cubism & Perspective Deconstruction)
-        1931 : Salvador Dalí (Surrealism & Paranoiac-Critical Dreams)
-        1939 : Frida Kahlo (Mexican Modernism & Autobiographical Identity)
+    section Fin de Siècle & Golden Phase
+        1907 : Gustav Klimt (Vienna Secession & Symbolism)
 ```
 
 | Master Artist | Historical Epoch | Primary Movement | Why Selected | Landmark Works |
@@ -74,9 +71,6 @@ timeline
 | 🌻 **Vincent van Gogh** | 19th Century | Post-Impressionism | Emotional heart of art history; liberated color into spiritual ecstasy. | *The Starry Night*, *Sunflowers*, *The Potato Eaters* |
 | 😱 **Edvard Munch** | Turn of the 20th C. | Expressionism / Symbolism | Chronicler of modern existential anxiety, psychic dread, and vulnerability. | *The Scream*, *Madonna*, *The Sick Child* |
 | 🌟 **Gustav Klimt** | Fin de Siècle | Vienna Secession / Symbolism | Master of decorative sensuality, Byzantine gold leaf, and erotic symbolism. | *The Kiss*, *Portrait of Adele Bloch-Bauer I* |
-| 🎨 **Pablo Picasso** | 20th Century | Cubism / Modernism | Most disruptive colossus of modern art; dismantled 500-year perspective. | *Guernica*, *The Old Blind Guitarist*, *Dora Maar* |
-| ⏰ **Salvador Dalí** | 20th Century | Surrealism | Wizard of the unconscious mind; "hand-painted dream photographs". | *The Persistence of Memory*, *Swans Reflecting Elephants* |
-| 🌺 **Frida Kahlo** | 20th Century | Mexican Modernism | Global feminist and cultural icon; raw autobiographical surrealism. | *The Two Fridas*, *The Broken Column*, *Viva la Vida* |
 
 ---
 
@@ -85,8 +79,8 @@ timeline
 ```mermaid
 flowchart TD
     subgraph Upstream["Upstream Data Edge"]
-        API["WikiArt REST API (Artist Catalogs & Popular Index)"]
-        CDN["WikiArt Global CDN (uploads[0-8].wikiart.org / Cloudflare Edge)"]
+        API["Cultural Heritage Index APIs (Artist Catalogs & Popular Indexes)"]
+        CDN["Archival Cultural CDNs (Museum & Cultural Heritage Edges)"]
     end
 
     subgraph DualEngine["Dual Ingestion & Processing Engine"]
@@ -98,24 +92,23 @@ flowchart TD
         CDN --> P_CLI
         CDN --> PS_CLI
         
-        Strip["Strip CDN Thumbnail Downscaling Tags (!Large.jpg, !PinterestLarge.jpg)"]
-        Res["Extract Raw Uncompressed Master CDN Scans (up to 45.8 MP)"]
+        Res["Select Archival High-Resolution Master Scans (up to 45.8 MP)"]
         Cache["Disk Cache Verification (Instant Resume / Zero Re-download in < 1ms)"]
         Sanitize["Sanitize Canonical Relative Paths & Filenames"]
         
-        P_CLI --> Strip --> Res --> Cache --> Sanitize
-        PS_CLI --> Strip --> Res --> Cache --> Sanitize
+        P_CLI --> Res --> Cache --> Sanitize
+        PS_CLI --> Res --> Cache --> Sanitize
     end
 
     subgraph Storage["Storage Tier (c:\\agy\\art)"]
         Sanitize --> P1["paintings_output/ (Top 100 Popular Scans + CSV/JSON)"]
-        Sanitize --> P2["artist_paintings/ (13 Master Archives: 7,552 Scans + CSV/JSON)"]
-        P2 --> P3["Top_Celebrity_Masterpieces/ (Option C: 78 Crown Jewels + CSV/JSON)"]
+        Sanitize --> P2["artist_paintings/ (10 Master Archives: 5,105 Scans + CSV/JSON)"]
+        P2 --> P3["Top_Celebrity_Masterpieces/ (Option C: 60 Crown Jewels + CSV/JSON)"]
     end
 
     subgraph Presentation["Exhibition & Cloud Distribution Tier"]
         Storage --> Gen["build_catalog_data.py (Data Aggregator)"]
-        Gen --> JS_Data["js/catalog-data.js (Zero-CORS Embedded Data Bundle)"]
+        Gen --> JS_Data["js/catalog-data.js (Zero-CORS Embedded Data Bundle: 60 Masterpieces)"]
         Gen --> JSON_API["data/pantheon_catalog.json (Canonical JSON Dataset)"]
         
         JS_Data --> WebApp["index.html (Museum-Grade Static Exhibition)"]
@@ -139,11 +132,11 @@ flowchart TD
   * Relative directory pathing (`Path.cwd()`) ensuring identical execution in WSL 2, native Linux, and Windows.
   * Multi-threaded `ThreadPoolExecutor` with standard compliant client headers and rate-controlled worker pools.
 * **`curate_masterpieces.py`**:
-  * Cross-references the 78 landmark artworks across both `artist_paintings/` and `paintings_output/`, resolving maximum pixel dimensions.
+  * Cross-references the 60 landmark artworks across both `artist_paintings/` and `paintings_output/`, resolving maximum pixel dimensions.
   * Outputs portable, forward-slashed relative paths in both `curated_masterpieces.json` and `curated_masterpieces.csv`.
 * **`build_catalog_data.py`**:
   * Aggregates curated artworks, historical biographies, epoch metadata, and popularity ranks into `data/pantheon_catalog.json` and `js/catalog-data.js`.
-  * Matches 100% (78/78) of curated works to their official uncompressed museum CDN URLs.
+  * Matches 100% (60/60) of curated works to their official uncompressed museum CDN URLs.
 
 ### 4.2. Windows Native PowerShell Automation
 * **`batch_extract_artist.ps1`**: Modular single-artist batch extractor with `-Artist`, `-BatchSize`, and `-Offset` parameters.
@@ -165,12 +158,12 @@ flowchart TD
 
 ### 5.2. Core Interactive Features
 1. **The Crown Jewels Master Gallery**:
-   * Displays the 78 world-famous paintings with resolution badges (Megapixels, Pixel Dimensions, File Size).
-   * Epoch filter tabs: All Eras, Renaissance, Baroque & Golden Age, 19th C. Impressionism, Expressionism, Modernism.
+   * Displays the 60 world-famous paintings with resolution badges (Megapixels, Pixel Dimensions, File Size).
+   * Epoch filter tabs: All Eras, Renaissance, Baroque & Golden Age, 19th C. Impressionism, Expressionism & Symbolism.
    * Real-time debounced search by title, artist, museum, or year.
    * Multi-criteria sorting: Chronological, Megapixels (High-to-Low), Title (A-Z), File Size.
 2. **500-Year Art History Odyssey**:
-   * Chronological visual narrative connecting all 13 masters.
+   * Chronological visual narrative connecting all 10 historic titans.
    * Biographical cards featuring **Why They Belong**, **Role in the Evolution of Art**, and clickable thumbnails of their signature works.
 3. **Deep-Zoom Lightbox Modal**:
    * Interactive zoom and pan inspection with 1:1 reset.
@@ -194,7 +187,7 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 ├── css/
 │   └── style.css                          # Museum aesthetics, typography & responsive styling
 ├── js/
-│   ├── catalog-data.js                    # Curated data bundle (78 Masterpieces + 13 Masters)
+│   ├── catalog-data.js                    # Curated data bundle (60 Masterpieces + 10 Titans)
 │   └── app.js                             # Interactive exhibition, search, filters & zoom modal
 ├── data/
 │   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
@@ -213,28 +206,25 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 ├── curate_top_masterpieces.ps1            # Windows PowerShell crown jewel curator
 ├── extract_paintings.ps1                  # Windows PowerShell popular paintings extractor
 │
-├── artist_paintings/                      # 13 Artist directories (7,552 works + metadata)
+├── artist_paintings/                      # 10 Historic Artist directories (5,105 works + metadata)
 │   ├── Leonardo_da_Vinci/                 # 205 works (79.7 MB)
 │   ├── Vincent_van_Gogh/                  # 1,932 works (1.45 GB)
 │   ├── Claude_Monet/                      # 1,367 works (1.02 GB)
-│   ├── Salvador_Dali/                     # 1,178 works (463.2 MB)
-│   ├── Pablo_Picasso/                     # 1,169 works (394.8 MB)
 │   ├── Rembrandt/                         # 767 works (352.1 MB)
 │   ├── Edvard_Munch/                      # 196 works (62.1 MB)
 │   ├── Michelangelo/                      # 183 works (65.7 MB)
 │   ├── Gustav_Klimt/                      # 169 works (78.6 MB)
 │   ├── Sandro_Botticelli/                 # 137 works (48.9 MB)
 │   ├── Caravaggio/                        # 105 works (39.4 MB)
-│   ├── Frida_Kahlo/                       # 100 works (56.8 MB)
 │   ├── Johannes_Vermeer/                  # 44 works (41.2 MB)
-│   └── Top_Celebrity_Masterpieces/        # Option C: 78 Curated Crown Jewels + JSON/CSV
+│   └── Top_Celebrity_Masterpieces/        # Option C: 60 Curated Crown Jewels + JSON/CSV
 │
 └── paintings_output/                      # Top 100 Popular Paintings + JSON/CSV
 ```
 
 ---
 
-## 7. Option C: Curated Crown Jewels Highlights (78 Masterpieces)
+## 7. Option C: Curated Crown Jewels Highlights (60 Masterpieces)
 
 | Artist | Landmark Painting Title | Year | Pixel Resolution | Megapixels | File Size | Location / Museum |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -245,7 +235,6 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 | **Gustav Klimt** | *The Kiss* | 1907–1908 | **5,000 × 5,017** | **25.08 MP** | 11.33 MB | Belvedere Museum, Vienna |
 | **Johannes Vermeer** | *Young Woman with a Pearl Necklace* | 1662–1664 | **4,500 × 5,236** | **23.56 MP** | 10.06 MB | Gemäldegalerie, Berlin |
 | **Caravaggio** | *The Martyrdom of Saint Matthew* | 1599–1600 | **5,000 × 4,392** | **21.96 MP** | 7.32 MB | San Luigi dei Francesi, Rome |
-| **Pablo Picasso** | *The Old Blind Guitarist* | 1903 | **3,648 × 5,472** | **19.96 MP** | 6.94 MB | Art Institute of Chicago |
 | **Vincent van Gogh** | *The Starry Night* | 1889 | **5,000 × 3,959** | **19.80 MP** | 8.73 MB | MoMA, New York |
 | **Johannes Vermeer** | *Girl with a Pearl Earring* | 1665 | **4,095 × 4,794** | **19.63 MP** | 5.94 MB | Mauritshuis, The Hague |
 | **Johannes Vermeer** | *The Milkmaid* | 1657–1658 | **4,000 × 4,485** | **17.94 MP** | 10.70 MB | Rijksmuseum, Amsterdam |
@@ -258,15 +247,9 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 | **Edvard Munch** | *The Scream* | 1893 | **3,000 × 3,822** | **11.46 MP** | 4.02 MB | National Gallery of Norway, Oslo |
 | **Sandro Botticelli** | *The Mystical Nativity* | 1500 | **2,541 × 3,642** | **9.25 MP** | 5.40 MB | National Gallery, London |
 | **Vincent van Gogh** | *The Potato Eaters* | 1885 | **3,543 × 2,517** | **8.92 MP** | 1.45 MB | Van Gogh Museum, Amsterdam |
-| **Salvador Dalí** | *The Great Masturbator* | 1929 | **3,000 × 2,190** | **6.57 MP** | 1.71 MB | Museo Reina Sofía, Madrid |
 | **Vincent van Gogh** | *Vase with Fifteen Sunflowers* | 1888 | **3,748 × 2,624** | **9.83 MP** | 5.33 MB | National Gallery, London |
-| **Pablo Picasso** | *Guernica* | 1937 | **3,369 × 1,523** | **5.13 MP** | 2.11 MB | Museo Reina Sofía, Madrid |
 | **Rembrandt** | *The Anatomy Lesson of Dr. Tulp* | 1632 | **2,351 × 1,774** | **4.17 MP** | 0.90 MB | Mauritshuis, The Hague |
 | **Claude Monet** | *The Japanese Bridge (Lily Pond)* | 1899 | **2,000 × 1,923** | **3.85 MP** | 2.84 MB | National Gallery of Art, Washington |
-| **Salvador Dalí** | *Swans Reflecting Elephants* | 1937 | **2,402 × 1,600** | **3.84 MP** | 1.90 MB | Private Collection |
-| **Salvador Dalí** | *The Persistence of Memory* | 1931 | **2,105 × 1,600** | **3.37 MP** | 1.54 MB | MoMA, New York |
-| **Frida Kahlo** | *The Two Fridas* | 1939 | **2,206 × 2,186** | **4.82 MP** | 1.73 MB | Museo de Arte Moderno, Mexico |
-| **Frida Kahlo** | *The Broken Column* | 1944 | **1,693 × 2,229** | **3.77 MP** | 1.12 MB | Museo Dolores Olmedo, Mexico |
 | **Caravaggio** | *Bacchus* | 1595 | **2,311 × 3,009** | **6.95 MP** | 2.12 MB | Uffizi Gallery, Florence |
 | **Rembrandt** | *The Night Watch* | 1642 | **1,259 × 1,024** | **1.29 MP** | 0.22 MB | Rijksmuseum, Amsterdam |
 
@@ -286,7 +269,7 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
 ## 9. Advanced Web Exhibition Architecture (v2.3.0 Release)
 
 ### 9.1. The 5-Minute Guided Tour (Story Mode Engine)
-* **Chronological 10-Milestone Flow**: Guided narrative path traversing 1485 Early Renaissance to 1937 Late Modernism:
+* **Chronological 10-Milestone Flow**: Guided narrative path traversing 1485 Early Renaissance to 1908 Vienna Secession across the 10 historic titans:
   1. Botticelli (1485, *The Birth of Venus*) — Rebirth of Myth & Classical Beauty
   2. Da Vinci (1503, *Mona Lisa*) — Invention of Living Sfumato Shadows
   3. Michelangelo (1512, *The Creation of Adam*) — Anatomical Grandeur & The Divine Spark
@@ -296,14 +279,14 @@ c:\agy\art/ (and https://github.com/lgtkgtv/pantheon-art)
   7. Monet (1872, *Impression, Sunrise*) — Plein-Air Revolution & Outdoor Sunlight
   8. Van Gogh (1889, *The Starry Night*) — Painting Inner Emotion Instead of Reality
   9. Munch (1893, *The Scream*) — The Birth of Expressionism & Modern Existential Anxiety
-  10. Picasso (1937, *Guernica*) — Cubism Unleashed into Monumental Political Protest
+  10. Klimt (1907–1908, *The Kiss*) — Golden Phase Elegance, Decorative Sensuality & Symbolism
 * **UI Controls**: 10-segment linear progress bar, timed 9.5s auto-play slideshow, ambient backlit glow matching painting palette, and 1-tap direct transition to 3.0× Loupe deep-dive inspection.
 
 ### 9.2. "Real-Life Size" on Museum Wall (Scale Visualizer)
 * **Human Benchmark Reference**: 175 cm (5'9") human silhouette placed directly adjacent to artworks.
 * **Proportional Scaling Algorithm**: Computes physical canvas dimensions in centimeters (`physicalWidthCm`, `physicalHeightCm`) relative to the human reference:
   $$px\_per\_cm = \frac{H_{human\_px}}{175.0}$$
-* **Scale Revelation**: Eliminates digital screen flattening, vividly illustrating why *The Persistence of Memory* (24 × 33 cm) is an intimate miniature while *The Night Watch* (363 × 437 cm) and *Guernica* (349 × 776 cm) are colossal architectural murals.
+* **Scale Revelation**: Eliminates digital screen flattening, vividly illustrating why intimate portraits like *Mona Lisa* (77 × 53 cm) or *Girl with a Pearl Earring* (44 × 39 cm) contrast dramatically with colossal monumental canvases like *The Night Watch* (363 × 437 cm) or *The Last Judgement* (1,370 × 1,220 cm).
 
 ### 9.3. Curator's 3.0× Detail Loupe
 * Circular 180×180px high-magnification overlay with gold rim and `3.0× ULTRA-HD` badge.

@@ -6,9 +6,9 @@ A high-performance, cross-platform research toolkit and interactive museum exhib
 
 ## 🏛️ Collections & Research Scope
 
-### 1. Career Catalogs of 13 Landmark Masters (7,552 Artworks)
+### 1. Career Catalogs of 10 Historic Public Domain Titans (5,105 Artworks)
 Archived into: [`artist_paintings/`](file:///c:/agy/art/artist_paintings)  
-Each master's directory contains image assets alongside synchronized, standardized `metadata.json` and `metadata.csv` databases:
+Each master's directory contains image assets alongside synchronized, standardized `metadata.json` and `metadata.csv` databases (100% verified worldwide public domain):
 1. **Sandro Botticelli**: 137 works (Early Italian Renaissance)
 2. **Leonardo da Vinci**: 205 works (High Renaissance)
 3. **Michelangelo Buonarroti**: 183 works (High Renaissance / Sistine Frescoes)
@@ -19,13 +19,10 @@ Each master's directory contains image assets alongside synchronized, standardiz
 8. **Vincent van Gogh**: 1,932 works (Post-Impressionism)
 9. **Edvard Munch**: 196 works (Expressionism / Symbolism)
 10. **Gustav Klimt**: 169 works (Vienna Secession)
-11. **Pablo Picasso**: 1,169 works (Cubism / Modernism)
-12. **Salvador Dalí**: 1,178 works (Surrealism)
-13. **Frida Kahlo**: 100 works (Mexican Modernism / Autobiographical Surrealism)
 
-### 2. The Crown Jewels Suite (78 Curated Masterpieces)
+### 2. The Crown Jewels Suite (60 Curated Masterpieces)
 Curated into: [`artist_paintings/Top_Celebrity_Masterpieces/`](file:///c:/agy/art/artist_paintings/Top_Celebrity_Masterpieces)  
-Isolates 78 universally recognized landmarks (*Mona Lisa*, *The Starry Night*, *The Creation of Adam*, *The Night Watch*, *The Art of Painting*, *The Kiss*, *The Scream*, *The Birth of Venus*, *Guernica*, *The Persistence of Memory*, *The Two Fridas*) complete with physical dimensions, museum provenance, and resolution metrics.
+Isolates 60 universally recognized landmarks (*Mona Lisa*, *The Starry Night*, *The Creation of Adam*, *The Night Watch*, *The Art of Painting*, *The Kiss*, *The Scream*, *The Birth of Venus*, *The Last Supper*, *Impression, Sunrise*, *The Milkmaid*) complete with physical dimensions, museum provenance, and resolution metrics.
 
 ### 3. Historical Popularity Catalog (Top 100 Paintings)
 Archived into: [`paintings_output/`](file:///c:/agy/art/paintings_output)  
@@ -70,15 +67,15 @@ uv run extract_artist.py --artist johannes-vermeer
 uv run extract_artist.py --artist vincent-van-gogh --batch-size 50 --offset 0
 
 # Fetch metadata only (no image downloads)
-uv run extract_artist.py --artist frida-kahlo --metadata-only
+uv run extract_artist.py --artist gustav-klimt --metadata-only
 
-# Ingest all 13 masters sequentially with rate throttling
+# Ingest all 10 historic masters sequentially with rate throttling
 uv run extract_artist.py --all --max-workers 8
 ```
 
 #### Curate Top Masterpieces:
 ```bash
-# Re-scan library and curate the top 78 crown jewels
+# Re-scan library and curate the top 60 crown jewels
 uv run curate_masterpieces.py
 ```
 
@@ -112,7 +109,7 @@ powershell -ExecutionPolicy Bypass -File batch_extract_artist.ps1 -Artist "vince
 ### 2. Multi-Artist Full Catalog Extractor (`extract_artist_paintings.ps1`)
 ```powershell
 powershell -ExecutionPolicy Bypass -File extract_artist_paintings.ps1 `
-    -Artists "johannes-vermeer,frida-kahlo,caravaggio,gustav-klimt,edvard-munch,sandro-botticelli" `
+    -Artists "johannes-vermeer,caravaggio,gustav-klimt,edvard-munch,sandro-botticelli" `
     -OutputDir "artist_paintings"
 ```
 
@@ -137,11 +134,11 @@ The repository includes a museum-grade interactive web application configured fo
 
 ### 🎨 Key Exhibition Capabilities
 1. **🎧 The 5-Minute Guided Tour (Story Mode)**:
-   * 1-tap automated chronological narrative journey through **10 landmark turning points** in art history (1485 &rarr; 1937) from Botticelli to Picasso.
+   * 1-tap automated chronological narrative journey through **10 landmark turning points** in art history (1485 &rarr; 1908) across the 10 historic titans from Botticelli to Klimt.
    * Features bite-sized 2-sentence evolutionary story cards, breakthrough badges, segmented progress indicators, and timed auto-play slideshow.
 2. **🖼️ "Real-Life Size" on Museum Wall Visualizer**:
    * Solves digital scale distortion by displaying framed artworks on an architectural gallery wall beside an accurate human silhouette (175 cm / 5'9").
-   * Visually reveals why *Mona Lisa* (30 in) is intimate, *The Night Watch* (14 ft) is colossal, and *Guernica* (25 ft) fills an entire room.
+   * Visually reveals why intimate portraits like *Mona Lisa* (30 in) contrast dramatically with colossal monumental canvases like *The Night Watch* (14 ft) or *The Last Judgement* (45 ft).
 3. **🔬 Interactive Curator's Detail Loupe (3.0× Ultra-HD)**:
    * Circular 180×180px high-magnification lens with museum gold rim.
    * Tracks cursor dynamically on desktop (shortcut `L`) and follows touch contacts with an ergonomic **-65px vertical offset** on mobile so fingers never obstruct the inspection area.
@@ -169,11 +166,10 @@ The repository includes a museum-grade interactive web application configured fo
 > [!NOTE]
 > For the complete, master-by-master statutory and case-law analysis, read our formal [**docs/LEGAL_REVIEW.md**](docs/LEGAL_REVIEW.md).
 
-### 1. Three-Tier Rights Taxonomy & Copyright Status
-Pantheon’s curated catalog of 78 landmark masterworks and 7,552 artist works adheres to a rigorous three-tier legal classification:
-* **Tier 1: Global Public Domain (60 works / 76.9%)**: Masterworks created between 1470 and 1926 by artists deceased for more than 70 years (Botticelli, Da Vinci, Michelangelo, Caravaggio, Rembrandt, Vermeer, Monet, Van Gogh, Klimt, and Munch). These works reside irrevocably in the worldwide public domain.
-* **Tier 2: US Public Domain / EU Protected (3 works / 3.8%)**: Landmark early works by Pablo Picasso (*Child with a Dove*, *The Old Blind Guitarist*, *Self-Portrait 1907*) published prior to January 1, 1929. Under United States copyright law, these works have entered the US public domain, while estate protections continue under EU Life + 70 rules.
-* **Tier 3: Active Estate Protection & Fair Use (15 works / 19.2%)**: Select mid-20th-century works by Salvador Dalí (© Fundació Gala-Salvador Dalí), post-1928 Pablo Picasso (© Succession Picasso), and Frida Kahlo (© Banco de México / ARS). These works are presented strictly under **17 U.S.C. § 107 (Transformative Educational Fair Use)** for non-commercial scale visualizer comparison and art historical scholarship.
+### 1. 100% Verified Worldwide Public Domain Purity
+Pantheon’s curated catalog of 60 landmark masterworks and 5,105 artist works adheres to absolute public-domain standards:
+* **100% Global Public Domain (60 works / 100%)**: Masterworks created between 1470 and 1918 by artists deceased for more than 70 years (Botticelli, Da Vinci, Michelangelo, Caravaggio, Rembrandt, Vermeer, Monet, Van Gogh, Munch, and Klimt). These works reside irrevocably in the worldwide public domain across all jurisdictions.
+* **Proactive Estate Exclusion**: Mid-20th-century artists whose copyrights remain active or litigious (Pablo Picasso, Salvador Dalí, Frida Kahlo) are deliberately excluded from the public exhibition catalog to guarantee a zero-liability, legally impeccable research and educational platform.
 
 ### 2. Digital Photographic Reproductions & Legal Doctrine
 A cornerstone of digital art preservation is the principle that faithful two-dimensional photographic reproductions of public domain paintings do not create new copyright:
@@ -203,7 +199,7 @@ Pantheon is actively expanding ingestion to institutional **CC0 / Open Access AP
 ├── css/
 │   └── style.css                          # Museum aesthetics, typography & responsive styling
 ├── js/
-│   ├── catalog-data.js                    # Curated data bundle (78 Masterpieces + 13 Masters)
+│   ├── catalog-data.js                    # Curated data bundle (60 Masterpieces + 10 Historic Titans)
 │   └── app.js                             # Interactive exhibition, search, filters & zoom modal
 ├── data/
 │   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
@@ -225,11 +221,11 @@ Pantheon is actively expanding ingestion to institutional **CC0 / Open Access AP
 ├── curate_top_masterpieces.ps1            # Windows PowerShell crown jewel curator
 ├── extract_paintings.ps1                  # Windows PowerShell popular paintings extractor
 │
-├── artist_paintings/                      # 13 Artist directories (7,552 works + metadata)
+├── artist_paintings/                      # 10 Historic Artist directories (5,105 works + metadata)
 │   ├── Leonardo_da_Vinci/
 │   ├── Vincent_van_Gogh/
 │   ├── ...
-│   └── Top_Celebrity_Masterpieces/        # 78 Curated Crown Jewels + JSON/CSV
+│   └── Top_Celebrity_Masterpieces/        # 60 Curated Crown Jewels + JSON/CSV
 │
 └── paintings_output/                      # Top 100 Popular Paintings + JSON/CSV
 ```

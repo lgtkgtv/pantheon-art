@@ -382,7 +382,6 @@
             <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border backdrop-blur-md ${badgeColor}">
               ${item.Megapixels.toFixed(1)} MP
             </span>
-            ${item.rightsStatus === 'estate_protected' ? '<span class="px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold bg-amber-950/80 text-amber-300 border border-amber-500/40 backdrop-blur-md" title="Estate Protected &bull; Educational Fair Use">© Fair Use</span>' : ''}
           </div>
 
           <div class="absolute top-3 right-3 z-10">
@@ -652,21 +651,14 @@
     dom.modalMp.textContent = `${item.Megapixels.toFixed(2)} MP`;
     dom.modalSize.textContent = `${item.FileSizeMB} MB`;
 
-    // Rights & Provenance Metadata
+    // Rights & Provenance Metadata (100% Public Domain)
     if (dom.modalRightsBadge) {
-      dom.modalRightsBadge.textContent = item.rightsBadge || 'Public Domain';
-      dom.modalRightsBadge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-wider';
-      if (item.rightsStatus === 'estate_protected') {
-        dom.modalRightsBadge.classList.add('bg-amber-500/20', 'text-amber-300', 'border', 'border-amber-500/40');
-      } else if (item.rightsStatus === 'us_public_domain') {
-        dom.modalRightsBadge.classList.add('bg-sky-500/20', 'text-sky-300', 'border', 'border-sky-500/40');
-      } else {
-        dom.modalRightsBadge.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/40');
-      }
+      dom.modalRightsBadge.textContent = 'PUBLIC DOMAIN';
+      dom.modalRightsBadge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/40';
     }
 
     if (dom.modalRightsStatement) {
-      dom.modalRightsStatement.textContent = item.rightsStatement || '🏛️ Public Domain Worldwide (Public Domain Mark 1.0)';
+      dom.modalRightsStatement.textContent = item.rightsStatement || '🏛️ Public Domain Worldwide (Life + 70 Years Expired)';
     }
 
     dom.modalRawLink.href = item.HighResUrl || item.LocalRelativePath;
@@ -1275,7 +1267,7 @@
       }
 
       if (exhibitionTitle) exhibitionTitle.textContent = '500-Year Evolutionary Chronology';
-      if (exhibitionSubtitle) exhibitionSubtitle.textContent = 'Bite-sized micro-plaques tracking the 13 celebrity masters from Botticelli (1470) to Kahlo (1954).';
+      if (exhibitionSubtitle) exhibitionSubtitle.textContent = 'Bite-sized micro-plaques tracking 10 historic titans of art history from Botticelli (1470) to Munch (1944).';
 
       if (dom.gallerySection) dom.gallerySection.classList.add('hidden');
       if (dom.timelineSection) dom.timelineSection.classList.remove('hidden');
