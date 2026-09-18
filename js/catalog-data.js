@@ -68,6 +68,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 77.0,
       "physicalType": "Intimate Poplar Panel",
       "physicalDimensionsStr": "53 × 77 cm (20.9 × 30.3 in) • Intimate Poplar Panel",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -92,6 +96,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 280.0,
       "physicalType": "Sistine Chapel Ceiling Fresco",
       "physicalDimensionsStr": "570 × 280 cm (18.7 × 9.2 ft) • Sistine Chapel Ceiling Fresco",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -116,6 +124,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 44.5,
       "physicalType": "Intimate Domestic Tronie",
       "physicalDimensionsStr": "39 × 44.5 cm (15.4 × 17.5 in) • Intimate Domestic Tronie",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -140,6 +152,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 120.0,
       "physicalType": "Full-Scale Studio Allegory",
       "physicalDimensionsStr": "100 × 120 cm (39.4 × 47.2 in) • Full-Scale Studio Allegory",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -164,6 +180,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 48.0,
       "physicalType": "Plein-Air Harbor Study",
       "physicalDimensionsStr": "63 × 48 cm (24.8 × 18.9 in) • Plein-Air Harbor Study",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -188,6 +208,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 73.7,
       "physicalType": "Intimate Cosmic Vision",
       "physicalDimensionsStr": "92.1 × 73.7 cm (36.3 × 29 in) • Intimate Cosmic Vision",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -212,6 +236,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 180.0,
       "physicalType": "Square Gold Leaf Masterpiece",
       "physicalDimensionsStr": "180 × 180 cm (70.9 × 70.9 in) • Square Gold Leaf Masterpiece",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -236,6 +264,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 173.5,
       "physicalType": "Square Double Self-Portrait",
       "physicalDimensionsStr": "173 × 173.5 cm (68.1 × 68.3 in) • Square Double Self-Portrait",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     }
   ],
@@ -712,6 +744,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 172.5,
       "physicalType": "Grand Mythological Canvas",
       "physicalDimensionsStr": "278.9 × 172.5 cm (109.8 × 67.9 in) • Grand Mythological Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -736,6 +772,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 203.0,
       "physicalType": "Grand Allegorical Masterpiece",
       "physicalDimensionsStr": "314 × 203 cm (123.6 × 79.9 in) • Grand Allegorical Masterpiece",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -760,6 +800,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 108.5,
       "physicalType": "Devotional Panel",
       "physicalDimensionsStr": "75 × 108.5 cm (29.5 × 42.7 in) • Devotional Panel",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -784,6 +828,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 83.0,
       "physicalType": "Spalliera Wedding Panel",
       "physicalDimensionsStr": "138 × 83 cm (54.3 × 32.7 in) • Spalliera Wedding Panel",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -808,6 +856,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 62.0,
       "physicalType": "Classical Allegory",
       "physicalDimensionsStr": "91 × 62 cm (35.8 × 24.4 in) • Classical Allegory",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -832,6 +884,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 77.0,
       "physicalType": "Intimate Poplar Panel",
       "physicalDimensionsStr": "53 × 77 cm (20.9 × 30.3 in) • Intimate Poplar Panel",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -856,6 +912,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 460.0,
       "physicalType": "Monumental Convent Refectory Fresco",
       "physicalDimensionsStr": "880 × 460 cm (28.9 × 15.1 ft) • Monumental Convent Refectory Fresco",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -880,6 +940,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 54.0,
       "physicalType": "Intimate Walnut Panel",
       "physicalDimensionsStr": "39 × 54 cm (15.4 × 21.3 in) • Intimate Walnut Panel",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -904,6 +968,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "66.2 × 90 cm (26.1 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -928,6 +996,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "84.8 × 90 cm (33.4 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -952,6 +1024,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 98.0,
       "physicalType": "Early Masterwork",
       "physicalDimensionsStr": "217 × 98 cm (85.4 × 38.6 in) • Early Masterwork",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -976,6 +1052,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 190.0,
       "physicalType": "Late Colorful Swirling Canvas",
       "physicalDimensionsStr": "200 × 190 cm (78.7 × 74.8 in) • Late Colorful Swirling Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1000,6 +1080,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "68.5 × 90 cm (27 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1024,6 +1108,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 280.0,
       "physicalType": "Sistine Chapel Ceiling Fresco",
       "physicalDimensionsStr": "570 × 280 cm (18.7 × 9.2 ft) • Sistine Chapel Ceiling Fresco",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1048,6 +1136,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 1370.0,
       "physicalType": "Colossal Sistine Altar Wall",
       "physicalDimensionsStr": "1220 × 1370 cm (40.0 × 44.9 ft) • Colossal Sistine Altar Wall",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1072,6 +1164,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "133.1 × 90 cm (52.4 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1096,6 +1192,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "89.5 × 90 cm (35.2 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1120,6 +1220,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "74.8 × 90 cm (29.4 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1144,6 +1248,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "142 × 90 cm (55.9 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1168,6 +1276,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 300.0,
       "physicalType": "Monumental Altar Canvas",
       "physicalDimensionsStr": "203 × 300 cm (79.9 × 118.1 in) • Monumental Altar Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1192,6 +1304,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "63.6 × 90 cm (25 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "renaissance"
     },
     {
@@ -1216,6 +1332,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 322.0,
       "physicalType": "Monumental Contarelli Chapel Canvas",
       "physicalDimensionsStr": "340 × 322 cm (133.9 × 126.8 in) • Monumental Contarelli Chapel Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1240,6 +1360,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 323.0,
       "physicalType": "Dramatic Action Tenebrism",
       "physicalDimensionsStr": "343 × 323 cm (135 × 127.2 in) • Dramatic Action Tenebrism",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1264,6 +1388,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 145.0,
       "physicalType": "Visceral Dramatic Canvas",
       "physicalDimensionsStr": "195 × 145 cm (76.8 × 57.1 in) • Visceral Dramatic Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1288,6 +1416,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 95.0,
       "physicalType": "Sensual Youth Portrait",
       "physicalDimensionsStr": "85 × 95 cm (33.5 × 37.4 in) • Sensual Youth Portrait",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1312,6 +1444,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 125.0,
       "physicalType": "Dark Tragic Self-Portrait",
       "physicalDimensionsStr": "101 × 125 cm (39.8 × 49.2 in) • Dark Tragic Self-Portrait",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1336,6 +1472,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 363.0,
       "physicalType": "Colossal Civic Guard Canvas",
       "physicalDimensionsStr": "437 × 363 cm (14.3 × 11.9 ft) • Colossal Civic Guard Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1360,6 +1500,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 169.5,
       "physicalType": "Dynamic Guild Portrait",
       "physicalDimensionsStr": "216.5 × 169.5 cm (85.2 × 66.7 in) • Dynamic Guild Portrait",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1384,6 +1528,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 160.0,
       "physicalType": "Dramatic Seascape (Stolen)",
       "physicalDimensionsStr": "128 × 160 cm (50.4 × 63 in) • Dramatic Seascape (Stolen)",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1408,6 +1556,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "72.8 × 90 cm (28.7 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1432,6 +1584,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "72.7 × 90 cm (28.6 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1456,6 +1612,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "70.5 × 90 cm (27.8 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1480,6 +1640,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "58.9 × 90 cm (23.2 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1504,6 +1668,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 44.5,
       "physicalType": "Intimate Domestic Tronie",
       "physicalDimensionsStr": "39 × 44.5 cm (15.4 × 17.5 in) • Intimate Domestic Tronie",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1528,6 +1696,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 45.5,
       "physicalType": "Intimate Sacred Stillness",
       "physicalDimensionsStr": "41 × 45.5 cm (16.1 × 17.9 in) • Intimate Sacred Stillness",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1552,6 +1724,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 120.0,
       "physicalType": "Full-Scale Studio Allegory",
       "physicalDimensionsStr": "100 × 120 cm (39.4 × 47.2 in) • Full-Scale Studio Allegory",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1576,6 +1752,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 50.0,
       "physicalType": "Enlightenment Intellectual",
       "physicalDimensionsStr": "45 × 50 cm (17.7 × 19.7 in) • Enlightenment Intellectual",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1600,6 +1780,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "77.3 × 90 cm (30.4 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "baroque"
     },
     {
@@ -1624,6 +1808,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 48.0,
       "physicalType": "Plein-Air Harbor Study",
       "physicalDimensionsStr": "63 × 48 cm (24.8 × 18.9 in) • Plein-Air Harbor Study",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1648,6 +1836,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 200.0,
       "physicalType": "Panoramic Curved Mural Installation",
       "physicalDimensionsStr": "1275 × 200 cm (41.8 × 6.6 ft) • Panoramic Curved Mural Installation",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1672,6 +1864,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 89.0,
       "physicalType": "Giverny Garden Canvas",
       "physicalDimensionsStr": "101 × 89 cm (39.8 × 35 in) • Giverny Garden Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1696,6 +1892,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "106.5 × 90 cm (41.9 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1720,6 +1920,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "70.6 × 90 cm (27.8 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1744,6 +1948,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "113.5 × 90 cm (44.7 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1768,6 +1976,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "105.6 × 90 cm (41.6 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1792,6 +2004,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 73.7,
       "physicalType": "Intimate Cosmic Vision",
       "physicalDimensionsStr": "92.1 × 73.7 cm (36.3 × 29 in) • Intimate Cosmic Vision",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1816,6 +2032,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 92.1,
       "physicalType": "Vibrant Chrome Yellow Still Life",
       "physicalDimensionsStr": "73 × 92.1 cm (28.7 × 36.3 in) • Vibrant Chrome Yellow Still Life",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1840,6 +2060,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 82.0,
       "physicalType": "Raw Peasant Earthiness",
       "physicalDimensionsStr": "114 × 82 cm (44.9 × 32.3 in) • Raw Peasant Earthiness",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1864,6 +2088,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "73 × 90 cm (28.7 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1888,6 +2116,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "119.1 × 90 cm (46.9 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1912,6 +2144,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "73.3 × 90 cm (28.9 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "impressionism"
     },
     {
@@ -1936,6 +2172,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 91.0,
       "physicalType": "Cardboard Tempera & Pastel Icon",
       "physicalDimensionsStr": "73.5 × 91 cm (28.9 × 35.8 in) • Cardboard Tempera & Pastel Icon",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -1960,6 +2200,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Sensual Symbolist Icon",
       "physicalDimensionsStr": "71 × 90 cm (28 × 35.4 in) • Sensual Symbolist Icon",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -1984,6 +2228,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "127.6 × 90 cm (50.2 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2008,6 +2256,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "72.2 × 90 cm (28.4 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2032,6 +2284,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 180.0,
       "physicalType": "Square Gold Leaf Masterpiece",
       "physicalDimensionsStr": "180 × 180 cm (70.9 × 70.9 in) • Square Gold Leaf Masterpiece",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2056,6 +2312,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 138.0,
       "physicalType": "Golden Viennese Portrait",
       "physicalDimensionsStr": "138 × 138 cm (54.3 × 54.3 in) • Golden Viennese Portrait",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2080,6 +2340,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 84.0,
       "physicalType": "Decadent Femme Fatale",
       "physicalDimensionsStr": "42 × 84 cm (16.5 × 33.1 in) • Decadent Femme Fatale",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2104,6 +2368,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "38.7 × 90 cm (15.2 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2128,6 +2396,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "42.1 × 90 cm (16.6 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "public_domain",
+      "rightsStatement": "🏛️ Public Domain Worldwide (Public Domain Mark 1.0)",
+      "rightsBadge": "Public Domain",
+      "rightsHolder": "Public Domain",
       "EpochId": "expressionism"
     },
     {
@@ -2152,6 +2424,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 349.3,
       "physicalType": "Colossal Anti-War Monumental Canvas",
       "physicalDimensionsStr": "776.6 × 349.3 cm (25.5 × 11.5 ft) • Colossal Anti-War Monumental Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Succession Picasso / Artists Rights Society (ARS), New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Succession Picasso / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2176,6 +2452,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 122.9,
       "physicalType": "Blue Period Melancholy",
       "physicalDimensionsStr": "82.6 × 122.9 cm (32.5 × 48.4 in) • Blue Period Melancholy",
+      "rightsStatus": "us_public_domain",
+      "rightsStatement": "Public Domain in US (Published Pre-1929); © Succession Picasso in EU",
+      "rightsBadge": "US Public Domain",
+      "rightsHolder": "Succession Picasso / ADAGP",
       "EpochId": "modernism"
     },
     {
@@ -2200,6 +2480,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "69.4 × 90 cm (27.3 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "us_public_domain",
+      "rightsStatement": "Public Domain in US (Published Pre-1929); © Succession Picasso in EU",
+      "rightsBadge": "US Public Domain",
+      "rightsHolder": "Succession Picasso / ADAGP",
       "EpochId": "modernism"
     },
     {
@@ -2224,6 +2508,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "74.4 × 90 cm (29.3 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Succession Picasso / Artists Rights Society (ARS), New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Succession Picasso / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2248,6 +2536,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "64.8 × 90 cm (25.5 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "us_public_domain",
+      "rightsStatement": "Public Domain in US (Published Pre-1929); © Succession Picasso in EU",
+      "rightsBadge": "US Public Domain",
+      "rightsHolder": "Succession Picasso / ADAGP",
       "EpochId": "modernism"
     },
     {
@@ -2272,6 +2564,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 24.1,
       "physicalType": "Intimate Surrealist Miniature",
       "physicalDimensionsStr": "33 × 24.1 cm (13 × 9.5 in) • Intimate Surrealist Miniature",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2296,6 +2592,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 110.0,
       "physicalType": "Freudian Dream Landscape",
       "physicalDimensionsStr": "150 × 110 cm (59.1 × 43.3 in) • Freudian Dream Landscape",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2320,6 +2620,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 51.5,
       "physicalType": "Double-Image Paranoiac Canvas",
       "physicalDimensionsStr": "77.5 × 51.5 cm (30.5 × 20.3 in) • Double-Image Paranoiac Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2344,6 +2648,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 51.2,
       "physicalType": "Double-Image Transformation",
       "physicalDimensionsStr": "78 × 51.2 cm (30.7 × 20.2 in) • Double-Image Transformation",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2368,6 +2676,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 89.5,
       "physicalType": "Spidery Surrealist Mirage",
       "physicalDimensionsStr": "119.5 × 89.5 cm (47 × 35.2 in) • Spidery Surrealist Mirage",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2392,6 +2704,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "56.6 × 90 cm (22.3 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2416,6 +2732,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "65.8 × 90 cm (25.9 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2440,6 +2760,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 24.1,
       "physicalType": "Intimate Surrealist Miniature",
       "physicalDimensionsStr": "33 × 24.1 cm (13 × 9.5 in) • Intimate Surrealist Miniature",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York",
       "EpochId": "modernism"
     },
     {
@@ -2464,6 +2788,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 173.5,
       "physicalType": "Square Double Self-Portrait",
       "physicalDimensionsStr": "173 × 173.5 cm (68.1 × 68.3 in) • Square Double Self-Portrait",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     },
     {
@@ -2488,6 +2816,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 39.8,
       "physicalType": "Intimate Autobiographical Icon",
       "physicalDimensionsStr": "30.5 × 39.8 cm (12 × 15.7 in) • Intimate Autobiographical Icon",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     },
     {
@@ -2512,6 +2844,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 59.5,
       "physicalType": "Final Defiant Celebration of Life",
       "physicalDimensionsStr": "72 × 59.5 cm (28.3 × 23.4 in) • Final Defiant Celebration of Life",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     },
     {
@@ -2536,6 +2872,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 30.5,
       "physicalType": "Visceral Sheet Metal Panel",
       "physicalDimensionsStr": "38 × 30.5 cm (15 × 12 in) • Visceral Sheet Metal Panel",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     },
     {
@@ -2560,6 +2900,10 @@ window.PANTHEON_DATA = {
       "physicalHeightCm": 90.0,
       "physicalType": "Museum Master Canvas",
       "physicalDimensionsStr": "103.7 × 90 cm (40.8 × 35.4 in) • Museum Master Canvas",
+      "rightsStatus": "estate_protected",
+      "rightsStatement": "© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview",
+      "rightsBadge": "© Estate Protected",
+      "rightsHolder": "Banco de México Diego Rivera & Frida Kahlo Museums Trust",
       "EpochId": "modernism"
     }
   ],

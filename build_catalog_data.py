@@ -1,5 +1,6 @@
 import json
 import glob
+import re
 from pathlib import Path
 
 # Load Curated Masterpieces
@@ -194,6 +195,39 @@ for item in curated:
         item['physicalDimensionsStr'] = f'{w_cm:g} × {h_cm:g} cm ({w_ft} × {h_ft} ft) • {p_type}'
     else:
         item['physicalDimensionsStr'] = f'{w_cm:g} × {h_cm:g} cm ({w_in:g} × {h_in:g} in) • {p_type}'
+
+    # Legal Rights & Provenance Classification
+    y_raw = str(item.get('Year', ''))
+    y_matches = re.findall(r'\b(1[4-9]\d{2}|20\d{2})\b', y_raw)
+    y_val = int(y_matches[0]) if y_matches else 1900
+    a_val = item.get('ArtistId', '')
+
+    if a_val in ['picasso', 'dali', 'kahlo']:
+        if a_val == 'picasso' and y_val < 1929:
+            item['rightsStatus'] = 'us_public_domain'
+            item['rightsStatement'] = 'Public Domain in US (Published Pre-1929); © Succession Picasso in EU'
+            item['rightsBadge'] = 'US Public Domain'
+            item['rightsHolder'] = 'Succession Picasso / ADAGP'
+        elif a_val == 'picasso':
+            item['rightsStatus'] = 'estate_protected'
+            item['rightsStatement'] = '© Succession Picasso / Artists Rights Society (ARS), New York • Educational Fair Use Preview'
+            item['rightsBadge'] = '© Estate Protected'
+            item['rightsHolder'] = 'Succession Picasso / Artists Rights Society (ARS), New York'
+        elif a_val == 'dali':
+            item['rightsStatus'] = 'estate_protected'
+            item['rightsStatement'] = '© Fundació Gala-Salvador Dalí / VEGAP / ARS, New York • Educational Fair Use Preview'
+            item['rightsBadge'] = '© Estate Protected'
+            item['rightsHolder'] = 'Fundació Gala-Salvador Dalí / VEGAP / Artists Rights Society (ARS), New York'
+        else: # kahlo
+            item['rightsStatus'] = 'estate_protected'
+            item['rightsStatement'] = '© Banco de México Diego Rivera & Frida Kahlo Museums Trust • Educational Fair Use Preview'
+            item['rightsBadge'] = '© Estate Protected'
+            item['rightsHolder'] = 'Banco de México Diego Rivera & Frida Kahlo Museums Trust'
+    else:
+        item['rightsStatus'] = 'public_domain'
+        item['rightsStatement'] = '🏛️ Public Domain Worldwide (Public Domain Mark 1.0)'
+        item['rightsBadge'] = 'Public Domain'
+        item['rightsHolder'] = 'Public Domain'
 
 print(f'Total Curated Paintings: {len(curated)}')
 matched_urls = sum(1 for x in curated if x['HighResUrl'])

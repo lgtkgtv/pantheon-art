@@ -87,6 +87,8 @@
     modalRes: document.getElementById('modalRes'),
     modalMp: document.getElementById('modalMp'),
     modalSize: document.getElementById('modalSize'),
+    modalRightsBadge: document.getElementById('modalRightsBadge'),
+    modalRightsStatement: document.getElementById('modalRightsStatement'),
     modalRawLink: document.getElementById('modalRawLink'),
     modalPrevBtn: document.getElementById('modalPrevBtn'),
     modalNextBtn: document.getElementById('modalNextBtn'),
@@ -376,10 +378,11 @@
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-75 group-hover:opacity-50 transition-opacity"></div>
           
-          <div class="absolute top-3 left-3 flex gap-1.5 z-10">
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
             <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border backdrop-blur-md ${badgeColor}">
               ${item.Megapixels.toFixed(1)} MP
             </span>
+            ${item.rightsStatus === 'estate_protected' ? '<span class="px-1.5 py-0.5 rounded-md text-[9px] font-mono font-bold bg-amber-950/80 text-amber-300 border border-amber-500/40 backdrop-blur-md" title="Estate Protected &bull; Educational Fair Use">© Fair Use</span>' : ''}
           </div>
 
           <div class="absolute top-3 right-3 z-10">
@@ -648,6 +651,23 @@
     dom.modalRes.textContent = `${item.Width} × ${item.Height} px`;
     dom.modalMp.textContent = `${item.Megapixels.toFixed(2)} MP`;
     dom.modalSize.textContent = `${item.FileSizeMB} MB`;
+
+    // Rights & Provenance Metadata
+    if (dom.modalRightsBadge) {
+      dom.modalRightsBadge.textContent = item.rightsBadge || 'Public Domain';
+      dom.modalRightsBadge.className = 'px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-wider';
+      if (item.rightsStatus === 'estate_protected') {
+        dom.modalRightsBadge.classList.add('bg-amber-500/20', 'text-amber-300', 'border', 'border-amber-500/40');
+      } else if (item.rightsStatus === 'us_public_domain') {
+        dom.modalRightsBadge.classList.add('bg-sky-500/20', 'text-sky-300', 'border', 'border-sky-500/40');
+      } else {
+        dom.modalRightsBadge.classList.add('bg-emerald-500/20', 'text-emerald-300', 'border', 'border-emerald-500/40');
+      }
+    }
+
+    if (dom.modalRightsStatement) {
+      dom.modalRightsStatement.textContent = item.rightsStatement || '🏛️ Public Domain Worldwide (Public Domain Mark 1.0)';
+    }
 
     dom.modalRawLink.href = item.HighResUrl || item.LocalRelativePath;
 

@@ -368,28 +368,39 @@
       </div>
 
       <!-- Modal Footer -->
-      <div class="border-t border-slate-800/80 bg-slate-950/80 px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs">
-        <div class="flex flex-wrap items-center gap-2 text-slate-300 text-[11px] sm:text-xs">
-          <span>🏛️ <strong id="modalMuseum" class="text-white"></strong></span>
-          <span class="text-slate-600">&bull;</span>
-          <span id="modalPhysicalDim" class="font-mono text-amber-300 font-semibold"></span>
-          <span class="text-slate-600">&bull;</span>
-          <span id="modalRes" class="font-mono text-slate-400"></span>
-          <span class="text-slate-600">&bull;</span>
-          <span id="modalMp" class="font-mono text-emerald-400 font-semibold"></span>
-          <span class="text-slate-600">&bull;</span>
-          <span id="modalSize" class="font-mono text-slate-400"></span>
+      <div class="border-t border-slate-800/80 bg-slate-950/80 px-4 sm:px-6 py-3 flex flex-col gap-2.5 text-xs">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5">
+          <div class="flex flex-wrap items-center gap-2 text-slate-300 text-[11px] sm:text-xs">
+            <span>🏛️ <strong id="modalMuseum" class="text-white"></strong></span>
+            <span class="text-slate-600">&bull;</span>
+            <span id="modalPhysicalDim" class="font-mono text-amber-300 font-semibold"></span>
+            <span class="text-slate-600">&bull;</span>
+            <span id="modalRes" class="font-mono text-slate-400"></span>
+            <span class="text-slate-600">&bull;</span>
+            <span id="modalMp" class="font-mono text-emerald-400 font-semibold"></span>
+            <span class="text-slate-600">&bull;</span>
+            <span id="modalSize" class="font-mono text-slate-400"></span>
+          </div>
+
+          <a 
+            id="modalRawLink" 
+            href="#" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-1.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-1.5 shrink-0"
+          >
+            <span>🔗</span> Open Raw Museum Master Scan
+          </a>
         </div>
 
-        <a 
-          id="modalRawLink" 
-          href="#" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="w-full sm:w-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-1.5 rounded-xl text-xs transition shadow-md flex items-center justify-center gap-1.5"
-        >
-          <span>🔗</span> Open Raw Museum Master Scan
-        </a>
+        <!-- Rights, Provenance & Legal Attribution -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-slate-800/60 text-[11px]">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="modalRightsBadge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold tracking-wider"></span>
+            <span id="modalRightsStatement" class="text-slate-400 font-sans"></span>
+          </div>
+          <a href="https://github.com/lgtkgtv/pantheon-art/blob/main/docs/LEGAL_REVIEW.md" target="_blank" rel="noopener noreferrer" class="text-amber-400/80 hover:text-amber-300 underline font-mono text-[10px] whitespace-nowrap">Legal & Rights Review &rarr;</a>
+        </div>
       </div>
 
     </div>
@@ -486,16 +497,60 @@
 
   </div>
 
-  <!-- Minimalist Footer -->
-  <footer class="mt-auto border-t border-slate-900 bg-[#070a0f] py-8 px-4 sm:px-6 text-center text-xs text-slate-500 space-y-2">
-    <div class="flex items-center justify-center gap-2 text-slate-400 font-mono">
-      <span>🏛️ Pantheon Digital Art Archive</span>
-      <span>&bull;</span>
-      <a href="https://github.com/lgtkgtv/pantheon-art" target="_blank" class="text-amber-400 hover:underline">github.com/lgtkgtv/pantheon-art</a>
+  <!-- Museum Legal, Attribution & Provenance Footer -->
+  <footer class="mt-auto border-t border-slate-900 bg-[#06080d] py-10 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto space-y-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-6 border-b border-slate-800/60">
+        <!-- Project & Purpose -->
+        <div class="space-y-2">
+          <div class="flex items-center gap-2 text-slate-200 font-monumental text-sm font-bold tracking-wider text-gold-gradient">
+            <span>🏛️ PANTHEON ART ARCHIVE</span>
+          </div>
+          <p class="text-slate-400 text-[11px] leading-relaxed">
+            A non-profit, open educational resource curated for art history education, visual analysis, and comparative scale studies across 500 years of Western art history.
+          </p>
+        </div>
+
+        <!-- Rights & Legal Framework -->
+        <div class="space-y-2">
+          <h5 class="text-slate-300 font-mono text-[11px] font-bold uppercase tracking-wider">Rights & Reproduction Doctrine</h5>
+          <p class="text-slate-400 text-[11px] leading-relaxed">
+            <strong class="text-slate-300">Public Domain (1470–1926):</strong> Underlying historic artworks reside in the worldwide public domain. Under <em>Bridgeman Art Library v. Corel Corp.</em> (1999) and EU CDSM Directive Art. 14, faithful 2D digital photographic reproductions of public-domain works do not create new copyright.
+          </p>
+        </div>
+
+        <!-- Fair Use & Provenance -->
+        <div class="space-y-2">
+          <h5 class="text-slate-300 font-mono text-[11px] font-bold uppercase tracking-wider">Modern Art & Fair Use Notice</h5>
+          <p class="text-slate-400 text-[11px] leading-relaxed">
+            Select 20th-century works (Picasso, Dalí, Kahlo) are presented under <strong class="text-slate-300">17 U.S.C. § 107 (Fair Use)</strong> exclusively for non-commercial scholarship, art critique, and transformative scale comparison. All rights remain reserved to their respective estates.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Links & DMCA Protocol -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+          <a href="https://github.com/lgtkgtv/pantheon-art/blob/main/docs/LEGAL_REVIEW.md" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 underline font-mono">
+            ⚖️ Comprehensive Legal Review & Rights Registry
+          </a>
+          <span>&bull;</span>
+          <a href="https://github.com/lgtkgtv/pantheon-art" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white underline">
+            GitHub Repository
+          </a>
+          <span>&bull;</span>
+          <a href="https://github.com/lgtkgtv/pantheon-art/issues" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-slate-200">
+            DMCA / Rights Inquiry
+          </a>
+        </div>
+
+        <p class="text-slate-500 font-mono text-[10px] text-center sm:text-right">
+          Designated DMCA Agent: <span class="text-slate-400">legal@pantheon-art.org</span> &bull; 24-Hour Takedown Policy
+        </p>
+      </div>
+
     </div>
-    <p class="text-[11px] text-slate-600">
-      500 Years of Western Art &bull; 13 Celebrity Masters &bull; 78 Curated Masterpieces &bull; Public Domain Cultural Preservation
-    </p>
   </footer>
 
   <!-- Catalog Data & Application Controller Scripts -->

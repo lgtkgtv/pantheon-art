@@ -166,21 +166,28 @@ The repository includes a museum-grade interactive web application configured fo
 
 ## 📜 Provenance, Legal Context & Ethical Sourcing
 
-### 1. Underlying Artworks in the Public Domain
-All master artworks featured in Pantheon were created between **1470 and 1954** by artists who passed away more than 70 years ago. Under international copyright law (including Title 17 of the United States Code and the Berne Convention), the underlying artistic works reside in the **worldwide public domain**.
+> [!NOTE]
+> For the complete, master-by-master statutory and case-law analysis, read our formal [**docs/LEGAL_REVIEW.md**](docs/LEGAL_REVIEW.md).
 
-### 2. Photographic Reproductions & Legal Doctrine
-In the United States, the landmark federal court ruling in ***The Bridgeman Art Library, Ltd. v. Corel Corp.*** (36 F. Supp. 2d 191, S.D.N.Y. 1999) established that slavish photographic reproductions of two-dimensional public domain artworks lack independent originality and are therefore not subject to new copyright protection. While this principle is recognized in US jurisprudence and adopted by institutions like Wikimedia Commons, other jurisdictions (such as parts of the European Union under *sui generis* database directives) maintain differing interpretations regarding digitization rights.
+### 1. Three-Tier Rights Taxonomy & Copyright Status
+Pantheon’s curated catalog of 78 landmark masterworks and 7,552 artist works adheres to a rigorous three-tier legal classification:
+* **Tier 1: Global Public Domain (60 works / 76.9%)**: Masterworks created between 1470 and 1926 by artists deceased for more than 70 years (Botticelli, Da Vinci, Michelangelo, Caravaggio, Rembrandt, Vermeer, Monet, Van Gogh, Klimt, and Munch). These works reside irrevocably in the worldwide public domain.
+* **Tier 2: US Public Domain / EU Protected (3 works / 3.8%)**: Landmark early works by Pablo Picasso (*Child with a Dove*, *The Old Blind Guitarist*, *Self-Portrait 1907*) published prior to January 1, 1929. Under United States copyright law, these works have entered the US public domain, while estate protections continue under EU Life + 70 rules.
+* **Tier 3: Active Estate Protection & Fair Use (15 works / 19.2%)**: Select mid-20th-century works by Salvador Dalí (© Fundació Gala-Salvador Dalí), post-1928 Pablo Picasso (© Succession Picasso), and Frida Kahlo (© Banco de México / ARS). These works are presented strictly under **17 U.S.C. § 107 (Transformative Educational Fair Use)** for non-commercial scale visualizer comparison and art historical scholarship.
 
-### 3. Open Access API Roadmap
-Pantheon is committed to sustainable cultural heritage access. While early cataloging relied on public art index references, our architecture is actively expanding ingestion backends to institutional **Open Access / CC0 APIs**:
-* **[Metropolitan Museum of Art Open Access (CC0)](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access)**
-* **[National Gallery of Art Open Access](https://www.nga.gov/open-access-images.html)**
-* **[Wikimedia Commons Cultural Heritage](https://commons.wikimedia.org/)**
-* **[Rijksmuseum Open Data API](https://data.rijksmuseum.nl/)**
+### 2. Digital Photographic Reproductions & Legal Doctrine
+A cornerstone of digital art preservation is the principle that faithful two-dimensional photographic reproductions of public domain paintings do not create new copyright:
+* **United States**: In ***The Bridgeman Art Library, Ltd. v. Corel Corp.*** (36 F. Supp. 2d 191, S.D.N.Y. 1999), affirmed in *Meshwerks v. Toyota* (2008), the court ruled that slavish photographic reproductions of 2D public-domain artworks lack creative originality and are not copyrightable.
+* **European Union**: **Article 14 of Directive (EU) 2019/790 (CDSM Directive)** explicitly mandates that upon copyright expiration of a visual art work, reproduction materials are not subject to copyright or related rights unless they constitute an author's own intellectual creation.
+* **United Kingdom**: The UK Intellectual Property Office **Copyright Notice 1/2014** confirmed that creating accurate photographs of two-dimensional artworks does not satisfy the originality requirement.
 
-### 4. Non-Commercial Educational Notice
-Pantheon is developed strictly as an open-source, non-commercial educational portfolio project. It is intended for art historians, educators, students, and museum enthusiasts to explore art history and visual scale.
+### 3. Architecture, Decoupling & The Server Test
+Pantheon maintains a strict asset decoupling architecture:
+* **Zero Bulk Media in Git**: The repository contains code and metadata only; multi-gigabyte scans are excluded via `.gitignore`.
+* **The Server Test (*Perfect 10 v. Amazon*)**: Images are resolved on the client side from decentralized cultural CDNs, avoiding direct reproduction or distribution of copyrighted files on the hosting server.
+
+### 4. Open Access API Roadmap & DMCA Protocol
+Pantheon is actively integrating institutional **CC0 / Open Access APIs** (Metropolitan Museum of Art, National Gallery of Art, Rijksmuseum, and Wikimedia Commons). For inquiries or takedown requests under 17 U.S.C. § 512, see our [Compliance & DMCA Protocol](docs/LEGAL_REVIEW.md#8-compliance--takedown-protocol-dmca-notice) with a guaranteed 24-hour response window.
 
 ---
 
@@ -201,6 +208,7 @@ Pantheon is developed strictly as an open-source, non-commercial educational por
 ├── data/
 │   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
 ├── docs/
+│   ├── LEGAL_REVIEW.md                    # Comprehensive legal, copyright & attribution audit
 │   └── SOFTWARE_SPEC.md                   # Comprehensive system specification & architecture report
 │
 ├── pyproject.toml                         # PEP 621 project configuration for uv / pip
