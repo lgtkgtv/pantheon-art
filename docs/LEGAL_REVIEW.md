@@ -140,6 +140,14 @@ Under EU law, faithful 2D digital photographic reproductions of historic visual 
 In the United Kingdom, following the 2009 National Portrait Gallery controversy, the UK Intellectual Property Office issued **Copyright Notice 1/2014**:
 > *"According to the Court of Justice of the European Union, copyright can only subsist in subject matter that is original in the sense that it is the author's own intellectual creation. Simply creating an accurate photograph of an existing two-dimensional artwork is unlikely to satisfy this requirement."*
 
+### 4.4. Cross-Border Cultural Heritage Legislation: Italian State Code Exemption
+Under Italian domestic law, Articles 107 and 108 of the *Codice dei beni culturali e del paesaggio* (Legislative Decree no. 42/2004) empower state cultural institutions (e.g. Gallerie degli Uffizi, Galleria Borghese) to require authorization and concession royalties for commercial reproductions of state-owned cultural assets, independent of copyright expiration. 
+
+Crucially, **Article 108, paragraph 3-bis** explicitly **exempts non-profit, educational, scientific, and personal study activities** from concession fees and authorization requirements:
+> Reproductions undertaken by private individuals for personal use or for purposes of study, research, free manifestation of thought, or creative expression, and by non-profit entities for cultural valorization and promotion, are free from authorization and payment.
+
+Because Pantheon is strictly a non-commercial, personal educational and cultural appreciation initiative with zero commercial exploitation, its curation of Italian masterworks falls squarely within this statutory educational safe harbor.
+
 ---
 
 ## 5. Affirmative Defense Limitations & Proactive Clearance Strategy
@@ -164,6 +172,13 @@ Pantheon's GitHub repository adheres to a strict decoupling of code and media as
 ### 6.2. Judicial Precedent: *Perfect 10 v. Amazon*
 Under the established standard of the United States Court of Appeals for the Ninth Circuit in ***Perfect 10, Inc. v. Amazon.com, Inc.*** (487 F.3d 701, 9th Cir. 2007), an online service that in-line links or embeds content hosted on third-party servers does not store or transmit a copyrighted copy, and therefore does not commit direct copyright infringement of the display or distribution rights.
 
+### 6.3. Judicial Nuance: The Second Circuit Split (*Goldman* & *Nicklen*)
+It is recognized that the Ninth Circuit's "Server Test" has been challenged in other federal jurisdictions, notably the Second Circuit (New York / S.D.N.Y.) in *Goldman v. Breitbart News Network LLC* (306 F. Supp. 3d 622, 2018) and *Nicklen v. Sinclair Broadcast Group* (551 F. Supp. 3d 188, 2021). 
+
+To ensure maximum resilience and avoid reliance on contested embedding theories, Pantheon's legal foundation does not rest upon the Server Test alone:
+1. **The underlying works are 100% in the public domain**, meaning no display or distribution monopoly exists in the underlying masterworks.
+2. Under our documented **Open Access API Roadmap** (Section 7), Pantheon is prioritizing direct links to authorized, institutionally sanctioned open-access endpoints (CC0 / Open Access) to eliminate third-party CDN friction entirely.
+
 ---
 
 ## 7. Open Access API Roadmap
@@ -177,16 +192,17 @@ To transition from legacy index references to fully authorized, institution-sanc
 
 ---
 
-## 8. Attribution Inquiries & Content Inquiries
+## 8. Notice, Takedown & Curator Contact
 
-Pantheon is dedicated to cultural heritage preservation and open education:
-* **Curator Email**: `lgtkgtv@gmail.com`
+Pantheon operates under a formal, zero-friction notice and takedown policy:
+* **Formal Takedown Policy**: [`docs/TAKEDOWN_POLICY.md`](docs/TAKEDOWN_POLICY.md)
+* **Curator Email**: [`lgtkgtv@gmail.com`](mailto:lgtkgtv@gmail.com)
 * **GitHub Repository Issues**: [github.com/lgtkgtv/pantheon-art/issues](https://github.com/lgtkgtv/pantheon-art/issues)
 
-Any inquiry regarding catalog metadata, attribution, or public domain status will receive prompt attention within **24 hours**.
+Any inquiry or removal request regarding catalog metadata, attribution, or rights will receive prompt, courteous compliance within **24 hours** with zero dispute.
 
 ---
 
 ## 9. Verification & Conclusion
 
-Pantheon's fine art catalog is **100% composed of undisputed global public domain masterworks (1470–1944)**. Through proactive exclusion of active 20th-century estate works, full alignment with *Bridgeman v. Corel* and Article 14 of Directive (EU) 2019/790, self-hosted social assets, and a documented Open Access roadmap, the project provides an uncompromising standard of copyright compliance, technical excellence, and legal integrity.
+Pantheon's fine art catalog is **100% composed of undisputed global public domain masterworks (1470–1944)**. Through proactive exclusion of active 20th-century estate works, formal adoption of an open-source MIT software license with express liability disclaimers, complete alignment with *Bridgeman v. Corel* and Article 14 of Directive (EU) 2019/790, and a documented zero-dispute takedown policy, the project provides an uncompromising standard of copyright compliance, safety, and cultural integrity.

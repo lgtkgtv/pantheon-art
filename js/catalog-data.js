@@ -2478,19 +2478,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 7895184
     },
     {
-      "Rank": 18,
-      "Title": "Guitar lesson",
-      "Artist": "Balthus",
-      "Year": "1934",
-      "Width": 520,
-      "Height": 600,
-      "Megapixels": 0.31,
-      "HighResUrl": "https://uploads5.wikiart.org/images/balthus/guitar-lesson-1934.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/balthus/guitar-lesson-1934",
-      "LocalFileName": "018_Balthus_-_Guitar_lesson_520x600.jpg",
-      "FileSizeBytes": 251700
-    },
-    {
       "Rank": 19,
       "Title": "The Girl with a Pearl Earring",
       "Artist": "Johannes Vermeer",
@@ -2502,19 +2489,6 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/johannes-vermeer/the-girl-with-a-pearl-earring",
       "LocalFileName": "019_Johannes_Vermeer_-_The_Girl_with_a_Pearl_Earring_4095x4794.jpg",
       "FileSizeBytes": 6229244
-    },
-    {
-      "Rank": 20,
-      "Title": "Color Study: Squares with Concentric Circles",
-      "Artist": "Wassily Kandinsky",
-      "Year": "1913",
-      "Width": 640,
-      "Height": 479,
-      "Megapixels": 0.31,
-      "HighResUrl": "https://uploads3.wikiart.org/images/wassily-kandinsky/color-study-squares-with-concentric-circles-1913(1).jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/wassily-kandinsky/color-study-squares-with-concentric-circles-1913",
-      "LocalFileName": "020_Wassily_Kandinsky_-_Color_Study_Squares_with_Concentric_640x479.jpg",
-      "FileSizeBytes": 57352
     },
     {
       "Rank": 21,
@@ -2569,19 +2543,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 1770521
     },
     {
-      "Rank": 30,
-      "Title": "Forever Always",
-      "Artist": "Octavio Ocampo",
-      "Year": "XX cent.",
-      "Width": 1697,
-      "Height": 1280,
-      "Megapixels": 2.17,
-      "HighResUrl": "https://uploads8.wikiart.org/images/octavio-ocampo/forever-always.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/octavio-ocampo/forever-always",
-      "LocalFileName": "030_Octavio_Ocampo_-_Forever_Always_1697x1280.jpg",
-      "FileSizeBytes": 221851
-    },
-    {
       "Rank": 32,
       "Title": "Women in the garden",
       "Artist": "Claude Monet",
@@ -2621,19 +2582,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 2414020
     },
     {
-      "Rank": 35,
-      "Title": "Mother Mary with the Holy Child Jesus Christ",
-      "Artist": "Adolf Hitler",
-      "Year": "1913",
-      "Width": 660,
-      "Height": 459,
-      "Megapixels": 0.3,
-      "HighResUrl": "https://uploads6.wikiart.org/00280/images/adolf-hitler/hitlermarywithjesus.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/adolf-hitler/mother-mary-with-the-holy-child-jesus-christ",
-      "LocalFileName": "035_Adolf_Hitler_-_Mother_Mary_with_the_Holy_Child_Jes_660x459.jpg",
-      "FileSizeBytes": 32373
-    },
-    {
       "Rank": 36,
       "Title": "The Eiffel Tower",
       "Artist": "Georges Seurat",
@@ -2645,19 +2593,6 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/georges-seurat/the-eiffel-tower-1889",
       "LocalFileName": "036_Georges_Seurat_-_The_Eiffel_Tower_2042x3200.jpeg",
       "FileSizeBytes": 1427636
-    },
-    {
-      "Rank": 37,
-      "Title": "Dance (II)",
-      "Artist": "Henri Matisse",
-      "Year": "1910",
-      "Width": 2348,
-      "Height": 1587,
-      "Megapixels": 3.73,
-      "HighResUrl": "https://uploads6.wikiart.org/images/henri-matisse/dance-ii-1910.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/henri-matisse/dance-ii-1910",
-      "LocalFileName": "037_Henri_Matisse_-_Dance_(II)_2348x1587.jpg",
-      "FileSizeBytes": 544362
     },
     {
       "Rank": 38,
@@ -2673,19 +2608,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 4502392
     },
     {
-      "Rank": 41,
-      "Title": "Necronom IV",
-      "Artist": "H.R. Giger",
-      "Year": "1976",
-      "Width": 600,
-      "Height": 402,
-      "Megapixels": 0.24,
-      "HighResUrl": "https://uploads5.wikiart.org/images/h-r-giger/necronom-iv-1976.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/h-r-giger/necronom-iv-1976",
-      "LocalFileName": "041_H.R._Giger_-_Necronom_IV_600x402.jpg",
-      "FileSizeBytes": 101913
-    },
-    {
       "Rank": 42,
       "Title": "Liberty Leading the People",
       "Artist": "Eugene Delacroix",
@@ -2697,32 +2619,6 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/eugene-delacroix/the-liberty-leading-the-people-1830",
       "LocalFileName": "042_Eugene_Delacroix_-_Liberty_Leading_the_People_5946x4771.jpg",
       "FileSizeBytes": 7623124
-    },
-    {
-      "Rank": 45,
-      "Title": "Composition A",
-      "Artist": "Piet Mondrian",
-      "Year": "1923",
-      "Width": 889,
-      "Height": 866,
-      "Megapixels": 0.77,
-      "HighResUrl": "https://uploads2.wikiart.org/images/piet-mondrian/composition-a-1923.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/piet-mondrian/composition-a-1923",
-      "LocalFileName": "045_Piet_Mondrian_-_Composition_A_889x866.jpg",
-      "FileSizeBytes": 116861
-    },
-    {
-      "Rank": 46,
-      "Title": "Minotaur",
-      "Artist": "Man Ray",
-      "Year": "1934",
-      "Width": 500,
-      "Height": 342,
-      "Megapixels": 0.17,
-      "HighResUrl": "https://uploads0.wikiart.org/images/man-ray/minotaur-1934.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/man-ray/minotaur-1934",
-      "LocalFileName": "046_Man_Ray_-_Minotaur_500x342.jpg",
-      "FileSizeBytes": 19152
     },
     {
       "Rank": 47,
@@ -2749,19 +2645,6 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/leonardo-da-vinci/the-lady-with-the-ermine-cecilia-gallerani-1496",
       "LocalFileName": "049_Leonardo_da_Vinci_-_The_Lady_with_an_Ermine_(Cecilia_Ga_3543x4876.jpg",
       "FileSizeBytes": 3497427
-    },
-    {
-      "Rank": 50,
-      "Title": "Zebra",
-      "Artist": "Victor Vasarely",
-      "Year": "1937",
-      "Width": 408,
-      "Height": 328,
-      "Megapixels": 0.13,
-      "HighResUrl": "https://uploads5.wikiart.org/images/victor-vasarely/zebra-1937.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/victor-vasarely/zebra-1937",
-      "LocalFileName": "050_Victor_Vasarely_-_Zebra_408x328.jpg",
-      "FileSizeBytes": 37936
     },
     {
       "Rank": 51,
@@ -2829,19 +2712,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 1428690
     },
     {
-      "Rank": 56,
-      "Title": "Orange and Yellow",
-      "Artist": "Mark Rothko",
-      "Year": "1956",
-      "Width": 457,
-      "Height": 583,
-      "Megapixels": 0.27,
-      "HighResUrl": "https://uploads2.wikiart.org/images/mark-rothko/orange-and-yellow(1).jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/mark-rothko/orange-and-yellow",
-      "LocalFileName": "056_Mark_Rothko_-_Orange_and_Yellow_457x583.jpg",
-      "FileSizeBytes": 31557
-    },
-    {
       "Rank": 57,
       "Title": "The Creation of Adam",
       "Artist": "Michelangelo",
@@ -2853,19 +2723,6 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/michelangelo/the-creation-of-adam-1512",
       "LocalFileName": "057_Michelangelo_-_The_Creation_of_Adam_4256x2843.jpg",
       "FileSizeBytes": 9494881
-    },
-    {
-      "Rank": 58,
-      "Title": "Skull",
-      "Artist": "Jean-Michel Basquiat",
-      "Year": "1981",
-      "Width": 1827,
-      "Height": 2160,
-      "Megapixels": 3.95,
-      "HighResUrl": "https://uploads4.wikiart.org/images/jean-michel-basquiat/head.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/jean-michel-basquiat/head",
-      "LocalFileName": "058_Jean-Michel_Basquiat_-_Skull_1827x2160.jpg",
-      "FileSizeBytes": 818954
     },
     {
       "Rank": 61,
@@ -2894,32 +2751,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 7018475
     },
     {
-      "Rank": 63,
-      "Title": "Glass tears",
-      "Artist": "Man Ray",
-      "Year": "1932",
-      "Width": 2056,
-      "Height": 1645,
-      "Megapixels": 3.38,
-      "HighResUrl": "https://uploads8.wikiart.org/images/man-ray/larmes-tears.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/man-ray/larmes-tears",
-      "LocalFileName": "063_Man_Ray_-_Glass_tears_2056x1645.jpg",
-      "FileSizeBytes": 322777
-    },
-    {
-      "Rank": 65,
-      "Title": "“Untitled” (Portrait of Ross in L.A.)",
-      "Artist": "Felix Gonzalez-Torres",
-      "Year": "1991",
-      "Width": 700,
-      "Height": 552,
-      "Megapixels": 0.39,
-      "HighResUrl": "https://uploads2.wikiart.org/images/felix-gonzalez-torres/untitled-portrait-of-ross-in-l-a-1991.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/felix-gonzalez-torres/untitled-portrait-of-ross-in-l-a-1991",
-      "LocalFileName": "065_Felix_Gonzalez-Torres_-_“Untitled”_(Portrait_of_Ross_in_L.A_700x552.jpg",
-      "FileSizeBytes": 41956
-    },
-    {
       "Rank": 66,
       "Title": "Lamentation (The Mourning of Christ)",
       "Artist": "Giotto",
@@ -2946,19 +2777,6 @@ window.PANTHEON_DATA = {
       "FileSizeBytes": 1521210
     },
     {
-      "Rank": 70,
-      "Title": "Castle and Sun",
-      "Artist": "Paul Klee",
-      "Year": "1928",
-      "Width": 1000,
-      "Height": 821,
-      "Megapixels": 0.82,
-      "HighResUrl": "https://uploads8.wikiart.org/images/paul-klee/castle-and-sun-1928.jpg",
-      "WikiArtUrl": "https://www.wikiart.org/en/paul-klee/castle-and-sun-1928",
-      "LocalFileName": "070_Paul_Klee_-_Castle_and_Sun_1000x821.jpg",
-      "FileSizeBytes": 226338
-    },
-    {
       "Rank": 71,
       "Title": "The Archangel Michael defeating Satan",
       "Artist": "Guido Reni",
@@ -2983,6 +2801,188 @@ window.PANTHEON_DATA = {
       "WikiArtUrl": "https://www.wikiart.org/en/gustave-courbet/the-desperate-man-self-portrait-1845",
       "LocalFileName": "073_Gustave_Courbet_-_The_Desperate_Man_(Self-Portrait)_1500x1228.jpg",
       "FileSizeBytes": 391786
+    },
+    {
+      "Rank": 79,
+      "Title": "Basket of Apples",
+      "Artist": "Paul Cezanne",
+      "Year": "1895",
+      "Width": 2536,
+      "Height": 2003,
+      "Megapixels": 5.08,
+      "HighResUrl": "https://uploads0.wikiart.org/images/paul-cezanne/still-life-with-bottle-and-apple-basket-1894.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/paul-cezanne/still-life-with-bottle-and-apple-basket-1894",
+      "LocalFileName": "079_Paul_Cezanne_-_Basket_of_Apples_2536x2003.jpg",
+      "FileSizeBytes": 535414
+    },
+    {
+      "Rank": 82,
+      "Title": "The Arnolfini Wedding. Portrait of Giovanni Arnolfini and his Wife Giovanna Cenami (The Arnolfini Marriage)",
+      "Artist": "Jan van Eyck",
+      "Year": "1434",
+      "Width": 4386,
+      "Height": 6000,
+      "Megapixels": 26.32,
+      "HighResUrl": "https://uploads2.wikiart.org/00129/images/jan-van-eyck/the-arnolfini-wedding.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/jan-van-eyck/the-arnolfini-wedding-the-portrait-of-giovanni-arnolfini-and-his-wife-giovanna-cenami-the-1434",
+      "LocalFileName": "082_Jan_van_Eyck_-_The_Arnolfini_Wedding._Portrait_of_4386x6000.jpg",
+      "FileSizeBytes": 5659182
+    },
+    {
+      "Rank": 83,
+      "Title": "Las Meninas",
+      "Artist": "Diego Velazquez",
+      "Year": "1656",
+      "Width": 5000,
+      "Height": 5754,
+      "Megapixels": 28.77,
+      "HighResUrl": "https://uploads6.wikiart.org/00142/images/diego-velazquez/las-meninas.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/diego-velazquez/las-meninas-detail-of-the-lower-half-depicting-the-family-of-philip-iv-of-spain-1656",
+      "LocalFileName": "083_Diego_Velazquez_-_Las_Meninas_5000x5754.jpg",
+      "FileSizeBytes": 7013037
+    },
+    {
+      "Rank": 85,
+      "Title": "The Artist’s Studio",
+      "Artist": "Gustave Courbet",
+      "Year": "1854-1855",
+      "Width": 4999,
+      "Height": 2946,
+      "Megapixels": 14.73,
+      "HighResUrl": "https://uploads5.wikiart.org/00142/images/gustave-courbet/the-artist-s-studio.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/gustave-courbet/the-artist-s-studio-1855",
+      "LocalFileName": "085_Gustave_Courbet_-_The_Artist’s_Studio_4999x2946.jpg",
+      "FileSizeBytes": 5064921
+    },
+    {
+      "Rank": 86,
+      "Title": "Black Square",
+      "Artist": "Kazimir Malevich",
+      "Year": "1915",
+      "Width": 1196,
+      "Height": 1199,
+      "Megapixels": 1.43,
+      "HighResUrl": "https://uploads7.wikiart.org/00209/images/kazimir-malevich/1915-2.png",
+      "WikiArtUrl": "https://www.wikiart.org/en/kazimir-malevich/black-square-1915",
+      "LocalFileName": "086_Kazimir_Malevich_-_Black_Square_1196x1199.png",
+      "FileSizeBytes": 2068226
+    },
+    {
+      "Rank": 89,
+      "Title": "The Virgin and Child with St. Anne",
+      "Artist": "Leonardo da Vinci",
+      "Year": "1503-1519",
+      "Width": 5000,
+      "Height": 6704,
+      "Megapixels": 33.52,
+      "HighResUrl": "https://uploads7.wikiart.org/00142/images/leonardo-da-vinci/the-virgin-and-child-with-st.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/leonardo-da-vinci/the-virgin-and-child-with-st-anne-1510",
+      "LocalFileName": "089_Leonardo_da_Vinci_-_The_Virgin_and_Child_with_St._Anne_5000x6704.jpg",
+      "FileSizeBytes": 10527633
+    },
+    {
+      "Rank": 90,
+      "Title": "Mont Sainte-Victoire",
+      "Artist": "Paul Cezanne",
+      "Year": "1895",
+      "Width": 1280,
+      "Height": 1012,
+      "Megapixels": 1.3,
+      "HighResUrl": "https://uploads5.wikiart.org/images/paul-cezanne/mont-sainte-victoire-3.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/paul-cezanne/mont-sainte-victoire-3",
+      "LocalFileName": "090_Paul_Cezanne_-_Mont_Sainte-Victoire_1280x1012.jpg",
+      "FileSizeBytes": 234515
+    },
+    {
+      "Rank": 91,
+      "Title": "The Ancient of Days",
+      "Artist": "William Blake",
+      "Year": "1794",
+      "Width": 2217,
+      "Height": 3004,
+      "Megapixels": 6.66,
+      "HighResUrl": "https://uploads1.wikiart.org/00142/images/57726d7eedc2cb3880b47f24/europe-a-prophecy-copy-k-plate-01.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/william-blake/the-ancient-of-days-1794",
+      "LocalFileName": "091_William_Blake_-_The_Ancient_of_Days_2217x3004.jpg",
+      "FileSizeBytes": 1494518
+    },
+    {
+      "Rank": 92,
+      "Title": "The Spring",
+      "Artist": "Sandro Botticelli",
+      "Year": "1478-1482",
+      "Width": 4926,
+      "Height": 3236,
+      "Megapixels": 15.94,
+      "HighResUrl": "https://uploads4.wikiart.org/00129/images/sandro-botticelli/primavera.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/sandro-botticelli/primavera-1478",
+      "LocalFileName": "092_Sandro_Botticelli_-_The_Spring_4926x3236.jpg",
+      "FileSizeBytes": 6679700
+    },
+    {
+      "Rank": 94,
+      "Title": "The Ninth Wave",
+      "Artist": "Ivan Aivazovsky",
+      "Year": "1850",
+      "Width": 5815,
+      "Height": 3840,
+      "Megapixels": 22.33,
+      "HighResUrl": "https://uploads7.wikiart.org/images/ivan-aivazovsky/the-ninth-wave-1850-1.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/ivan-aivazovsky/the-ninth-wave-1850-1",
+      "LocalFileName": "094_Ivan_Aivazovsky_-_The_Ninth_Wave_5815x3840.jpg",
+      "FileSizeBytes": 16019462
+    },
+    {
+      "Rank": 96,
+      "Title": "Dante and Virgil",
+      "Artist": "William-Adolphe Bouguereau",
+      "Year": "1850",
+      "Width": 2803,
+      "Height": 3515,
+      "Megapixels": 9.85,
+      "HighResUrl": "https://uploads7.wikiart.org/00142/images/57726d86edc2cb3880b49101/william-bouguereau-dante-and-virgile-google-art-project-2.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/william-adolphe-bouguereau/dante-and-virgil-1850",
+      "LocalFileName": "096_William-Adolphe_Bouguerea_-_Dante_and_Virgil_2803x3515.jpg",
+      "FileSizeBytes": 7884464
+    },
+    {
+      "Rank": 98,
+      "Title": "The Third of May 1808 (Execution of the Defenders of Madrid)",
+      "Artist": "Francisco Goya",
+      "Year": "1814",
+      "Width": 5000,
+      "Height": 3862,
+      "Megapixels": 19.31,
+      "HighResUrl": "https://uploads7.wikiart.org/00142/images/francisco-goya/the-third-of-may-1808-execution-of-the-defenders-of-madrid.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/francisco-goya/the-third-of-may-1808-execution-of-the-defenders-of-madrid-1814-1",
+      "LocalFileName": "098_Francisco_Goya_-_The_Third_of_May_1808_(Execution_of_5000x3862.jpg",
+      "FileSizeBytes": 3743472
+    },
+    {
+      "Rank": 99,
+      "Title": "Mystery and Melancholy of a Street",
+      "Artist": "Giorgio de Chirico",
+      "Year": "1914",
+      "Width": 755,
+      "Height": 927,
+      "Megapixels": 0.7,
+      "HighResUrl": "https://uploads1.wikiart.org/images/giorgio-de-chirico/mystery-and-melancholy-of-a-street-1914.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/giorgio-de-chirico/mystery-and-melancholy-of-a-street-1914",
+      "LocalFileName": "099_Giorgio_de_Chirico_-_Mystery_and_Melancholy_of_a_Street_755x927.jpg",
+      "FileSizeBytes": 142453
+    },
+    {
+      "Rank": 100,
+      "Title": "Still Life - Vase with Fifteen Sunflowers",
+      "Artist": "Vincent van Gogh",
+      "Year": "1888",
+      "Width": 2040,
+      "Height": 2591,
+      "Megapixels": 5.29,
+      "HighResUrl": "https://uploads6.wikiart.org/images/vincent-van-gogh/still-life-vase-with-fifteen-sunflowers-1888-1.jpg",
+      "WikiArtUrl": "https://www.wikiart.org/en/vincent-van-gogh/still-life-vase-with-fifteen-sunflowers-1888-1",
+      "LocalFileName": "100_Vincent_van_Gogh_-_Still_Life_-_Vase_with_Fifteen_Sunf_2040x2591.jpg",
+      "FileSizeBytes": 824563
     }
   ]
 };

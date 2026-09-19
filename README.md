@@ -182,8 +182,12 @@ Pantheon maintains a strict asset decoupling architecture:
 * **Zero Bulk Media in Git**: The repository contains code and metadata only; multi-gigabyte scans are excluded via `.gitignore`.
 * **The Server Test (*Perfect 10 v. Amazon*)**: Images are resolved on the client side from decentralized cultural CDNs, avoiding direct reproduction or distribution of copyrighted files on the hosting server.
 
-### 4. Open Access API Roadmap & Curator Inquiries
-Pantheon is actively expanding ingestion to institutional **CC0 / Open Access APIs** (Metropolitan Museum of Art, National Gallery of Art, Rijksmuseum, and Wikimedia Commons). For inquiries, attribution updates, or suggestions, please contact **`lgtkgtv@gmail.com`** or open an issue on GitHub. All inquiries receive prompt attention within 24 hours.
+### 4. Non-Commercial Educational Purpose, Takedown Policy & Inquiries
+Pantheon is an independent, non-commercial personal educational initiative created out of appreciation for historic visual art and comparative scale education. There is **no commercial interest, monetization, print sales, or advertising**.
+
+* **License**: Open-source under the [**MIT License**](LICENSE) with full disclaimer of warranty and limitation of liability.
+* **Notice & Takedown Policy**: For inquiries, attribution updates, or content removal, please refer to our formal [**docs/TAKEDOWN_POLICY.md**](docs/TAKEDOWN_POLICY.md) or contact **`lgtkgtv@gmail.com`**. All inquiries receive prompt, courteous compliance within **24 hours** with zero dispute.
+* **Open Access API Roadmap**: Pantheon is actively expanding ingestion connectors for official institutional **CC0 / Open Access APIs** (Metropolitan Museum of Art, National Gallery of Art, Rijksmuseum, and Wikimedia Commons).
 
 ---
 
@@ -191,6 +195,7 @@ Pantheon is actively expanding ingestion to institutional **CC0 / Open Access AP
 
 ```text
 .
+├── LICENSE                                # Formal MIT License with non-commercial disclaimer
 ├── index.html                             # Museum-grade exhibition web app (GitHub Pages entry)
 ├── .nojekyll                              # Bypasses Jekyll for GitHub Pages
 ├── 404.html                               # Fallback redirect for GitHub Pages
@@ -205,7 +210,8 @@ Pantheon is actively expanding ingestion to institutional **CC0 / Open Access AP
 │   └── pantheon_catalog.json              # Canonical JSON dataset for API / web consumption
 ├── docs/
 │   ├── LEGAL_REVIEW.md                    # Comprehensive legal, copyright & attribution audit
-│   └── SOFTWARE_SPEC.md                   # Comprehensive system specification & architecture report
+│   ├── SOFTWARE_SPEC.md                   # Comprehensive system specification & architecture report
+│   └── TAKEDOWN_POLICY.md                 # Formal zero-friction notice & takedown protocol
 │
 ├── pyproject.toml                         # PEP 621 project configuration for uv / pip
 ├── README.md                              # Comprehensive technical documentation
@@ -227,5 +233,5 @@ Pantheon is actively expanding ingestion to institutional **CC0 / Open Access AP
 │   ├── ...
 │   └── Top_Celebrity_Masterpieces/        # 60 Curated Crown Jewels + JSON/CSV
 │
-└── paintings_output/                      # Top 100 Popular Paintings + JSON/CSV
+└── paintings_output/                      # Public Domain Popular Paintings + JSON/CSV
 ```
